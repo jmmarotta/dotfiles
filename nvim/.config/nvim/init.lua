@@ -1125,6 +1125,8 @@ require("lazy").setup({
         "ruby",
         "sql",
         "terraform",
+        "yaml",
+        "json",
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
@@ -1142,6 +1144,12 @@ require("lazy").setup({
 
       ---@diagnostic disable-next-line: missing-fields
       require("nvim-treesitter.configs").setup(opts)
+
+      vim.filetype.add({
+        extension = {
+          sqlx = "sql",
+        },
+      })
 
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:
