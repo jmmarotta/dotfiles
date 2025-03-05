@@ -1224,6 +1224,7 @@ require("lazy").setup({
       require("plugins.codecompanion.fidget-spinner"):init()
       -- Toggle extended thinking mode
       CodecompanionExtendedThinking = false -- Default to false
+      local thinking_budget_max = 32000
       AnthropicToggle = function()
         return require("codecompanion.adapters").extend("anthropic", {
           schema = {
@@ -1237,12 +1238,12 @@ require("lazy").setup({
               default = CodecompanionExtendedThinking,
             },
             thinking_budget = {
-              default = CodecompanionExtendedThinking and 16000 or nil,
+              default = CodecompanionExtendedThinking and thinking_budget_max or nil,
             },
             max_tokens = {
               default = function()
                 if CodecompanionExtendedThinking then
-                  return 16000 + 1000
+                  return thinking_budget_max + 1000
                 end
 
                 return 8192
