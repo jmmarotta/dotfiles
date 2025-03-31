@@ -132,8 +132,8 @@ source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 # Add private variables to .private_variables
-if [ -f ~/.private_variables ]; then                                                                               
-  . ~/.private_variables                                                                                         
+if [ -f ~/.zshsecrets ]; then                                                                               
+  . ~/.zshsecrets
 fi
 
 tmux9() {
@@ -239,3 +239,5 @@ alias aic=aichat
 # uv
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
+
+export AWS_PROFILE=default
