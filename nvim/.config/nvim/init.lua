@@ -408,11 +408,12 @@ require("lazy").setup({
           require("telescope.actions").close(prompt_bufnr)
           for _, j in pairs(multi) do
             if j.path ~= nil then
-              if j.lnum ~= nil then
-                vim.cmd(string.format("%s %s:%s", "edit", j.path, j.lnum))
-              else
-                vim.cmd(string.format("%s %s", "edit", j.path))
-              end
+              -- if j.lnum ~= nil then
+              --   vim.cmd(string.format("%s %s:%s", "edit", j.path, j.lnum))
+              -- else
+              --   vim.cmd(string.format("%s %s", "edit", j.path))
+              -- end
+              vim.cmd(string.format("%s %s", "edit", j.path))
             end
           end
         else
