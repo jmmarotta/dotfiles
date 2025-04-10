@@ -1260,6 +1260,7 @@ require("lazy").setup({
             end,
           },
           schema = {
+            -- NOTE: will likely need to switch to "gemini-2.5-pro-preview-03-25"
             model = { default = thinking_enabled and "gemini-2.5-pro-exp-03-25" or "gemini-2.0-flash" },
           },
         })
@@ -1313,7 +1314,7 @@ require("lazy").setup({
           --
           -- Ensure buffer variables are initialized (might be redundant with BufWinEnter but safe)
           if vim.b[bufnr].codecompanion_initialized == nil then
-            vim.b[bufnr].codecompanion_thinking_enabled = false
+            vim.b[bufnr].codecompanion_thinking_enabled = adapter_name == "gemini" and true or false
             vim.b[bufnr].codecompanion_grounding_enabled = false
             vim.b[bufnr].codecompanion_initialized = true
           end
@@ -1463,7 +1464,7 @@ require("lazy").setup({
       },
       adapters = {
         anthropic = function()
-          return CreateAnthropicAdapter()
+          return CreateAnthropicAdapter(false)
         end,
         openai = function()
           return require("codecompanion.adapters").extend("openai", {
@@ -1478,7 +1479,7 @@ require("lazy").setup({
           })
         end,
         gemini = function()
-          return CreateGeminiAdapter()
+          return CreateGeminiAdapter(true, false)
         end,
       },
       strategies = {
