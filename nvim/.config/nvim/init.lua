@@ -473,7 +473,7 @@ require("lazy").setup({
             -- Version Control
             "^.git/",
             -- Dependencies
-            "^node_modules/",
+            "node_modules/",
             "^.npm/",
             "^vendor/",
             "^.bundle/",
@@ -487,6 +487,7 @@ require("lazy").setup({
             "^.venv/",
             "^__pycache__/",
             "^.pytest_cache/",
+            "^.sst/",
             -- IDE & Tools
             "^.vscode/",
             "^.idea/",
@@ -740,6 +741,9 @@ require("lazy").setup({
         -- terraform
         terraformls = {},
 
+        -- docker
+        dockerls = {},
+
         -- lua
         lua_ls = {
           -- cmd = {...},
@@ -851,7 +855,7 @@ require("lazy").setup({
         },
         ignore_filetypes = { "" },
         condition = function()
-          return vim.fn.expand("%:t") == ".private_variables"
+          return vim.fn.expand("%:t") == ".zshsecrets"
         end,
       })
     end,
@@ -1261,7 +1265,8 @@ require("lazy").setup({
           },
           schema = {
             -- NOTE: will likely need to switch to "gemini-2.5-pro-preview-03-25"
-            model = { default = thinking_enabled and "gemini-2.5-pro-exp-03-25" or "gemini-2.0-flash" },
+            -- was "gemini-2.5-pro-exp-03-25"
+            model = { default = thinking_enabled and "gemini-2.5-pro-exp-03-25" or "gemini-2.5-flash-preview-04-17" },
           },
         })
       end

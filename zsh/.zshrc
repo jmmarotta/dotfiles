@@ -240,4 +240,12 @@ alias aic=aichat
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
-export AWS_PROFILE=default
+export AWS_PROFILE=$AWS_DEFAULT_PROFILE
+
+# pnpm
+export PNPM_HOME="/Users/julianmarotta/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
