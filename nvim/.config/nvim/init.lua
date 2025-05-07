@@ -560,8 +560,8 @@ require("lazy").setup({
     "neovim/nvim-lspconfig",
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
-      { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
-      "williamboman/mason-lspconfig.nvim",
+      { "mason-org/mason.nvim", config = true, version = "^1.0.0", opts = {} }, -- NOTE: Must be loaded before dependants
+      { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
       "WhoIsSethDaniel/mason-tool-installer.nvim",
 
       -- Useful status updates for LSP.
@@ -683,11 +683,11 @@ require("lazy").setup({
           -- code, if the language server you are using supports them
           --
           -- This may be unwanted, since they displace some of your code
-          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-            map("<leader>th", function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-            end, "[T]oggle Inlay [H]ints")
-          end
+          -- if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+          --   map("<leader>th", function()
+          --     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
+          --   end, "[T]oggle Inlay [H]ints")
+          -- end
         end,
       })
 
@@ -767,7 +767,6 @@ require("lazy").setup({
       --    :Mason
       --
       --  You can press `g?` for help in this menu.
-      require("mason").setup()
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
@@ -786,12 +785,14 @@ require("lazy").setup({
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
       require("mason-lspconfig").setup({
+        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        automatic_installation = false,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for tsserver)
+            -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
             require("lspconfig")[server_name].setup(server)
           end,
@@ -1264,9 +1265,9 @@ require("lazy").setup({
             end,
           },
           schema = {
-            -- NOTE: will likely need to switch to "gemini-2.5-pro-preview-03-25"
-            -- was "gemini-2.5-pro-exp-03-25"
-            model = { default = thinking_enabled and "gemini-2.5-pro-exp-03-25" or "gemini-2.5-flash-preview-04-17" },
+            model = {
+              default = thinking_enabled and "gemini-2.5-pro-preview-05-06" or "gemini-2.5-flash-preview-04-17",
+            },
           },
         })
       end
