@@ -68,6 +68,7 @@
 	a = add
 	sw = switch
 	d = diff
+	ds = diff --staged
 	p = push
 
 # https://blog.gitbutler.com/how-git-core-devs-configure-git/?utm_source=tldrwebdev
