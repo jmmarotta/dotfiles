@@ -131,8 +131,8 @@ export DISPLAY=:0
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
-# Add private variables to .private_variables
-if [ -f ~/.zshsecrets ]; then                                                                               
+# Add private variables to .zshsecrets
+if [ -f ~/.zshsecrets ]; then
   . ~/.zshsecrets
 fi
 
@@ -251,8 +251,10 @@ esac
 # pnpm end
 
 export NODE_OPTIONS="--disable-warning=ExperimentalWarning"
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=($HOME/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
