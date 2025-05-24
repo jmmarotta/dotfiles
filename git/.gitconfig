@@ -68,5 +68,6 @@
 	a = add
 	sw = switch
 	d = diff
+	p = push
 
 # https://blog.gitbutler.com/how-git-core-devs-configure-git/?utm_source=tldrwebdev
