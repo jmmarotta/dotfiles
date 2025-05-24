@@ -13,7 +13,7 @@ return {
       local thinking_budget_max = 32000
       return require("codecompanion.adapters").extend("anthropic", {
         schema = {
-          model = { default = "claude-3-7-sonnet-20250219" },
+          model = { default = "claude-sonnet-4-20250514" },
           extended_output = { default = thinking_enabled },
           extended_thinking = { default = thinking_enabled },
           thinking_budget = { default = thinking_enabled and thinking_budget_max or nil },
@@ -270,14 +270,13 @@ return {
     strategies = {
       -- Change the default chat adapter
       chat = {
-        adapter = "gemini",
-        -- adapter = "anthropic",
+        adapter = "anthropic",
+        -- adapter = "gemini",
         -- adapter = "openai",
         slash_commands = {
           ["file"] = {
             callback = "strategies.chat.slash_commands.file",
             description = "Select a file using Telescope",
-            -- TODO: check that git ignored files are not included. I think this is dependent on Telescope.
             opts = {
               provider = "telescope", -- Other options include 'default', 'mini_pick', 'fzf_lua', snacks
               contains_code = true,
