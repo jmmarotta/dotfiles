@@ -59,5 +59,8 @@
 [merge]
 	# (just 'diff3' if git version < 2.3)
 	# conflictstyle = zdiff3 
+# https://jordanelver.co.uk/blog/2020/06/04/fixing-commits-with-git-commit-fixup-and-git-rebase-autosquash/
+[alias]
+	fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
 
 # https://blog.gitbutler.com/how-git-core-devs-configure-git/?utm_source=tldrwebdev
