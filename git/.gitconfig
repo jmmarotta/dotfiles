@@ -67,5 +67,6 @@
 	l = log
 	a = add
 	sw = switch
+	d = diff
 
 # https://blog.gitbutler.com/how-git-core-devs-configure-git/?utm_source=tldrwebdev
