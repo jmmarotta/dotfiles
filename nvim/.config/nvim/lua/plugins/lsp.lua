@@ -232,7 +232,7 @@ return { -- LSP Plugins
       "eslint_d", -- Used to lint typescript
       "prettierd", -- Used to format javascript/typescript
       "biome", -- Used to format/lint javascript/typescript
-      "markdownlint", -- Used to lint markdown
+      -- "markdownlint", -- Used to lint markdown
       "tflint", -- Used to lint terraform
       "actionlint", -- Used to lint github actions
     })
