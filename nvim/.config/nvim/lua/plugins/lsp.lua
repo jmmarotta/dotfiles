@@ -172,7 +172,7 @@ return {
         zls = {},
 
         -- go
-        -- gopls = {},
+        gopls = {},
 
         -- python
         pyright = {},
@@ -235,6 +235,7 @@ return {
         "eslint_d", -- Used to lint typescript
         "prettierd", -- Used to format javascript/typescript
         "biome", -- Used to format/lint javascript/typescript
+        "golangci-lint", -- Used to lint golang
         -- "markdownlint", -- Used to lint markdown
         "tflint", -- Used to lint terraform
         "actionlint", -- Used to lint github actions
