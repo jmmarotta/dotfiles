@@ -232,9 +232,9 @@ return {
         "stylua", -- Used to format Lua code
         "ruff", -- Used to lint Python code
         "zls", -- Used to lint Zig code
-        "eslint_d", -- Used to lint typescript
-        "prettierd", -- Used to format javascript/typescript
-        "biome", -- Used to format/lint javascript/typescript
+        "eslint", -- Used to lint typescript
+        "prettier", -- Used to format javascript/typescript
+        -- "biome", -- Used to format/lint javascript/typescript
         "golangci-lint", -- Used to lint golang
         -- "markdownlint", -- Used to lint markdown
         "tflint", -- Used to lint terraform

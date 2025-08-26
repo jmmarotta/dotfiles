@@ -258,3 +258,9 @@ autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
+
+# opencode
+export PATH=/Users/julianmarotta/.opencode/bin:$PATH
