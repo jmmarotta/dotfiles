@@ -228,8 +228,14 @@ fi
 eval "$(mise activate zsh)"
 
 # zoxide
-eval "$(zoxide init zsh)"
-alias cd=z
+if [[ $- == *i* ]]; then
+  eval "$(zoxide init zsh)"
+fi
+
+# Only alias cd in interactive shells
+if [[ -o interactive ]]; then
+  alias cd=z
+fi
 
 # aichat
 export AICHAT_CONFIG_PATH=$HOME/.config/aichat
