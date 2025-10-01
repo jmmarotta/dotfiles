@@ -13,7 +13,7 @@ return {
       local thinking_budget_max = 32000
       return require("codecompanion.adapters").extend("anthropic", {
         schema = {
-          model = { default = "claude-sonnet-4-20250514" },
+          model = { default = "claude-sonnet-4-5" },
           extended_output = { default = thinking_enabled },
           extended_thinking = { default = thinking_enabled },
           thinking_budget = { default = thinking_enabled and thinking_budget_max or nil },
@@ -128,10 +128,7 @@ return {
         chat.adapter = new_adapter
 
         -- Update chat internals
-        util.fire(
-          "ChatAdapter",
-          { bufnr = bufnr, adapter = require("codecompanion.adapters").make_safe(chat.adapter) }
-        )
+        util.fire("ChatAdapter", { bufnr = bufnr, adapter = require("codecompanion.adapters").make_safe(chat.adapter) })
         chat.ui.adapter = chat.adapter
         chat:apply_settings()
 
