@@ -227,13 +227,9 @@ fi
 # mise
 eval "$(mise activate zsh)"
 
-# zoxide
+# zoxide (only in interactive shells)
 if [[ $- == *i* ]]; then
   eval "$(zoxide init zsh)"
-fi
-
-# Only alias cd in interactive shells
-if [[ -o interactive ]]; then
   alias cd=z
 fi
 
