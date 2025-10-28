@@ -245,31 +245,57 @@ return {
       },
     },
     adapters = {
-      anthropic = function()
-        return CreateAnthropicAdapter(false)
-      end,
-      openai = function()
-        return require("codecompanion.adapters").extend("openai", {
-          schema = {
-            model = {
-              default = "o3-mini-2025-01-31",
+      http = {
+        anthropic = function()
+          return CreateAnthropicAdapter(false)
+        end,
+        openai = function()
+          return require("codecompanion.adapters").extend("openai", {
+            schema = {
+              model = {
+                default = "o3-mini-2025-01-31",
+              },
+              resoning_effort = {
+                default = "high",
+              },
             },
-            resoning_effort = {
-              default = "high",
+          })
+        end,
+        gemini = function()
+          return CreateGeminiAdapter(true, false)
+        end,
+      },
+      acp = {
+        opencode = function()
+          return require("codecompanion.adapters").extend("gemini_cli", {
+            name = "opencode",
+            formatted_name = "opencode",
+            commands = {
+              default = { "opencode", "acp" },
             },
-          },
-        })
-      end,
-      gemini = function()
-        return CreateGeminiAdapter(true, false)
-      end,
+            defaults = {
+              mcpServers = {},
+              timeout = 20000,
+            },
+            env = {},
+            opts = {
+              vision = true,
+              trim_tool_output = true,
+            },
+            handlers = {
+              -- Set auth to true to skip auth since it's not implemented in opencode yet
+              auth = function(self)
+                return true
+              end,
+            },
+          })
+        end,
+      },
     },
     strategies = {
       -- Change the default chat adapter
       chat = {
         adapter = "anthropic",
-        -- adapter = "gemini",
-        -- adapter = "openai",
         slash_commands = {
           ["file"] = {
             callback = "strategies.chat.slash_commands.file",
@@ -302,7 +328,7 @@ return {
         },
       },
       inline = {
-        adapter = "gemini",
+        adapter = "anthropic",
         keymaps = {
           accept_change = {
             modes = { n = "ga" },

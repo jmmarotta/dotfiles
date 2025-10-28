@@ -31,8 +31,9 @@ return { -- Autoformat
       --
       python = { "ruff" },
       -- You can use 'stop_after_first' to run the first available formatter from the list
-      javascript = { "prettierd", "prettier", "biome", stop_after_first = true },
-      typescript = { "prettierd", "prettier", "biome", stop_after_first = true },
+      javascript = { "oxlint", "prettierd", "prettier", "biome", stop_after_first = true },
+      typescript = { "oxlint", "prettierd", "prettier", "biome", stop_after_first = true },
+      json = { "prettierd", "prettier", "biome", stop_after_first = true },
     },
     formatters = {
       stylua = {
