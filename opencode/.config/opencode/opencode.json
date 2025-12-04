@@ -1,6 +1,47 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "gruvbox",
-  "model": "anthropic/claude-sonnet-4-5",
+  "theme": "gruvbox-material",
+  "model": "anthropic/claude-opus-4-5",
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "anthropic/claude-opus-4-5",
+      "reasoningEffort": "medium",
+      "prompt": "{file:./prompts/anthropic-with-context-reminder.txt}"
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "anthropic/claude-opus-4-5",
+      "prompt": "{file:./prompts/anthropic-with-context-reminder.txt}"
+    },
+    "review": {
+      "mode": "primary",
+      "model": "anthropic/claude-opus-4-5",
+      "description": "Reviews code with a focus on minimizing complexity",
+      "tools": {
+        "write": false,
+        "edit": false
+      },
+      "permissions": {
+        "bash": "ask",
+        "webfetch": "ask"
+      },
+      "prompt": "{file:./prompts/review.txt}"
+    },
+    "context": {
+      "mode": "subagent",
+      "model": "anthropic/claude-haiku-4-5",
+      "description": "Agent for gathering all relevant code context needed to implement a specific plan. Provide: (1) the plan or task you're implementing, and (2) optionally, known entry points or files to start from. For PR reviews, the current branch will be compared against a specified base branch; if no base branch is provided, the repository's default branch will be used. Returns relevant file paths with line numbers, code snippets, and brief relevance notes.",
+      "tools": {
+        "write": false,
+        "edit": false
+      },
+      "permissions": {
+        "bash": "ask",
+        "webfetch": "ask"
+      },
+      "prompt": "{file:./prompts/context.txt}"
+    }
+  },
   "autoupdate": true
 }
