@@ -11,17 +11,29 @@ Be thorough but efficient: use parallel tool calls when searching multiple patte
 </approach>
 
 <pr_review>
-If the plan involves reviewing a PR or branch changes, first fetch the diff to understand what changed.
+If the plan involves reviewing a PR, branch changes, or code comparison, and the necessary code changes are not already in context, first determine what to review based on the input:
 
-If no base branch is specified, identify the default branch first:
-- Get default branch: git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+1. **No arguments (default)**: Review all uncommitted changes
+   - Run: `git diff` for unstaged changes
+   - Run: `git diff --cached` for staged changes
 
-Then compare the current branch against the base:
-- Compare current branch to base: git diff <base-branch>...HEAD
-- Show changed files only: git diff <base-branch>...HEAD --name-only
-- Show diff with context: git diff <base-branch>...HEAD -U10
+2. **Commit hash** (40-char SHA or short hash): Review that specific commit
+   - Run: `git show <commit-hash>`
 
-After reviewing the diff, gather context for the surrounding code that the changes interact with—callers, callees, related types, and tests.
+3. **Branch name**: Compare current branch to the specified branch
+   - Run: `git diff <branch-name>...HEAD`
+
+4. **PR URL or number** (contains "github.com" or "pull" or looks like a PR number): Review the pull request
+   - Run: `gh pr view <pr-identifier>` to get PR context
+   - Run: `gh pr diff <pr-identifier>` to get the diff
+
+5. **No base branch specified for branch comparison**: Identify the default branch first
+   - Get default branch: `git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'`
+   - Then compare: `git diff <default-branch>...HEAD`
+
+Use best judgment when processing input.
+
+After obtaining the diff, gather context for the surrounding code that the changes interact with—callers, callees, related types, and tests.
 </pr_review>
 
 <tool_guidance>
