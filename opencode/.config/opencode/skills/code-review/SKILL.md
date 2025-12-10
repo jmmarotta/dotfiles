@@ -113,6 +113,30 @@ When you spot these symptoms, explain the concern and suggest a concrete alterna
 
 8. **Evaluate strategically**: Is this a tactical fix adding complexity, or a strategic improvement paying down debt?
 
+## Obtaining the Diff for PRs
+
+When reviewing a PR, branch changes, or code comparison, first obtain the diff based on the input:
+
+1. **No arguments (default)**: Review all uncommitted changes
+   - Run: `git diff` for unstaged changes
+   - Run: `git diff --cached` for staged changes
+
+2. **Commit hash** (40-char SHA or short hash): Review that specific commit
+   - Run: `git show <commit-hash>`
+
+3. **Branch name**: Compare current branch to the specified branch
+   - Run: `git diff <branch-name>...HEAD`
+
+4. **PR URL or number**: Review the pull request
+   - Run: `gh pr view <pr-identifier>` to get PR context
+   - Run: `gh pr diff <pr-identifier>` to get the diff
+
+5. **No base branch specified for branch comparison**: Identify the default branch first
+   - Get default branch: `git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'`
+   - Then compare: `git diff <default-branch>...HEAD`
+
+Use best judgment when processing input. After obtaining the diff, gather context for the surrounding code that the changes interact with—callers, callees, related types, and tests.
+
 ## Providing Feedback
 
 Prioritize technical accuracy. Your tone should be matter-of-fact—not accusatory, not overly positive. Write as a helpful assistant.
