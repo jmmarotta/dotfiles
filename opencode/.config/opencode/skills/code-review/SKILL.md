@@ -185,7 +185,7 @@ Structure reviews as follows:
 
 **Design feedback**: Strategic concerns about architecture, abstraction, complexity in flowing prose. Describe what you observed, why it's a concern, and what you'd suggest. Use collaborative language here.
 
-**Issues**: Bulleted list for bugs, problems, and localized feedback. For each:
+**Issues**: Numbered list for bugs, problems, and localized feedback. For each:
 - State the problem directly (for bugs) or suggest improvements (for design)
 - Explain the scenario/conditions where it manifests (for bugs)
 - Suggest a fix if straightforward
