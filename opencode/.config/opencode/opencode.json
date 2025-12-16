@@ -14,6 +14,6 @@
       "prompt": "{file:./prompts/anthropic.txt}"
     }
   },
-  "plugin": ["opencode-skills"],
+  "plugin": ["opencode-skills", "@tarquinen/opencode-dcp@latest"],
   "autoupdate": true
 }
