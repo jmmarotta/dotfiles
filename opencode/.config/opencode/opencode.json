@@ -14,6 +14,9 @@
       "prompt": "{file:./prompts/anthropic.txt}"
     }
   },
-  "plugin": ["opencode-skills", "@tarquinen/opencode-dcp@latest"],
+  "plugin": [
+    "@tarquinen/opencode-dcp@latest",
+    "@franlol/opencode-md-table-formatter@0.0.3"
+  ],
   "autoupdate": true
 }
