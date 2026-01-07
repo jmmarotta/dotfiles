@@ -16,7 +16,8 @@
   },
   "plugin": [
     "@tarquinen/opencode-dcp@latest",
-    "@franlol/opencode-md-table-formatter@0.0.3"
+    "@franlol/opencode-md-table-formatter@0.0.3",
+    "opencode-anthropic-websearch@latest"
   ],
   "autoupdate": true
 }
