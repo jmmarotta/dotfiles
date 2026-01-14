@@ -17,7 +17,29 @@
   "plugin": [
     "@tarquinen/opencode-dcp@latest",
     "@franlol/opencode-md-table-formatter@0.0.3",
-    "opencode-anthropic-websearch@latest"
+    "opencode-anthropic-websearch@latest",
+    "opencode-websearch-cited@1.2.0"
   ],
+  "provider": {
+    "openai": {
+      "options": {
+        "websearch_cited": {
+          "model": "gpt-5-mini"
+        }
+      }
+    }
+  },
+  "mcp": {
+    "playwriter": {
+      "type": "local",
+      "command": ["bun", "x", "playwriter@latest"],
+      "enabled": false
+    },
+    "xcodebuildmcp": {
+      "type": "local",
+      "command": ["bun", "x", "-y", "xcodebuildmcp@latest"],
+      "enabled": false
+    }
+  },
   "autoupdate": true
 }
