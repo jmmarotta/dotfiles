@@ -7,15 +7,17 @@
     "build": {
       "mode": "primary",
       // "model": "opencode/claude-opus-4-5",
-      // "prompt": "{file:./prompts/anthropic.txt}"
-      "model": "openai/gpt-5.1-codex-max",
+      // "prompt": "{file:./prompts/anthropic.txt}",
+      // "reasoningEffort": "none"
+      "model": "openai/gpt-5.2-codex",
       "prompt": "{file:./prompts/codex.txt}",
-      "reasoningEffort": "high"
+      "reasoningEffort": "low"
     },
     "plan": {
       "mode": "primary",
       // "model": "opencode/claude-opus-4-5",
-      // "prompt": "{file:./prompts/anthropic.txt}"
+      // "prompt": "{file:./prompts/anthropic.txt}",
+      // "reasoningEffort": "high"
       "model": "openai/gpt-5.2",
       "prompt": "{file:./prompts/codex.txt}",
       "reasoningEffort": "high"
@@ -24,14 +26,14 @@
   "plugin": [
     "@tarquinen/opencode-dcp@latest",
     "@franlol/opencode-md-table-formatter@0.0.3",
-    "opencode-anthropic-websearch@latest",
+    // "opencode-anthropic-websearch@latest"
     "opencode-websearch-cited@1.2.0"
   ],
   "provider": {
     "openai": {
       "options": {
         "websearch_cited": {
-          "model": "openai/gpt-5-mini"
+          "model": "gpt-5.2"
         }
       }
     }
