@@ -27,6 +27,7 @@
     }
   },
   "plugin": [
+    "opencode-anthropic-auth@0.0.9",
     "@tarquinen/opencode-dcp@latest",
     "@franlol/opencode-md-table-formatter@0.0.3",
     // "opencode-anthropic-websearch@latest"
@@ -51,6 +52,13 @@
       "type": "local",
       "command": ["bun", "x", "-y", "xcodebuildmcp@latest"],
       "enabled": false
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      }
     }
   },
   "autoupdate": true
