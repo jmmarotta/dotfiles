@@ -8,7 +8,7 @@
     // Protect from pruning for <turns> message turns
     "turnProtection": {
         "enabled": true,
-        "turns": 10,
+        "turns": 15,
     },
     // LLM-driven context pruning tools
     "tools": {
@@ -16,7 +16,7 @@
         "settings": {
             // Nudge the LLM to use prune tools (every <nudgeFrequency> tool results)
             "nudgeEnabled": true,
-            "nudgeFrequency": 20,
+            "nudgeFrequency": 30,
             // Additional tools to protect from pruning
             "protectedTools": [],
         },
