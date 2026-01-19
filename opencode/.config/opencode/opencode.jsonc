@@ -28,6 +28,7 @@
   },
   "plugin": [
     "opencode-anthropic-auth@0.0.9",
+    "opencode-handoff@0.3.2",
     "@tarquinen/opencode-dcp@latest",
     "@franlol/opencode-md-table-formatter@0.0.3",
     // "opencode-anthropic-websearch@latest"
