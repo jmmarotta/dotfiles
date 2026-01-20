@@ -99,8 +99,10 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshc="nvim ~/.zshrc"
+alias ohmyzshc="nvim ~/.oh-my-zsh"
+alias tmuxzshsource="tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}' \
+  | xargs -I{} tmux send-keys -t {} 'source ~/.zshrc' C-m"
 
 # add cargo (rust) to path
 export PATH=$HOME/.cargo/bin:$PATH
@@ -124,6 +126,17 @@ export EDITOR="nvim"
 # alias sed="gsed"
 # alias xargs="gxargs"
 # alias awk="gawk"
+alias nvc="nvim ~/.config/nvim/init.lua"
+
+# OpenCode alias
+alias oc="opencode"
+alias occ="opencode --continue"
+
+# Git alias
+alias jj="git"
+
+# Terraform alias
+alias tf="terraform"
 
 export PATH="/usr/X11/bin:$PATH"
 export DISPLAY=:0
@@ -149,10 +162,6 @@ tmux9() {
   # Attach to the session
   tmux attach-session -t ts 
 }
-
-alias nvc="nvim ~/.config/nvim/init.lua"
-
-alias aicp='git ls-files | while read file; do echo "=== $file ==="; cat "$file"; echo; done | pbcopy'
 
 ###-begin-npm-completion-###
 #
