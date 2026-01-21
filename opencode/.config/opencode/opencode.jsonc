@@ -27,7 +27,7 @@
     }
   },
   "plugin": [
-    "opencode-anthropic-auth@0.0.9",
+    // "opencode-anthropic-auth@0.0.9",
     "opencode-handoff@0.3.2",
     "@tarquinen/opencode-dcp@latest",
     "@franlol/opencode-md-table-formatter@0.0.3",
@@ -60,6 +60,12 @@
       "headers": {
         "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       }
+    }
+  },
+  "permission": {
+    "external_directory": {
+      "*": "ask",
+      "{env:HOME}/.config/opencode/skills/*": "allow"
     }
   },
   "autoupdate": true
