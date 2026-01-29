@@ -28,9 +28,9 @@
   },
   "plugin": [
     // "opencode-anthropic-auth@0.0.9",
-    "opencode-handoff@0.3.2",
+    // "opencode-handoff@0.3.2",
     "@franlol/opencode-md-table-formatter@0.0.3",
-    "@tarquinen/opencode-dcp@latest",
+    // "@tarquinen/opencode-dcp@1.2.7",
     // "opencode-anthropic-websearch@latest"
     "opencode-websearch-cited@1.2.0"
   ],
