@@ -1,7 +1,7 @@
 [tools]
 ruby = "3.3"
 python = "3"
-node = "22"
+node = "24"
 bun = "1"
 go = "1"
 zig = "0.15.2"
