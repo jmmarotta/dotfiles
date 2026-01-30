@@ -19,12 +19,6 @@
       "version": "v0.0.0-20260120144606-d207a9824281"
     },
     {
-      "name": "repo-context",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/repo-context",
-      "version": "v0.0.0-20260120144606-d207a9824281"
-    },
-    {
       "name": "skill-creator",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/skill-creator",
