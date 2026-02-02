@@ -1,36 +1,6 @@
 {
   "skills": [
     {
-      "name": "code-review",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/code-review",
-      "version": "v0.0.0-20260120144606-d207a9824281"
-    },
-    {
-      "name": "code-simplify",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/code-simplify",
-      "version": "v0.0.0-20260120144606-d207a9824281"
-    },
-    {
-      "name": "frontend-design",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/frontend-design",
-      "version": "v0.0.0-20260120144606-d207a9824281"
-    },
-    {
-      "name": "skill-creator",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/skill-creator",
-      "version": "v0.0.0-20260120144606-d207a9824281"
-    },
-    {
-      "name": "software-design",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/software-design",
-      "version": "v0.0.0-20260120144606-d207a9824281"
-    },
-    {
       "name": "opentui",
       "origin": "https://github.com/msmps/opentui-skill",
       "subdir": "skill/opentui",
@@ -89,6 +59,48 @@
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/upgrading-expo/skills/upgrading-expo",
       "version": "v0.0.0-20260125144628-b631a6045b42"
+    },
+    {
+      "name": "remotion",
+      "origin": "https://github.com/remotion-dev/skills",
+      "subdir": "skills/remotion",
+      "version": "v0.0.0-20260130135620-bcddbb086a15"
+    },
+    {
+      "name": "agent-protocol",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/agent-protocol",
+      "version": "v0.0.0-20260130212141-e05a54016257"
+    },
+    {
+      "name": "code-review",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/code-review",
+      "version": "v0.0.0-20260130212141-e05a54016257"
+    },
+    {
+      "name": "code-simplify",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/code-simplify",
+      "version": "v0.0.0-20260130212141-e05a54016257"
+    },
+    {
+      "name": "frontend-design",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/frontend-design",
+      "version": "v0.0.0-20260130212141-e05a54016257"
+    },
+    {
+      "name": "skill-creator",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/skill-creator",
+      "version": "v0.0.0-20260130212141-e05a54016257"
+    },
+    {
+      "name": "software-design",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/software-design",
+      "version": "v0.0.0-20260130212141-e05a54016257"
     }
   ]
 }

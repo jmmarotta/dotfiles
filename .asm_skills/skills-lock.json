@@ -8,13 +8,18 @@
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260120144606-d207a9824281",
-      "rev": "d207a9824281e6e16125975e5a7dde4ae837244b"
+      "version": "v0.0.0-20260130212141-e05a54016257",
+      "rev": "e05a54016257ed4d7ddaac9c9cdaf44430b7e9bc"
     },
     {
       "origin": "https://github.com/msmps/opentui-skill",
       "version": "v0.0.0-20260120104837-0cf21f653ffb",
       "rev": "0cf21f653ffbd089fe00ef3f2f1bd32672a536f3"
+    },
+    {
+      "origin": "https://github.com/remotion-dev/skills",
+      "version": "v0.0.0-20260130135620-bcddbb086a15",
+      "rev": "bcddbb086a15c0a43c78b8dc23f2e3f961100625"
     }
   ]
 }
