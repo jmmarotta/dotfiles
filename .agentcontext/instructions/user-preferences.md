@@ -5,11 +5,14 @@ Use these defaults unless the user explicitly asks for a different style.
 ## Command Transparency
 
 - Before running git or other shell commands, show the exact command and a short description of what it does.
+- Redact secrets or tokens if a command includes sensitive values.
+- Prefer to use `git switch` over `git checkout` when switching branches.
 
 ## Change Reporting
 
 - For every changed file, include a table with these columns: `File`, `Lines`, `Description`.
 - In `Lines`, include the changed line numbers or line ranges when available.
+- If no files were changed, explicitly say `No file changes`.
 
 ## Commit Strategy
 
