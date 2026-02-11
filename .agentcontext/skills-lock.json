@@ -4,22 +4,114 @@
     {
       "origin": "https://github.com/expo/skills",
       "version": "v0.0.0-20260125144628-b631a6045b42",
-      "rev": "b631a6045b421c425df947af74d3f6007e6ccc69"
+      "rev": "b631a6045b421c425df947af74d3f6007e6ccc69",
+      "subdir": "plugins/expo-app-design/skills/building-native-ui",
+      "name": "building-native-ui"
+    },
+    {
+      "origin": "https://github.com/expo/skills",
+      "version": "v0.0.0-20260125144628-b631a6045b42",
+      "rev": "b631a6045b421c425df947af74d3f6007e6ccc69",
+      "subdir": "plugins/expo-app-design/skills/expo-api-routes",
+      "name": "expo-api-routes"
+    },
+    {
+      "origin": "https://github.com/expo/skills",
+      "version": "v0.0.0-20260125144628-b631a6045b42",
+      "rev": "b631a6045b421c425df947af74d3f6007e6ccc69",
+      "subdir": "plugins/expo-app-design/skills/expo-dev-client",
+      "name": "expo-dev-client"
+    },
+    {
+      "origin": "https://github.com/expo/skills",
+      "version": "v0.0.0-20260125144628-b631a6045b42",
+      "rev": "b631a6045b421c425df947af74d3f6007e6ccc69",
+      "subdir": "plugins/expo-app-design/skills/expo-tailwind-setup",
+      "name": "expo-tailwind-setup"
+    },
+    {
+      "origin": "https://github.com/expo/skills",
+      "version": "v0.0.0-20260125144628-b631a6045b42",
+      "rev": "b631a6045b421c425df947af74d3f6007e6ccc69",
+      "subdir": "plugins/expo-app-design/skills/native-data-fetching",
+      "name": "native-data-fetching"
+    },
+    {
+      "origin": "https://github.com/expo/skills",
+      "version": "v0.0.0-20260125144628-b631a6045b42",
+      "rev": "b631a6045b421c425df947af74d3f6007e6ccc69",
+      "subdir": "plugins/expo-app-design/skills/use-dom",
+      "name": "use-dom"
+    },
+    {
+      "origin": "https://github.com/expo/skills",
+      "version": "v0.0.0-20260125144628-b631a6045b42",
+      "rev": "b631a6045b421c425df947af74d3f6007e6ccc69",
+      "subdir": "plugins/expo-deployment/skills/expo-cicd-workflows",
+      "name": "expo-cicd-workflows"
+    },
+    {
+      "origin": "https://github.com/expo/skills",
+      "version": "v0.0.0-20260125144628-b631a6045b42",
+      "rev": "b631a6045b421c425df947af74d3f6007e6ccc69",
+      "subdir": "plugins/expo-deployment/skills/expo-deployment",
+      "name": "expo-deployment"
+    },
+    {
+      "origin": "https://github.com/expo/skills",
+      "version": "v0.0.0-20260125144628-b631a6045b42",
+      "rev": "b631a6045b421c425df947af74d3f6007e6ccc69",
+      "subdir": "plugins/upgrading-expo/skills/upgrading-expo",
+      "name": "upgrading-expo"
+    },
+    {
+      "origin": "https://github.com/jmmarotta/agilt",
+      "version": "v0.0.0-20260207033821-e07003a950ff",
+      "rev": "e07003a950ffc6db125b70237728cbf6ef5332a7",
+      "subdir": "skills/aglit-workflow",
+      "name": "aglit-workflow"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260130212141-e05a54016257",
-      "rev": "e05a54016257ed4d7ddaac9c9cdaf44430b7e9bc"
+      "version": "v0.0.0-20260207032927-121e9dffd8f4",
+      "rev": "121e9dffd8f4325fa38e65edfffd000c5c7cfe44",
+      "subdir": "skills/code-review",
+      "name": "code-review"
+    },
+    {
+      "origin": "https://github.com/jmmarotta/skills",
+      "version": "v0.0.0-20260207032927-121e9dffd8f4",
+      "rev": "121e9dffd8f4325fa38e65edfffd000c5c7cfe44",
+      "subdir": "skills/code-simplify",
+      "name": "code-simplify"
+    },
+    {
+      "origin": "https://github.com/jmmarotta/skills",
+      "version": "v0.0.0-20260207032927-121e9dffd8f4",
+      "rev": "121e9dffd8f4325fa38e65edfffd000c5c7cfe44",
+      "subdir": "skills/frontend-design",
+      "name": "frontend-design"
+    },
+    {
+      "origin": "https://github.com/jmmarotta/skills",
+      "version": "v0.0.0-20260207032927-121e9dffd8f4",
+      "rev": "121e9dffd8f4325fa38e65edfffd000c5c7cfe44",
+      "subdir": "skills/skill-creator",
+      "name": "skill-creator"
     },
     {
       "origin": "https://github.com/msmps/opentui-skill",
       "version": "v0.0.0-20260120104837-0cf21f653ffb",
-      "rev": "0cf21f653ffbd089fe00ef3f2f1bd32672a536f3"
+      "rev": "0cf21f653ffbd089fe00ef3f2f1bd32672a536f3",
+      "subdir": "skill/opentui",
+      "name": "opentui"
     },
     {
       "origin": "https://github.com/remotion-dev/skills",
       "version": "v0.0.0-20260130135620-bcddbb086a15",
-      "rev": "bcddbb086a15c0a43c78b8dc23f2e3f961100625"
+      "rev": "bcddbb086a15c0a43c78b8dc23f2e3f961100625",
+      "subdir": "skills/remotion",
+      "name": "remotion"
     }
   ]
 }
