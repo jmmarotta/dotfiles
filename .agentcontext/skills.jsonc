@@ -85,6 +85,12 @@
       "version": "v0.0.0-20260207032927-121e9dffd8f4"
     },
     {
+      "name": "software-design",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/software-design",
+      "version": "v0.0.0-20260207032927-121e9dffd8f4"
+    },
+    {
       "name": "upgrading-expo",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/upgrading-expo/skills/upgrading-expo",

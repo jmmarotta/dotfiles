@@ -100,6 +100,13 @@
       "name": "skill-creator"
     },
     {
+      "origin": "https://github.com/jmmarotta/skills",
+      "version": "v0.0.0-20260207032927-121e9dffd8f4",
+      "rev": "121e9dffd8f4325fa38e65edfffd000c5c7cfe44",
+      "subdir": "skills/software-design",
+      "name": "software-design"
+    },
+    {
       "origin": "https://github.com/msmps/opentui-skill",
       "version": "v0.0.0-20260120104837-0cf21f653ffb",
       "rev": "0cf21f653ffbd089fe00ef3f2f1bd32672a536f3",
