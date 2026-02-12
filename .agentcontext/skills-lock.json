@@ -66,8 +66,8 @@
     },
     {
       "origin": "https://github.com/jmmarotta/agilt",
-      "version": "v0.0.0-20260207033821-e07003a950ff",
-      "rev": "e07003a950ffc6db125b70237728cbf6ef5332a7",
+      "version": "v0.0.0-20260212182517-eb98c74770bf",
+      "rev": "eb98c74770bf9df8176a1b0a9ed4e69fca1fb838",
       "subdir": "skills/aglit-workflow",
       "name": "aglit-workflow"
     },

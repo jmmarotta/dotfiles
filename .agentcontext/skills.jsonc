@@ -4,7 +4,7 @@
       "name": "aglit-workflow",
       "origin": "https://github.com/jmmarotta/agilt",
       "subdir": "skills/aglit-workflow",
-      "version": "v0.0.0-20260207033821-e07003a950ff"
+      "version": "v0.0.0-20260212182517-eb98c74770bf"
     },
     {
       "name": "building-native-ui",
