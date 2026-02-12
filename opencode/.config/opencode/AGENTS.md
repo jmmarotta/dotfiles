@@ -4,23 +4,37 @@
 
 Use these defaults unless the user explicitly asks for a different style.
 
-- When planning running mutating git or other shell commands, show the exact command and a short description of what it does.
+- For non-destructive mutating git/shell commands, execute directly and include the command plus a short purpose in a progress or final update (not as a preflight step).
+- For destructive or irreversible commands, ask for explicit user confirmation before execution.
 - Redact secrets or tokens if a command includes sensitive values.
-- Prefer to use `git switch` when switching branches and `git switch -C <branch>` when creating a new branch.
+- Prefer `git switch [-C]` when switching branches.
 - Prefer atomic git commits, where each commit represents one logical change.
 
-- For every changed file, include a table with these columns: `File`, `Lines`, `Description`.
-- In `Lines`, include the changed line numbers or line ranges when available.
-- If no files were changed, explicitly say `No file changes`.
 - Start with a high-level overview, then provide exact per-file details of what changed or what we are changing.
+- In the final response, list each changed file in this format: `- <Status> <filepath>:<line-or-range> (<symbol anchors optional>)`.
+- Under each file entry, include concise bullets describing intent and impact (typically 1-3; add more only when needed for clarity).
+- Use status codes: `A` (added), `M` (modified), `D` (deleted), `R` (renamed).
+- Prefer exact line numbers or ranges; if unavailable, include the closest symbol or section anchors.
+- If no files were changed, explicitly say `No file changes`.
 
-- Avoid sizing effort with time (hours/days/weeks) unless the user explicitly asks for a time estimate.
-- Size effort by scope and uncertainty (complexity, dependencies, risk, and unknowns), using labels like `small`, `medium`, and `large`.
+Example:
+
+```text
+- M src/auth/session.ts:45-78,120-138 (createSession, refreshSession)
+  - Add token expiry guard and typed auth errors.
+  - Extract cookie serialization into a helper.
+```
+
+- Do not include time-based estimates in plans, updates, or final responses.
 
 - Be concise, but thorough and comprehensive.
-
 - Challenge the user when there is a clearly better approach.
 - Offer alternatives with reasoning.
+
+- For non-trivial tasks, discuss the approach with the user before implementation.
+- If a plan should be persisted, write it to an AGLIT issue or project for user review instead of only describing it in chat.
+
+- Produce module documentation using APOSD (A Philosophy of Software Design) guidance: document the module's purpose and interface first, capture invariants and dependency assumptions, call out non-obvious design decisions and error behavior, and avoid line-by-line implementation narration.
 
 ## Skills
 
