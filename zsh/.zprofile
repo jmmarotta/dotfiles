@@ -34,11 +34,10 @@ export PATH
 
 export DISPLAY=:0
 export EDITOR="nvim"
-export AICHAT_CONFIG_PATH="$HOME/.config/aichat"
-export AICHAT_CONFIG_FILE="$AICHAT_CONFIG_PATH/config.yaml"
 export AWS_PROFILE="$AWS_DEFAULT_PROFILE"
 export NODE_OPTIONS="--disable-warning=ExperimentalWarning"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
+export OPENCODE_EXPERIMENTAL_MARKDOWN=true
 
 if command -v brew >/dev/null 2>&1; then
   gcloud_path_script="$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
