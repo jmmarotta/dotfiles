@@ -4,103 +4,103 @@
       "name": "aglit-workflow",
       "origin": "https://github.com/jmmarotta/agilt",
       "subdir": "skills/aglit-workflow",
-      "version": "v0.0.0-20260212182517-eb98c74770bf"
+      "version": "v0.0.0-20260218164002-b33d4068cf99"
     },
     {
       "name": "building-native-ui",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/building-native-ui",
-      "version": "v0.0.0-20260125144628-b631a6045b42"
+      "version": "v0.0.0-20260213105430-0b19547886fa"
     },
     {
       "name": "code-review",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/code-review",
-      "version": "v0.0.0-20260207032927-121e9dffd8f4"
+      "version": "v0.0.0-20260218165557-f01993903467"
     },
     {
       "name": "code-simplify",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/code-simplify",
-      "version": "v0.0.0-20260207032927-121e9dffd8f4"
+      "version": "v0.0.0-20260218165557-f01993903467"
     },
     {
       "name": "expo-api-routes",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/expo-api-routes",
-      "version": "v0.0.0-20260125144628-b631a6045b42"
+      "version": "v0.0.0-20260213105430-0b19547886fa"
     },
     {
       "name": "expo-cicd-workflows",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-deployment/skills/expo-cicd-workflows",
-      "version": "v0.0.0-20260125144628-b631a6045b42"
+      "version": "v0.0.0-20260213105430-0b19547886fa"
     },
     {
       "name": "expo-deployment",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-deployment/skills/expo-deployment",
-      "version": "v0.0.0-20260125144628-b631a6045b42"
+      "version": "v0.0.0-20260213105430-0b19547886fa"
     },
     {
       "name": "expo-dev-client",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/expo-dev-client",
-      "version": "v0.0.0-20260125144628-b631a6045b42"
+      "version": "v0.0.0-20260213105430-0b19547886fa"
     },
     {
       "name": "expo-tailwind-setup",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/expo-tailwind-setup",
-      "version": "v0.0.0-20260125144628-b631a6045b42"
+      "version": "v0.0.0-20260213105430-0b19547886fa"
     },
     {
       "name": "frontend-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/frontend-design",
-      "version": "v0.0.0-20260207032927-121e9dffd8f4"
+      "version": "v0.0.0-20260218165557-f01993903467"
     },
     {
       "name": "native-data-fetching",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/native-data-fetching",
-      "version": "v0.0.0-20260125144628-b631a6045b42"
+      "version": "v0.0.0-20260213105430-0b19547886fa"
     },
     {
       "name": "opentui",
       "origin": "https://github.com/msmps/opentui-skill",
       "subdir": "skill/opentui",
-      "version": "v0.0.0-20260120104837-0cf21f653ffb"
+      "version": "v0.0.0-20260215192008-87c512939fde"
     },
     {
       "name": "remotion",
       "origin": "https://github.com/remotion-dev/skills",
       "subdir": "skills/remotion",
-      "version": "v0.0.0-20260130135620-bcddbb086a15"
+      "version": "v0.0.0-20260218130759-8969e8729f3e"
     },
     {
       "name": "skill-creator",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/skill-creator",
-      "version": "v0.0.0-20260207032927-121e9dffd8f4"
+      "version": "v0.0.0-20260218165557-f01993903467"
     },
     {
       "name": "software-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/software-design",
-      "version": "v0.0.0-20260207032927-121e9dffd8f4"
+      "version": "v0.0.0-20260218165557-f01993903467"
     },
     {
       "name": "upgrading-expo",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/upgrading-expo/skills/upgrading-expo",
-      "version": "v0.0.0-20260125144628-b631a6045b42"
+      "version": "v0.0.0-20260213105430-0b19547886fa"
     },
     {
       "name": "use-dom",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/use-dom",
-      "version": "v0.0.0-20260125144628-b631a6045b42"
+      "version": "v0.0.0-20260213105430-0b19547886fa"
     }
   ]
 }
