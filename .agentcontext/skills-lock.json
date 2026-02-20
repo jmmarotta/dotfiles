@@ -74,35 +74,47 @@
     {
       "origin": "https://github.com/jmmarotta/skills",
       "version": "v0.0.0-20260218165557-f01993903467",
-      "rev": "f01993903467ebddea249b1452a33588ef1fff16",
+      "rev": "f01993903467ebddea249b1452a33588ef1fff16"
+    },
+    {
+      "origin": "https://github.com/jmmarotta/skills",
+      "version": "v0.0.0-20260218214142-c565b0922b39",
+      "rev": "c565b0922b39133ecb135b37e80e7c43a03091ad",
       "subdir": "skills/code-review",
       "name": "code-review"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260218165557-f01993903467",
-      "rev": "f01993903467ebddea249b1452a33588ef1fff16",
+      "version": "v0.0.0-20260218214142-c565b0922b39",
+      "rev": "c565b0922b39133ecb135b37e80e7c43a03091ad",
       "subdir": "skills/code-simplify",
       "name": "code-simplify"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260218165557-f01993903467",
-      "rev": "f01993903467ebddea249b1452a33588ef1fff16",
+      "version": "v0.0.0-20260218214142-c565b0922b39",
+      "rev": "c565b0922b39133ecb135b37e80e7c43a03091ad",
       "subdir": "skills/frontend-design",
       "name": "frontend-design"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260218165557-f01993903467",
-      "rev": "f01993903467ebddea249b1452a33588ef1fff16",
+      "version": "v0.0.0-20260218214142-c565b0922b39",
+      "rev": "c565b0922b39133ecb135b37e80e7c43a03091ad",
+      "subdir": "skills/repo-bootstrap",
+      "name": "repo-bootstrap"
+    },
+    {
+      "origin": "https://github.com/jmmarotta/skills",
+      "version": "v0.0.0-20260218214142-c565b0922b39",
+      "rev": "c565b0922b39133ecb135b37e80e7c43a03091ad",
       "subdir": "skills/skill-creator",
       "name": "skill-creator"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260218165557-f01993903467",
-      "rev": "f01993903467ebddea249b1452a33588ef1fff16",
+      "version": "v0.0.0-20260218214142-c565b0922b39",
+      "rev": "c565b0922b39133ecb135b37e80e7c43a03091ad",
       "subdir": "skills/software-design",
       "name": "software-design"
     },

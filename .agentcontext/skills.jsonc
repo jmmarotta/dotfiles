@@ -16,13 +16,13 @@
       "name": "code-review",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/code-review",
-      "version": "v0.0.0-20260218165557-f01993903467"
+      "version": "v0.0.0-20260218214142-c565b0922b39"
     },
     {
       "name": "code-simplify",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/code-simplify",
-      "version": "v0.0.0-20260218165557-f01993903467"
+      "version": "v0.0.0-20260218214142-c565b0922b39"
     },
     {
       "name": "expo-api-routes",
@@ -58,7 +58,7 @@
       "name": "frontend-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/frontend-design",
-      "version": "v0.0.0-20260218165557-f01993903467"
+      "version": "v0.0.0-20260218214142-c565b0922b39"
     },
     {
       "name": "native-data-fetching",
@@ -79,16 +79,22 @@
       "version": "v0.0.0-20260218130759-8969e8729f3e"
     },
     {
+      "name": "repo-bootstrap",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/repo-bootstrap",
+      "version": "v0.0.0-20260218214142-c565b0922b39"
+    },
+    {
       "name": "skill-creator",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/skill-creator",
-      "version": "v0.0.0-20260218165557-f01993903467"
+      "version": "v0.0.0-20260218214142-c565b0922b39"
     },
     {
       "name": "software-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/software-design",
-      "version": "v0.0.0-20260218165557-f01993903467"
+      "version": "v0.0.0-20260218214142-c565b0922b39"
     },
     {
       "name": "upgrading-expo",
