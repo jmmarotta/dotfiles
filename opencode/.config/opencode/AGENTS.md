@@ -10,9 +10,9 @@ Use these defaults unless the user explicitly asks for a different style.
 - Prefer `git switch [-C]` when switching branches.
 - Prefer atomic git commits, where each commit represents one logical change.
 
-- Start with a high-level overview, then provide exact per-file details of what changed or what we are changing.
-- In the final response, include a `File changes` heading, then list each changed file in this format: `1. <Status> <filepath>:<line-or-range> (<symbol anchors optional>)`.
-- Under each file entry, include concise bullets describing intent and impact (typically 1-3; add more only when needed for clarity).
+- Start with a high-level overview, then provide exact per-file details only when files were changed by the agent.
+- In the final response, include a `File changes` heading only when files were changed by the agent; then list each changed file in this format: `<number>. <Status> <filepath>:<line-or-range> (<symbol anchors optional>)`.
+- Directly under each file entry, include concise bullets describing intent and impact (typically 1-3; add more only when needed for clarity).
 - Use status codes: `A` (added), `M` (modified), `D` (deleted), `R` (renamed).
 - Prefer exact line numbers or ranges; if unavailable, include the closest symbol or section anchors.
 
