@@ -1,70 +1,76 @@
 {
   "skills": [
     {
-      "name": "aglit-workflow",
-      "origin": "https://github.com/jmmarotta/agilt",
-      "subdir": "skills/aglit-workflow",
-      "version": "v0.0.0-20260218164002-b33d4068cf99"
+      "name": "agent-instruction-writing",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/agent-instruction-writing",
+      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
     },
     {
       "name": "building-native-ui",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/building-native-ui",
-      "version": "v0.0.0-20260213105430-0b19547886fa"
+      "version": "v0.0.0-20260303080620-46fa1f8b9347"
     },
     {
       "name": "code-review",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/code-review",
-      "version": "v0.0.0-20260218214142-c565b0922b39"
+      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
     },
     {
-      "name": "code-simplify",
+      "name": "code-simplifier",
       "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/code-simplify",
-      "version": "v0.0.0-20260218214142-c565b0922b39"
+      "subdir": "skills/code-simplifier",
+      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
     },
     {
       "name": "expo-api-routes",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/expo-api-routes",
-      "version": "v0.0.0-20260213105430-0b19547886fa"
+      "version": "v0.0.0-20260303080620-46fa1f8b9347"
     },
     {
       "name": "expo-cicd-workflows",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-deployment/skills/expo-cicd-workflows",
-      "version": "v0.0.0-20260213105430-0b19547886fa"
+      "version": "v0.0.0-20260303080620-46fa1f8b9347"
     },
     {
       "name": "expo-deployment",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-deployment/skills/expo-deployment",
-      "version": "v0.0.0-20260213105430-0b19547886fa"
+      "version": "v0.0.0-20260303080620-46fa1f8b9347"
     },
     {
       "name": "expo-dev-client",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/expo-dev-client",
-      "version": "v0.0.0-20260213105430-0b19547886fa"
+      "version": "v0.0.0-20260303080620-46fa1f8b9347"
     },
     {
       "name": "expo-tailwind-setup",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/expo-tailwind-setup",
-      "version": "v0.0.0-20260213105430-0b19547886fa"
+      "version": "v0.0.0-20260303080620-46fa1f8b9347"
     },
     {
       "name": "frontend-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/frontend-design",
-      "version": "v0.0.0-20260218214142-c565b0922b39"
+      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+    },
+    {
+      "name": "llm-tldr",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/llm-tldr",
+      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
     },
     {
       "name": "native-data-fetching",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/native-data-fetching",
-      "version": "v0.0.0-20260213105430-0b19547886fa"
+      "version": "v0.0.0-20260303080620-46fa1f8b9347"
     },
     {
       "name": "opentui",
@@ -73,40 +79,70 @@
       "version": "v0.0.0-20260215192008-87c512939fde"
     },
     {
+      "name": "playwriter",
+      "origin": "https://github.com/remorses/playwriter",
+      "subdir": "skills/playwriter",
+      "version": "v0.0.0-20260307082531-3a045c17d45c"
+    },
+    {
       "name": "remotion",
       "origin": "https://github.com/remotion-dev/skills",
       "subdir": "skills/remotion",
-      "version": "v0.0.0-20260218130759-8969e8729f3e"
+      "version": "v0.0.0-20260226163628-937ffb32b148"
     },
     {
       "name": "repo-bootstrap",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/repo-bootstrap",
-      "version": "v0.0.0-20260218214142-c565b0922b39"
+      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+    },
+    {
+      "name": "research-grounding",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/research-grounding",
+      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+    },
+    {
+      "name": "seal-workflow",
+      "origin": "https://github.com/jmmarotta/seal",
+      "subdir": "skills/seal-workflow",
+      "version": "v0.0.0-20260304152345-803a1372203a"
     },
     {
       "name": "skill-creator",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/skill-creator",
-      "version": "v0.0.0-20260218214142-c565b0922b39"
+      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
     },
     {
-      "name": "software-design",
+      "name": "software-implementation",
       "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/software-design",
-      "version": "v0.0.0-20260218214142-c565b0922b39"
+      "subdir": "skills/software-implementation",
+      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+    },
+    {
+      "name": "software-planning",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/software-planning",
+      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
     },
     {
       "name": "upgrading-expo",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/upgrading-expo/skills/upgrading-expo",
-      "version": "v0.0.0-20260213105430-0b19547886fa"
+      "version": "v0.0.0-20260303080620-46fa1f8b9347"
     },
     {
       "name": "use-dom",
       "origin": "https://github.com/expo/skills",
       "subdir": "plugins/expo-app-design/skills/use-dom",
-      "version": "v0.0.0-20260213105430-0b19547886fa"
+      "version": "v0.0.0-20260303080620-46fa1f8b9347"
+    },
+    {
+      "name": "websearch",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/websearch",
+      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
     }
   ]
 }
