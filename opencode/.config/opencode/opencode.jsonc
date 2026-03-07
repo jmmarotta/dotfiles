@@ -10,7 +10,7 @@
       // "reasoningEffort": "none"
       "model": "openai/gpt-5.4",
       "prompt": "{file:./prompts/codex.txt}",
-      "reasoningEffort": "xhigh"
+      "reasoningEffort": "medium"
     },
     "plan": {
       "mode": "primary",
@@ -19,37 +19,15 @@
       // "reasoningEffort": "high"
       "model": "openai/gpt-5.4",
       "prompt": "{file:./prompts/codex.txt}",
-      "reasoningEffort": "xhigh"
+      "reasoningEffort": "high"
     },
     "explore": {
       "model": "openai/gpt-5.4",
       "reasoningEffort": "low"
     }
   },
-  "plugin": [
-    // "opencode-anthropic-auth@0.0.9",
-    // "opencode-handoff@0.3.2",
-    // "@franlol/opencode-md-table-formatter@0.0.3"
-    // "@tarquinen/opencode-dcp@1.2.7",
-    // "opencode-anthropic-websearch@latest"
-    // "opencode-websearch-cited@1.2.0"
-  ],
-  // "provider": {
-  //   "openai": {
-  //     "options": {
-  //       "websearch_cited": {
-  //         "model": "gpt-5.1-codex-mini"
-  //           "reasoningEffort": "low"
-  //       }
-  //     }
-  //   }
-  // },
+  "plugin": [],
   "mcp": {
-    "playwriter": {
-      "type": "local",
-      "command": ["bun", "x", "playwriter@latest"],
-      "enabled": false
-    },
     "xcodebuildmcp": {
       "type": "local",
       "command": ["bun", "x", "-y", "xcodebuildmcp@latest"],
@@ -69,6 +47,17 @@
       "*": "ask",
       "{env:HOME}/.config/opencode/skills/*": "allow"
     }
+  },
+  "provider": {
+    "openai": {
+      "models": {
+        "gpt-5.4": {
+          "options": {
+            "serviceTier": "priority"
+          }
+        }
+      }
+    },
   },
   "autoupdate": true
 }
