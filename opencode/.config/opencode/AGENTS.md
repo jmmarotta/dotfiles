@@ -2,37 +2,57 @@
 
 ## User Preferences
 
-Use these defaults unless the user explicitly asks for a different style.
+Use these guidelines unless specified otherwise.
 
-- For non-destructive mutating git/shell commands, execute directly and include the command plus a short purpose in a progress or final update (not as a preflight step).
-- For destructive or irreversible commands, ask for explicit user confirmation before execution.
-- Redact secrets or tokens if a command includes sensitive values.
+### Commands And Safety
+
+- Run non-destructive mutating `git`/shell commands directly; mention the command and purpose in a progress or final update, not as preflight.
+- Ask before destructive or irreversible commands.
+- Redact secrets.
 - Prefer `git switch [-C]` when switching branches.
-- Prefer atomic git commits, where each commit represents one logical change.
+- Prefer atomic commits: one logical change per commit.
 
-- Start with a high-level overview, then provide exact per-file details only when files were changed by the agent.
-- In the final response, include a `File changes` heading only when files were changed by the agent; then list each changed file in this format: `<number>. <Status> <filepath>:<line-or-range> (<symbol anchors optional>)`.
-- Directly under each file entry, include concise bullets describing intent and impact (typically 1-3; add more only when needed for clarity).
-- Use status codes: `A` (added), `M` (modified), `D` (deleted), `R` (renamed).
-- Prefer exact line numbers or ranges; if unavailable, include the closest symbol or section anchors.
+### Responses
 
+- Lead with a high-level overview; when files changed, include `File changes` as a list with entries as `<number>. <Status [A|M|D|R]> <filepath>:<line-or-range>)` with 1-3 concise bullets on intent and impact.
 - Do not include time-based estimates in plans, updates, or final responses.
 
-- Be concise, but thorough and comprehensive.
-- Challenge the user when there is a clearly better approach.
-- Offer alternatives with reasoning.
+### Guidance
 
-- For non-trivial tasks, discuss the approach with the user before implementation.
-- If a plan should be persisted, write it to an AGLIT issue or project for user review instead of only describing it in chat.
+- Challenge the user when there is a clearly better approach; offer reasoned alternatives.
+- Use APOSD (`A Philosophy of Software Design`) as a guide for design decisions; purpose and interface first, then invariants, dependency assumptions, non-obvious design choices, and error behavior.
 
-- Produce module documentation using APOSD (A Philosophy of Software Design) guidance: document the module's purpose and interface first, capture invariants and dependency assumptions, call out non-obvious design decisions and error behavior, and avoid line-by-line implementation narration.
+## Workflow
+
+For non-trivial work, separate planning and implementation. Below are non-exhaustive guidelines for each step.
+
+### Planning
+
+- Inspect the system.
+- Identify touch points.
+- Define verification.
+- Propose viable approaches.
+- Recommend one with rationale.
+- Discuss material tradeoffs.
+- Use the `software-planning` skill for detailed guidance.
+
+### Implementation
+
+- Reread the active plan/spec and relevant context.
+- Implement the chosen approach.
+- Avoid broad research unless new evidence invalidates the plan.
+- Use the `software-implementation` skill for detailed guidance.
+
+#### Completion
+
+- A task is complete only when the named verification passes.
+- Prefer deterministic finish lines.
+
+### SEAL
+
+- In repositories with `.seal/`, use `seal-workflow`.
+- Initialize `seal` if the user asks.
 
 ## Skills
 
-Load each skill only once per conversation.
-Default to loading `software-design` for any non-trivial code-related task.
-
-- Always load `software-design` for planning, specs, implementation, refactors, and reviews.
-- Add `aglit-workflow` for AGLIT planning/tracking work (especially when `.aglit/` exists).
-- Add `frontend-design` for web UI design and visual polish.
-- Add other relevant skills when needed (for example: `code-review`, `code-simplify`, `skill-creator`, Expo skills, `native-data-fetching`, `opentui`, `remotion-best-practices`).
+- Use the smallest skill set needed; do not load skills speculatively.
