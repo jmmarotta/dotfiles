@@ -1,76 +1,30 @@
+// Removed:
+//   - https://github.com/expo/skills
 {
   "skills": [
     {
       "name": "agent-instruction-writing",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/agent-instruction-writing",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
-    },
-    {
-      "name": "building-native-ui",
-      "origin": "https://github.com/expo/skills",
-      "subdir": "plugins/expo-app-design/skills/building-native-ui",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347"
+      "version": "v0.0.0-20260309214902-337bf979619d"
     },
     {
       "name": "code-review",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/code-review",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
-    },
-    {
-      "name": "code-simplifier",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/code-simplifier",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
-    },
-    {
-      "name": "expo-api-routes",
-      "origin": "https://github.com/expo/skills",
-      "subdir": "plugins/expo-app-design/skills/expo-api-routes",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347"
-    },
-    {
-      "name": "expo-cicd-workflows",
-      "origin": "https://github.com/expo/skills",
-      "subdir": "plugins/expo-deployment/skills/expo-cicd-workflows",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347"
-    },
-    {
-      "name": "expo-deployment",
-      "origin": "https://github.com/expo/skills",
-      "subdir": "plugins/expo-deployment/skills/expo-deployment",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347"
-    },
-    {
-      "name": "expo-dev-client",
-      "origin": "https://github.com/expo/skills",
-      "subdir": "plugins/expo-app-design/skills/expo-dev-client",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347"
-    },
-    {
-      "name": "expo-tailwind-setup",
-      "origin": "https://github.com/expo/skills",
-      "subdir": "plugins/expo-app-design/skills/expo-tailwind-setup",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347"
+      "version": "v0.0.0-20260309214902-337bf979619d"
     },
     {
       "name": "frontend-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/frontend-design",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
+      "version": "v0.0.0-20260309214902-337bf979619d"
     },
     {
       "name": "llm-tldr",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/llm-tldr",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
-    },
-    {
-      "name": "native-data-fetching",
-      "origin": "https://github.com/expo/skills",
-      "subdir": "plugins/expo-app-design/skills/native-data-fetching",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347"
+      "version": "v0.0.0-20260309214902-337bf979619d"
     },
     {
       "name": "opentui",
@@ -94,13 +48,13 @@
       "name": "repo-bootstrap",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/repo-bootstrap",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
+      "version": "v0.0.0-20260309214902-337bf979619d"
     },
     {
       "name": "research-grounding",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/research-grounding",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
+      "version": "v0.0.0-20260309214902-337bf979619d"
     },
     {
       "name": "seal-workflow",
@@ -112,43 +66,31 @@
       "name": "skill-creator",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/skill-creator",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
+      "version": "v0.0.0-20260309214902-337bf979619d"
     },
     {
       "name": "software-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/software-design",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
+      "version": "v0.0.0-20260309214902-337bf979619d"
     },
     {
       "name": "software-implementation",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/software-implementation",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
+      "version": "v0.0.0-20260309214902-337bf979619d"
     },
     {
       "name": "software-planning",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/software-planning",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
-    },
-    {
-      "name": "upgrading-expo",
-      "origin": "https://github.com/expo/skills",
-      "subdir": "plugins/upgrading-expo/skills/upgrading-expo",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347"
-    },
-    {
-      "name": "use-dom",
-      "origin": "https://github.com/expo/skills",
-      "subdir": "plugins/expo-app-design/skills/use-dom",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347"
+      "version": "v0.0.0-20260309214902-337bf979619d"
     },
     {
       "name": "websearch",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/websearch",
-      "version": "v0.0.0-20260309134631-a937ba7f922d"
+      "version": "v0.0.0-20260309214902-337bf979619d"
     }
   ]
 }

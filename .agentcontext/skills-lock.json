@@ -3,64 +3,64 @@
   "entries": [
     {
       "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347",
-      "rev": "46fa1f8b93479046445706c528af4c70d270e727",
+      "version": "v0.0.0-20260309135357-991716e214d2",
+      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
       "subdir": "plugins/expo-app-design/skills/building-native-ui",
       "name": "building-native-ui"
     },
     {
       "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347",
-      "rev": "46fa1f8b93479046445706c528af4c70d270e727",
+      "version": "v0.0.0-20260309135357-991716e214d2",
+      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
       "subdir": "plugins/expo-app-design/skills/expo-api-routes",
       "name": "expo-api-routes"
     },
     {
       "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347",
-      "rev": "46fa1f8b93479046445706c528af4c70d270e727",
+      "version": "v0.0.0-20260309135357-991716e214d2",
+      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
       "subdir": "plugins/expo-app-design/skills/expo-dev-client",
       "name": "expo-dev-client"
     },
     {
       "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347",
-      "rev": "46fa1f8b93479046445706c528af4c70d270e727",
+      "version": "v0.0.0-20260309135357-991716e214d2",
+      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
       "subdir": "plugins/expo-app-design/skills/expo-tailwind-setup",
       "name": "expo-tailwind-setup"
     },
     {
       "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347",
-      "rev": "46fa1f8b93479046445706c528af4c70d270e727",
+      "version": "v0.0.0-20260309135357-991716e214d2",
+      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
       "subdir": "plugins/expo-app-design/skills/native-data-fetching",
       "name": "native-data-fetching"
     },
     {
       "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347",
-      "rev": "46fa1f8b93479046445706c528af4c70d270e727",
+      "version": "v0.0.0-20260309135357-991716e214d2",
+      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
       "subdir": "plugins/expo-app-design/skills/use-dom",
       "name": "use-dom"
     },
     {
       "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347",
-      "rev": "46fa1f8b93479046445706c528af4c70d270e727",
+      "version": "v0.0.0-20260309135357-991716e214d2",
+      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
       "subdir": "plugins/expo-deployment/skills/expo-cicd-workflows",
       "name": "expo-cicd-workflows"
     },
     {
       "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347",
-      "rev": "46fa1f8b93479046445706c528af4c70d270e727",
+      "version": "v0.0.0-20260309135357-991716e214d2",
+      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
       "subdir": "plugins/expo-deployment/skills/expo-deployment",
       "name": "expo-deployment"
     },
     {
       "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260303080620-46fa1f8b9347",
-      "rev": "46fa1f8b93479046445706c528af4c70d270e727",
+      "version": "v0.0.0-20260309135357-991716e214d2",
+      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
       "subdir": "plugins/upgrading-expo/skills/upgrading-expo",
       "name": "upgrading-expo"
     },
@@ -73,90 +73,78 @@
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "version": "v0.0.0-20260309214902-337bf979619d",
+      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
       "subdir": "skills/agent-instruction-writing",
       "name": "agent-instruction-writing"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "version": "v0.0.0-20260309214902-337bf979619d",
+      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
       "subdir": "skills/code-review",
       "name": "code-review"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
-      "subdir": "skills/code-simplifier",
-      "name": "code-simplifier"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "version": "v0.0.0-20260309214902-337bf979619d",
+      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
       "subdir": "skills/frontend-design",
       "name": "frontend-design"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "version": "v0.0.0-20260309214902-337bf979619d",
+      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
       "subdir": "skills/llm-tldr",
       "name": "llm-tldr"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "version": "v0.0.0-20260309214902-337bf979619d",
+      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
       "subdir": "skills/repo-bootstrap",
       "name": "repo-bootstrap"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "version": "v0.0.0-20260309214902-337bf979619d",
+      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
       "subdir": "skills/research-grounding",
       "name": "research-grounding"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "version": "v0.0.0-20260309214902-337bf979619d",
+      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
       "subdir": "skills/skill-creator",
       "name": "skill-creator"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "version": "v0.0.0-20260309214902-337bf979619d",
+      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
       "subdir": "skills/software-design",
       "name": "software-design"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "version": "v0.0.0-20260309214902-337bf979619d",
+      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
       "subdir": "skills/software-implementation",
       "name": "software-implementation"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "version": "v0.0.0-20260309214902-337bf979619d",
+      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
       "subdir": "skills/software-planning",
       "name": "software-planning"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309134631-a937ba7f922d",
-      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "version": "v0.0.0-20260309214902-337bf979619d",
+      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
       "subdir": "skills/websearch",
       "name": "websearch"
     },
