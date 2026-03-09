@@ -74,77 +74,89 @@
     {
       "origin": "https://github.com/jmmarotta/skills",
       "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87",
+      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87"
+    },
+    {
+      "origin": "https://github.com/jmmarotta/skills",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
       "subdir": "skills/agent-instruction-writing",
       "name": "agent-instruction-writing"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
       "subdir": "skills/code-review",
       "name": "code-review"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
       "subdir": "skills/code-simplifier",
       "name": "code-simplifier"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
       "subdir": "skills/frontend-design",
       "name": "frontend-design"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
       "subdir": "skills/llm-tldr",
       "name": "llm-tldr"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
       "subdir": "skills/repo-bootstrap",
       "name": "repo-bootstrap"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
       "subdir": "skills/research-grounding",
       "name": "research-grounding"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
       "subdir": "skills/skill-creator",
       "name": "skill-creator"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
+      "subdir": "skills/software-design",
+      "name": "software-design"
+    },
+    {
+      "origin": "https://github.com/jmmarotta/skills",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
       "subdir": "skills/software-implementation",
       "name": "software-implementation"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
       "subdir": "skills/software-planning",
       "name": "software-planning"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d",
-      "rev": "49a2d2cfa93ddfd7a3094aadd2ac7238a6021c87",
+      "version": "v0.0.0-20260309134631-a937ba7f922d",
+      "rev": "a937ba7f922d23296b3e39a29233cdc693441391",
       "subdir": "skills/websearch",
       "name": "websearch"
     },

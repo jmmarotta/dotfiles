@@ -4,7 +4,7 @@
       "name": "agent-instruction-writing",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/agent-instruction-writing",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
     },
     {
       "name": "building-native-ui",
@@ -16,13 +16,13 @@
       "name": "code-review",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/code-review",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
     },
     {
       "name": "code-simplifier",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/code-simplifier",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
     },
     {
       "name": "expo-api-routes",
@@ -58,13 +58,13 @@
       "name": "frontend-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/frontend-design",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
     },
     {
       "name": "llm-tldr",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/llm-tldr",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
     },
     {
       "name": "native-data-fetching",
@@ -94,13 +94,13 @@
       "name": "repo-bootstrap",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/repo-bootstrap",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
     },
     {
       "name": "research-grounding",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/research-grounding",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
     },
     {
       "name": "seal-workflow",
@@ -112,19 +112,25 @@
       "name": "skill-creator",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/skill-creator",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
+    },
+    {
+      "name": "software-design",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/software-design",
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
     },
     {
       "name": "software-implementation",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/software-implementation",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
     },
     {
       "name": "software-planning",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/software-planning",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
     },
     {
       "name": "upgrading-expo",
@@ -142,7 +148,7 @@
       "name": "websearch",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/websearch",
-      "version": "v0.0.0-20260307222239-49a2d2cfa93d"
+      "version": "v0.0.0-20260309134631-a937ba7f922d"
     }
   ]
 }
