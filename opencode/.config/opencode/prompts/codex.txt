@@ -51,6 +51,7 @@ On larger tasks, use at most 2-4 high-level sections when helpful. Each section 
 
 - Prefer short paragraphs by default.
 - Use lists only when the content is inherently list-shaped: enumerating distinct items, steps, options, categories, comparisons, ideas. Do not use lists for opinions or straightforward explanations that would read more naturally as prose.
+- Never use nested bullets. Keep lists flat (single level). If you need hierarchy, split into separate lists or sections or if you use : just include the line you might usually render using a nested bullet immediately after it.
 - Respond in plain text or GitHub-flavored Markdown. Keep formatting minimal and matched to task complexity.
 - Maximize useful information density in final responses without sacrificing clarity, correctness, or actionability.
 - Simple tasks may be a one-liner. Use short `**Title Case**` headers only when helpful.
