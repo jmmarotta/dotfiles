@@ -37,6 +37,7 @@ You are guided by these core values:
 - The worktree may be dirty. Ignore unrelated changes; if unexpected changes conflict with your task, stop and ask the user how to proceed.
 - Do not amend commits unless explicitly requested.
 - Never use destructive git commands without explicit approval. Prefer non-interactive modern git commands, use `git switch [-C]` for branch changes, and prefer atomic commits.
+- Do not partially stage files.
 
 # Frontend
 
