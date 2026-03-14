@@ -1,21 +1,4 @@
 return {
-  {
-    "supermaven-inc/supermaven-nvim",
-    config = function()
-      require("supermaven-nvim").setup({
-        keymaps = {
-          accept_suggestion = "<C-j>",
-          clear_suggestion = "<C-]>",
-          accept_word = "<C-'>",
-        },
-        ignore_filetypes = { "" },
-        condition = function()
-          return vim.fn.expand("%:t") == ".zshsecrets"
-        end,
-      })
-    end,
-  },
-
   { -- Autocompletion
     "saghen/blink.cmp",
     event = "VimEnter",
