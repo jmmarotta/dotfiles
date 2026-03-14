@@ -30,6 +30,7 @@ return {
         enter = false,
         width = 0.45,
         on_win = function(win)
+          vim.wo[win.win].winfixwidth = false
           require("opencode.terminal").setup(win.win)
         end,
       },
