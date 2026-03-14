@@ -225,6 +225,8 @@ end
 
 vim.keymap.set("n", "<leader>yf", YankFloatContent, { desc = "[Y]ank [F]loating Window" })
 
+require("git_review").setup()
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -302,7 +304,9 @@ require("lazy").setup({
 
   require("plugins.which-key"),
 
-  require("plugins.telescope"),
+  require("plugins.snacks"),
+
+  require("plugins.fff"),
 
   require("plugins.lsp"),
 
@@ -320,7 +324,7 @@ require("lazy").setup({
 
   require("plugins.render-markdown"),
 
-  require("plugins.codecompanion"),
+  require("plugins.opencode"),
 
   -- example of loading a local plugin
   -- {
