@@ -9,6 +9,9 @@ return {
     terminal = {
       enabled = true,
       win = {
+        bo = {
+          buflisted = true,
+        },
         keys = {
           term_normal = {
             "<Esc><Esc>",
