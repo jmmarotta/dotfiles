@@ -5,9 +5,54 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local lint = require("lint")
+
       lint.linters_by_ft = {
-        -- markdown = { "markdownlint" },
+        python = { "ruff" },
+        javascript = { "oxlint" },
+        javascriptreact = { "oxlint" },
+        typescript = { "oxlint" },
+        typescriptreact = { "oxlint" },
+        go = { "golangcilint" },
+        terraform = { "tflint" },
       }
+
+      local function matches_pattern(path, pattern)
+        return path:match(pattern) ~= nil
+      end
+
+      local function is_github_workflow(path)
+        return matches_pattern(path, "/%.github/workflows/.*%.ya?ml$")
+      end
+
+      local function is_docker_compose(path)
+        return matches_pattern(path, "/docker%-compose%.ya?ml$") or matches_pattern(path, "/compose%.ya?ml$")
+      end
+
+      local function linters_for_buffer(bufnr)
+        local path = vim.api.nvim_buf_get_name(bufnr)
+        local names = lint._resolve_linter_by_ft(vim.bo[bufnr].filetype)
+        local seen = {}
+        local result = {}
+
+        for _, name in ipairs(names) do
+          if not seen[name] then
+            seen[name] = true
+            result[#result + 1] = name
+          end
+        end
+
+        if is_github_workflow(path) and not seen.actionlint then
+          seen.actionlint = true
+          result[#result + 1] = "actionlint"
+        end
+
+        if is_docker_compose(path) and not seen.yamllint then
+          seen.yamllint = true
+          result[#result + 1] = "yamllint"
+        end
+
+        return result
+      end
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
@@ -46,38 +91,10 @@ return {
       local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
       vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
         group = lint_augroup,
-        callback = function()
-          lint.try_lint()
-        end,
-      })
-
-      -- Run tflint --init
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "terraform",
-        callback = function()
-          -- Try to find the project root
-          local current_dir = vim.fn.expand("%:p:h")
-          local root_dir = current_dir
-
-          -- Look for .terraform or .git to identify project root
-          while vim.fn.isdirectory(root_dir) == 1 do
-            if vim.fn.isdirectory(root_dir .. "/.terraform") == 1 or vim.fn.isdirectory(root_dir .. "/.git") == 1 then
-              break
-            end
-
-            local parent_dir = vim.fn.fnamemodify(root_dir, ":h")
-            if parent_dir == root_dir then
-              -- We've reached filesystem root
-              root_dir = current_dir -- Fall back to current directory
-              break
-            end
-            root_dir = parent_dir
-          end
-
-          -- Check if .tflint.hcl exists in the project root
-          if vim.fn.filereadable(root_dir .. "/.tflint.hcl") == 0 then
-            vim.fn.system("cd " .. root_dir .. " && tflint --init")
-            print("TFLint initialized in " .. root_dir)
+        callback = function(args)
+          local names = linters_for_buffer(args.buf)
+          if #names > 0 then
+            lint.try_lint(names)
           end
         end,
       })

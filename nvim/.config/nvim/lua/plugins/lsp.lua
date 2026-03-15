@@ -237,12 +237,14 @@ return {
       local additional_tools = {
         "stylua", -- Used to format Lua code
         "ruff", -- Used to lint Python code
+        "oxfmt", -- Used to format TypeScript/JavaScript
         "oxlint", -- Used to lint TypeScript/JavaScript
         "eslint_d", -- Used to lint JSON (and as backup for TS/JS)
         "prettier", -- Used to format JavaScript/TypeScript
         "golangci-lint", -- Used to lint Golang
         "tflint", -- Used to lint Terraform
         "actionlint", -- Used to lint GitHub Actions
+        "yamllint", -- Used to lint Docker Compose YAML
       }
 
       -- Configure all LSP servers
