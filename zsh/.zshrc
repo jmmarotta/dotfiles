@@ -10,6 +10,11 @@ ZSH_THEME="robbyrussell"
 plugins=(git vi-mode rails)
 source "$ZSH/oh-my-zsh.sh"
 
+bindkey '^P' up-line-or-beginning-search
+bindkey '^N' down-line-or-beginning-search
+bindkey -M viins '^P' up-line-or-beginning-search
+bindkey -M viins '^N' down-line-or-beginning-search
+
 alias zshc="nvim ~/.zshrc"
 alias ohmyzshc="nvim ~/.oh-my-zsh"
 
