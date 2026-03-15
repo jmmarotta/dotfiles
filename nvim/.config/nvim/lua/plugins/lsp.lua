@@ -212,12 +212,12 @@ return {
         clangd = { mason_name = "clangd", filetypes = { "c", "cpp", "objc", "objcpp", "cuda" } },
         zls = { mason_name = "zls", filetypes = { "zig" } },
         gopls = { mason_name = "gopls", filetypes = { "go", "gomod", "gowork", "gotmpl" } },
-        pyright = { mason_name = "pyright", cmd_args = { "--stdio" }, filetypes = { "python" } },
+        pyright = { mason_name = "pyright", bin_name = "pyright-langserver", cmd_args = { "--stdio" }, filetypes = { "python" } },
         rust_analyzer = { mason_name = "rust-analyzer", filetypes = { "rust" } },
         vtsls = { mason_name = "vtsls", cmd_args = { "--stdio" }, filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" } },
         standardrb = { mason_name = "standardrb", cmd_args = { "--lsp" }, filetypes = { "ruby" } },
         terraformls = { mason_name = "terraform-ls", cmd_args = { "serve" }, filetypes = { "terraform", "terraform-vars" } },
-        dockerls = { mason_name = "dockerfile-language-server", cmd_args = { "--stdio" }, filetypes = { "dockerfile" } },
+        dockerls = { mason_name = "dockerfile-language-server", bin_name = "docker-langserver", cmd_args = { "--stdio" }, filetypes = { "dockerfile" } },
         lua_ls = {
           mason_name = "lua-language-server",
           filetypes = { "lua" },
@@ -248,7 +248,7 @@ return {
       -- Configure all LSP servers
       -- Servers will automatically start when a matching filetype is detected
       for name, config in pairs(servers) do
-        local cmd = { get_mason_bin(name) }
+        local cmd = { get_mason_bin(config.bin_name or config.mason_name or name) }
         if config.cmd_args then
           vim.list_extend(cmd, config.cmd_args)
         end
