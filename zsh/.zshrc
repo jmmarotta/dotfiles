@@ -18,18 +18,6 @@ bindkey -M viins '^N' down-line-or-beginning-search
 alias zshc="nvim ~/.zshrc"
 alias ohmyzshc="nvim ~/.oh-my-zsh"
 
-# Effectively a tmux refresh: reload .zshrc in all tmux panes.
-tmuxr() {
-  tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}' \
-    | xargs -I{} tmux send-keys -t {} 'source ~/.zshrc' C-m
-}
-
-# Full tmux refresh: reload .zprofile and .zshrc in all tmux panes.
-tmuxre() {
-  tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}' \
-    | xargs -I{} tmux send-keys -t {} 'source ~/.zprofile && source ~/.zshrc' C-m
-}
-
 alias nv="nvim"
 alias vi="nvim"
 alias vim="nvim"
@@ -41,12 +29,24 @@ alias jj="git"
 alias tf="terraform"
 alias aic="aichat"
 
-tmux9() {
-  tmux new-session -d -s ts
-  for i in {1..9}; do
-    tmux new-window -t ts
-  done
-  tmux attach-session -t ts
+tmuxe() {
+  if [ "$#" -eq 0 ]; then
+    printf 'usage: tmuxe <command>\n' >&2
+    return 1
+  fi
+
+  local cmd="$*"
+  local panes
+
+  panes=$(tmux list-panes -a -F '#{pane_id}' 2>/dev/null) || {
+    printf 'tmuxe: no tmux server running\n' >&2
+    return 1
+  }
+
+  while IFS= read -r pane; do
+    [ -n "$pane" ] || continue
+    tmux send-keys -t "$pane" "$cmd" C-m
+  done <<< "$panes"
 }
 
 if command -v brew >/dev/null 2>&1; then
