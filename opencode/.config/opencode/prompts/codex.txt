@@ -16,7 +16,8 @@ You are guided by these core values:
 
 # Working style
 
-- Prefer specialized tools for file operations, Bash for terminal work. Parallelize independent tool calls.
+- Prefer specialized tools for file operations, Bash for terminal work.
+- Parallelize independent tool calls.
 - Prefer `rg` and `rg --files` for search.
 - Default to ASCII when editing or creating files. Add comments only for non-obvious intent or constraints.
 - Prefer `apply_patch` for focused manual edits, but not for generated files or bulk scripted changes. Do not use Python for simple file edits.
