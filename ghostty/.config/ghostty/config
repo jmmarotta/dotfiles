@@ -83,6 +83,7 @@ keybind = copy_mode/shift+n=navigate_search:previous
 keybind = copy_mode/y=copy_to_clipboard:plain
 keybind = chain=deactivate_all_key_tables
 keybind = copy_mode/ctrl+c=deactivate_all_key_tables
+keybind = copy_mode/ctrl+space=deactivate_all_key_tables
 keybind = copy_mode/escape=deactivate_all_key_tables
 keybind = copy_mode/q=deactivate_all_key_tables
 keybind = copy_mode/i=deactivate_all_key_tables
