@@ -44,7 +44,7 @@
   },
   "permission": {
     "external_directory": {
-      "*": "ask",
+      "*": "allow",
       "{env:HOME}/.config/opencode/skills/*": "allow"
     }
   },
