@@ -240,6 +240,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "TermOpen", "BufWinEnter" }, {
+  desc = "Hide line numbers in terminal windows",
+  group = vim.api.nvim_create_augroup("kickstart-terminal-window", { clear = true }),
+  pattern = "term://*",
+  callback = function()
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+  end,
+})
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
