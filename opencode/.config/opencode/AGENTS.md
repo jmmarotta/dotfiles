@@ -31,10 +31,10 @@ Below are non-exhaustive guidelines for each step.
 - A task is complete only when that verification passes, or when you explicitly report why it could not be run.
 - Prefer deterministic finish lines.
 
-## SEAL
+## OpenPlan
 
-- In repositories with `.seal/`, use `seal-workflow`.
-- Initialize `seal` if the user asks.
+- In repositories with `.plans/` or `.plans/openplan.jsonc`, use `openplan`.
+- Initialize OpenPlan with `openplan init` if the user asks.
 
 # Context Gathering
 
