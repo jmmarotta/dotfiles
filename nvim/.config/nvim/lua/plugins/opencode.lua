@@ -28,7 +28,7 @@ return {
 
     local terminal_opts = {
       win = {
-        position = "current",
+        position = "right",
         enter = false,
         width = 0.45,
         on_win = function(win)
