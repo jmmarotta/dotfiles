@@ -4,72 +4,14 @@
     {
       "origin": "https://github.com/expo/skills",
       "version": "v0.0.0-20260309135357-991716e214d2",
-      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
-      "subdir": "plugins/expo-app-design/skills/building-native-ui",
-      "name": "building-native-ui"
+      "rev": "991716e214d206384249322e9ef99a2fe059bb9b"
     },
     {
-      "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260309135357-991716e214d2",
-      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
-      "subdir": "plugins/expo-app-design/skills/expo-api-routes",
-      "name": "expo-api-routes"
-    },
-    {
-      "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260309135357-991716e214d2",
-      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
-      "subdir": "plugins/expo-app-design/skills/expo-dev-client",
-      "name": "expo-dev-client"
-    },
-    {
-      "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260309135357-991716e214d2",
-      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
-      "subdir": "plugins/expo-app-design/skills/expo-tailwind-setup",
-      "name": "expo-tailwind-setup"
-    },
-    {
-      "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260309135357-991716e214d2",
-      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
-      "subdir": "plugins/expo-app-design/skills/native-data-fetching",
-      "name": "native-data-fetching"
-    },
-    {
-      "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260309135357-991716e214d2",
-      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
-      "subdir": "plugins/expo-app-design/skills/use-dom",
-      "name": "use-dom"
-    },
-    {
-      "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260309135357-991716e214d2",
-      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
-      "subdir": "plugins/expo-deployment/skills/expo-cicd-workflows",
-      "name": "expo-cicd-workflows"
-    },
-    {
-      "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260309135357-991716e214d2",
-      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
-      "subdir": "plugins/expo-deployment/skills/expo-deployment",
-      "name": "expo-deployment"
-    },
-    {
-      "origin": "https://github.com/expo/skills",
-      "version": "v0.0.0-20260309135357-991716e214d2",
-      "rev": "991716e214d206384249322e9ef99a2fe059bb9b",
-      "subdir": "plugins/upgrading-expo/skills/upgrading-expo",
-      "name": "upgrading-expo"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/seal",
-      "version": "v0.0.0-20260304152345-803a1372203a",
-      "rev": "803a1372203a80f69369f0003320f08ac8107795",
-      "subdir": "skills/seal-workflow",
-      "name": "seal-workflow"
+      "origin": "https://github.com/jmmarotta/openplan",
+      "version": "v0.0.0-20260323131933-d154da581e98",
+      "rev": "d154da581e98ee64fd8cc782f1040837b8f4986c",
+      "subdir": "skills/openplan",
+      "name": "openplan"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",

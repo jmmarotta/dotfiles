@@ -1,5 +1,3 @@
-// Removed:
-//   - https://github.com/expo/skills
 {
   "skills": [
     {
@@ -25,6 +23,12 @@
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/llm-tldr",
       "version": "v0.0.0-20260309214902-337bf979619d"
+    },
+    {
+      "name": "openplan",
+      "origin": "https://github.com/jmmarotta/openplan",
+      "subdir": "skills/openplan",
+      "version": "v0.0.0-20260323131933-d154da581e98"
     },
     {
       "name": "opentui",
@@ -55,12 +59,6 @@
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/research-grounding",
       "version": "v0.0.0-20260309214902-337bf979619d"
-    },
-    {
-      "name": "seal-workflow",
-      "origin": "https://github.com/jmmarotta/seal",
-      "subdir": "skills/seal-workflow",
-      "version": "v0.0.0-20260304152345-803a1372203a"
     },
     {
       "name": "skill-creator",
