@@ -24,9 +24,11 @@ return {
   end,
   config = function()
     local opencode_cmd = "opencode --port"
+    local snacks_terminal = require("snacks.terminal")
+
     local terminal_opts = {
       win = {
-        position = "right",
+        position = "current",
         enter = false,
         width = 0.45,
         on_win = function(win)
@@ -39,16 +41,16 @@ return {
 
     config.opts.server = vim.tbl_extend("force", config.opts.server or {}, {
       start = function()
-        require("snacks.terminal").open(opencode_cmd, terminal_opts)
+        snacks_terminal.open(opencode_cmd, terminal_opts)
       end,
       stop = function()
-        local terminal = require("snacks.terminal").get(opencode_cmd, terminal_opts)
+        local terminal = snacks_terminal.get(opencode_cmd, terminal_opts)
         if terminal then
           terminal:close()
         end
       end,
       toggle = function()
-        require("snacks.terminal").toggle(opencode_cmd, terminal_opts)
+        snacks_terminal.toggle(opencode_cmd, terminal_opts)
       end,
     })
   end,
@@ -67,6 +69,14 @@ return {
       end,
       mode = { "n", "x" },
       desc = "[O]pencode [A]sk",
+    },
+    {
+      "<leader>op",
+      function()
+        require("opencode").ask("", { submit = true })
+      end,
+      mode = { "n", "x" },
+      desc = "[O]pencode [P]rompt",
     },
     {
       "<leader>os",
