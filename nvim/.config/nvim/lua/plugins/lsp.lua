@@ -218,6 +218,44 @@ return {
         standardrb = { mason_name = "standardrb", cmd_args = { "--lsp" }, filetypes = { "ruby" } },
         terraformls = { mason_name = "terraform-ls", cmd_args = { "serve" }, filetypes = { "terraform", "terraform-vars" } },
         dockerls = { mason_name = "dockerfile-language-server", bin_name = "docker-langserver", cmd_args = { "--stdio" }, filetypes = { "dockerfile" } },
+        gh_actions_ls = {
+          mason_name = "gh-actions-language-server",
+          bin_name = "gh-actions-language-server",
+          cmd_args = { "--stdio" },
+          filetypes = { "yaml" },
+          root_dir = function(bufnr, on_dir)
+            local parent = vim.fs.dirname(vim.api.nvim_buf_get_name(bufnr))
+            if vim.endswith(parent, "/.github/workflows") then
+              on_dir(parent)
+            end
+          end,
+          handlers = {
+            ["actions/readFile"] = function(_, result)
+              if type(result.path) ~= "string" then
+                return nil, nil
+              end
+
+              local file_path = vim.uri_to_fname(result.path)
+              if vim.fn.filereadable(file_path) == 1 then
+                local file = assert(io.open(file_path, "r"))
+                local text = file:read("*a")
+                file:close()
+                return text, nil
+              end
+
+              return nil, nil
+            end,
+          },
+          init_options = {},
+          capabilities = {
+            workspace = {
+              didChangeWorkspaceFolders = {
+                dynamicRegistration = true,
+              },
+            },
+          },
+        },
+        jsonls = { mason_name = "json-lsp", bin_name = "vscode-json-language-server", cmd_args = { "--stdio" }, filetypes = { "json", "jsonc" } },
         lua_ls = {
           mason_name = "lua-language-server",
           filetypes = { "lua" },
@@ -229,6 +267,15 @@ return {
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
             },
+          },
+        },
+        yamlls = {
+          mason_name = "yaml-language-server",
+          cmd_args = { "--stdio" },
+          filetypes = { "yaml", "yaml.docker-compose", "yaml.gitlab", "yaml.helm-values" },
+          settings = {
+            redhat = { telemetry = { enabled = false } },
+            yaml = { format = { enable = true } },
           },
         },
       }
@@ -257,9 +304,14 @@ return {
 
         vim.lsp.config(name, {
           cmd = cmd,
-          capabilities = capabilities,
+          capabilities = vim.tbl_deep_extend("force", capabilities, config.capabilities or {}),
           settings = config.settings,
           filetypes = config.filetypes,
+          root_dir = config.root_dir,
+          root_markers = config.root_markers,
+          handlers = config.handlers,
+          init_options = config.init_options,
+          on_init = config.on_init,
         })
 
         -- Enable the LSP for the configured filetypes
