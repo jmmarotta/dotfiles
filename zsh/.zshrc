@@ -25,6 +25,7 @@ alias nvc="nvim ~/.config/nvim/init.lua"
 
 alias oc="opencode --port"
 alias occ="opencode --port --continue"
+alias plan="openplan"
 alias jj="git"
 alias tf="terraform"
 alias aic="aichat"
