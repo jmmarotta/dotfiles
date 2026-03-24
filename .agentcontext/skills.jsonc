@@ -4,25 +4,25 @@
       "name": "agent-instruction-writing",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/agent-instruction-writing",
-      "version": "v0.0.0-20260309214902-337bf979619d"
+      "version": "v0.0.0-20260324142629-010021cbfdcc"
     },
     {
       "name": "code-review",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/code-review",
-      "version": "v0.0.0-20260309214902-337bf979619d"
+      "version": "v0.0.0-20260324142629-010021cbfdcc"
     },
     {
       "name": "frontend-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/frontend-design",
-      "version": "v0.0.0-20260309214902-337bf979619d"
+      "version": "v0.0.0-20260324142629-010021cbfdcc"
     },
     {
-      "name": "llm-tldr",
+      "name": "go-practices",
       "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/llm-tldr",
-      "version": "v0.0.0-20260309214902-337bf979619d"
+      "subdir": "skills/go-practices",
+      "version": "v0.0.0-20260324142629-010021cbfdcc"
     },
     {
       "name": "openplan",
@@ -40,55 +40,55 @@
       "name": "playwriter",
       "origin": "https://github.com/remorses/playwriter",
       "subdir": "skills/playwriter",
-      "version": "v0.0.0-20260307082531-3a045c17d45c"
+      "version": "v0.0.0-20260322170236-38147f2a4a88"
     },
     {
       "name": "remotion",
       "origin": "https://github.com/remotion-dev/skills",
       "subdir": "skills/remotion",
-      "version": "v0.0.0-20260226163628-937ffb32b148"
+      "version": "v0.0.0-20260319124356-d5d395582c62"
     },
     {
       "name": "repo-bootstrap",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/repo-bootstrap",
-      "version": "v0.0.0-20260309214902-337bf979619d"
+      "version": "v0.0.0-20260324142629-010021cbfdcc"
     },
     {
       "name": "research-grounding",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/research-grounding",
-      "version": "v0.0.0-20260309214902-337bf979619d"
+      "version": "v0.0.0-20260324142629-010021cbfdcc"
     },
     {
       "name": "skill-creator",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/skill-creator",
-      "version": "v0.0.0-20260309214902-337bf979619d"
+      "version": "v0.0.0-20260324142629-010021cbfdcc"
     },
     {
       "name": "software-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/software-design",
-      "version": "v0.0.0-20260309214902-337bf979619d"
+      "version": "v0.0.0-20260324142629-010021cbfdcc"
     },
     {
       "name": "software-implementation",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/software-implementation",
-      "version": "v0.0.0-20260309214902-337bf979619d"
+      "version": "v0.0.0-20260324142629-010021cbfdcc"
     },
     {
       "name": "software-planning",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/software-planning",
-      "version": "v0.0.0-20260309214902-337bf979619d"
+      "version": "v0.0.0-20260324142629-010021cbfdcc"
     },
     {
       "name": "websearch",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/websearch",
-      "version": "v0.0.0-20260309214902-337bf979619d"
+      "version": "v0.0.0-20260324142629-010021cbfdcc"
     }
   ]
 }

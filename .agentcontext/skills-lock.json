@@ -15,78 +15,78 @@
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309214902-337bf979619d",
-      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
+      "version": "v0.0.0-20260324142629-010021cbfdcc",
+      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
       "subdir": "skills/agent-instruction-writing",
       "name": "agent-instruction-writing"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309214902-337bf979619d",
-      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
+      "version": "v0.0.0-20260324142629-010021cbfdcc",
+      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
       "subdir": "skills/code-review",
       "name": "code-review"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309214902-337bf979619d",
-      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
+      "version": "v0.0.0-20260324142629-010021cbfdcc",
+      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
       "subdir": "skills/frontend-design",
       "name": "frontend-design"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309214902-337bf979619d",
-      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
-      "subdir": "skills/llm-tldr",
-      "name": "llm-tldr"
+      "version": "v0.0.0-20260324142629-010021cbfdcc",
+      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
+      "subdir": "skills/go-practices",
+      "name": "go-practices"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309214902-337bf979619d",
-      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
+      "version": "v0.0.0-20260324142629-010021cbfdcc",
+      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
       "subdir": "skills/repo-bootstrap",
       "name": "repo-bootstrap"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309214902-337bf979619d",
-      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
+      "version": "v0.0.0-20260324142629-010021cbfdcc",
+      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
       "subdir": "skills/research-grounding",
       "name": "research-grounding"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309214902-337bf979619d",
-      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
+      "version": "v0.0.0-20260324142629-010021cbfdcc",
+      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
       "subdir": "skills/skill-creator",
       "name": "skill-creator"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309214902-337bf979619d",
-      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
+      "version": "v0.0.0-20260324142629-010021cbfdcc",
+      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
       "subdir": "skills/software-design",
       "name": "software-design"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309214902-337bf979619d",
-      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
+      "version": "v0.0.0-20260324142629-010021cbfdcc",
+      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
       "subdir": "skills/software-implementation",
       "name": "software-implementation"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309214902-337bf979619d",
-      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
+      "version": "v0.0.0-20260324142629-010021cbfdcc",
+      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
       "subdir": "skills/software-planning",
       "name": "software-planning"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260309214902-337bf979619d",
-      "rev": "337bf979619d76ea12fb39d410df03ff96ae952b",
+      "version": "v0.0.0-20260324142629-010021cbfdcc",
+      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
       "subdir": "skills/websearch",
       "name": "websearch"
     },
@@ -99,15 +99,15 @@
     },
     {
       "origin": "https://github.com/remorses/playwriter",
-      "version": "v0.0.0-20260307082531-3a045c17d45c",
-      "rev": "3a045c17d45ce60f92697c10f2d278fdbe380bd3",
+      "version": "v0.0.0-20260322170236-38147f2a4a88",
+      "rev": "38147f2a4a88531ab97aae2b02ebc7ba46f42adb",
       "subdir": "skills/playwriter",
       "name": "playwriter"
     },
     {
       "origin": "https://github.com/remotion-dev/skills",
-      "version": "v0.0.0-20260226163628-937ffb32b148",
-      "rev": "937ffb32b148fdceef4b4184f975a708aab8d560",
+      "version": "v0.0.0-20260319124356-d5d395582c62",
+      "rev": "d5d395582c6227249cec74f53ab79aca77a4ff16",
       "subdir": "skills/remotion",
       "name": "remotion"
     }
