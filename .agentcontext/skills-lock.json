@@ -8,8 +8,8 @@
     },
     {
       "origin": "https://github.com/jmmarotta/openplan",
-      "version": "v0.0.0-20260323131933-d154da581e98",
-      "rev": "d154da581e98ee64fd8cc782f1040837b8f4986c",
+      "version": "v0.0.0-20260325145722-c916e2a88c24",
+      "rev": "c916e2a88c243f6d9fff0e010ae663ef1decbbe7",
       "subdir": "skills/openplan",
       "name": "openplan"
     },
@@ -99,8 +99,8 @@
     },
     {
       "origin": "https://github.com/remorses/playwriter",
-      "version": "v0.0.0-20260322170236-38147f2a4a88",
-      "rev": "38147f2a4a88531ab97aae2b02ebc7ba46f42adb",
+      "version": "v0.0.0-20260324180300-0b75e829b49c",
+      "rev": "0b75e829b49ce98b099372e34258fe0849355302",
       "subdir": "skills/playwriter",
       "name": "playwriter"
     },

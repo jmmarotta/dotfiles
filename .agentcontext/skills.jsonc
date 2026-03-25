@@ -28,7 +28,7 @@
       "name": "openplan",
       "origin": "https://github.com/jmmarotta/openplan",
       "subdir": "skills/openplan",
-      "version": "v0.0.0-20260323131933-d154da581e98"
+      "version": "v0.0.0-20260325145722-c916e2a88c24"
     },
     {
       "name": "opentui",
@@ -40,7 +40,7 @@
       "name": "playwriter",
       "origin": "https://github.com/remorses/playwriter",
       "subdir": "skills/playwriter",
-      "version": "v0.0.0-20260322170236-38147f2a4a88"
+      "version": "v0.0.0-20260324180300-0b75e829b49c"
     },
     {
       "name": "remotion",
