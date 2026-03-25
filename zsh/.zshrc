@@ -1,5 +1,10 @@
 # Interactive shell configuration.
 
+# Repo-managed completions must be in fpath before compinit (run by Oh My Zsh).
+if [ -d "$HOME/.zfunc" ]; then
+  fpath=("$HOME/.zfunc" $fpath)
+fi
+
 # Docker completions must be in fpath before compinit (run by Oh My Zsh).
 if [ -d "$HOME/.docker/completions" ]; then
   fpath=("$HOME/.docker/completions" $fpath)
@@ -29,6 +34,9 @@ alias plan="openplan"
 alias jj="git"
 alias tf="terraform"
 alias aic="aichat"
+
+compdef _openplan plan
+compdef _opencode oc occ
 
 tmuxe() {
   if [ "$#" -eq 0 ]; then
@@ -135,38 +143,3 @@ if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
   alias cd="z"
 fi
-
-if command -v uv >/dev/null 2>&1; then
-  eval "$(uv generate-shell-completion zsh)"
-fi
-
-if command -v uvx >/dev/null 2>&1; then
-  eval "$(uvx --generate-shell-completion zsh)"
-fi
-
-#compdef opencode
-###-begin-opencode-completions-###
-#
-# yargs command completion script
-#
-# Installation: opencode completion >> ~/.zshrc
-#    or opencode completion >> ~/.zprofile on OSX.
-#
-_opencode_yargs_completions()
-{
-  local reply
-  local si=$IFS
-  IFS=$'\n' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" opencode --get-yargs-completions "${words[@]}"))
-  IFS=$si
-  if [[ ${#reply} -gt 0 ]]; then
-    _describe 'values' reply
-  else
-    _default
-  fi
-}
-if [[ "'${zsh_eval_context[-1]}" == "loadautofunc" ]]; then
-  _opencode_yargs_completions "$@"
-else
-  compdef _opencode_yargs_completions opencode
-fi
-###-end-opencode-completions-###
