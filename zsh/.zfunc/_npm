@@ -1,0 +1,24 @@
+#compdef npm
+
+_npm() {
+  local si=$IFS
+  local completions
+
+  IFS=$'\n' completions=($(COMP_CWORD=$((CURRENT-1)) \
+    COMP_LINE=$BUFFER \
+    COMP_POINT=0 \
+    npm completion -- "${words[@]}" 2>/dev/null))
+  IFS=$si
+
+  if [[ ${#completions[@]} -gt 0 ]]; then
+    compadd -- "${completions[@]}"
+  else
+    _default
+  fi
+}
+
+if [[ "$funcstack[1]" == "_npm" ]]; then
+  _npm "$@"
+else
+  compdef _npm npm
+fi
