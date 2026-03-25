@@ -35,7 +35,6 @@ export PATH
 export DISPLAY=:0
 export EDITOR="nvim"
 export AWS_PROFILE="$AWS_DEFAULT_PROFILE"
-export NODE_OPTIONS="--disable-warning=ExperimentalWarning"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
 export OPENCODE_EXPERIMENTAL_MARKDOWN=true
 
