@@ -17,7 +17,29 @@ brew bundle install
 https://gist.github.com/andreibosco/cb8506780d0942a712fc
 
 ```
-stow nvim zsh tmux mise
+stow nvim zsh tmux mise luarocks
+```
+
+If `~/.config/mise/config.toml` or `~/.luarocks/config.lua` already exist as real
+files on the machine, adopt them first:
+
+```
+stow --adopt mise luarocks
+stow nvim zsh tmux
+```
+
+Then verify LuaRocks is targeting Neovim's LuaJIT-compatible runtime:
+
+```
+luarocks config lua_version
+luarocks config variables.LUA
+```
+
+Expected:
+
+```
+5.1
+/opt/homebrew/opt/luajit/bin/luajit
 ```
 
 # TODO

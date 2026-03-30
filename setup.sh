@@ -23,7 +23,11 @@ brew bundle install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # stow tools
-stow zsh tmux neovim mise
+# If ~/.config/mise/config.toml or ~/.luarocks/config.lua already exist as
+# regular files, adopt those packages first with:
+#   stow --adopt mise luarocks
+# and then re-run stow for the remaining packages.
+stow zsh tmux nvim mise luarocks
 
 source $HOME/.zshrc
 
