@@ -7,6 +7,7 @@ return {
       local lint = require("lint")
 
       lint.linters_by_ft = {
+        lua = { "luacheck" },
         python = { "ruff" },
         javascript = { "oxlint" },
         javascriptreact = { "oxlint" },

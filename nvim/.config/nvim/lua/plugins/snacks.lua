@@ -1,3 +1,9 @@
+local function picker(method, opts)
+  return function()
+    require("snacks").picker[method](opts)
+  end
+end
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -26,72 +32,52 @@ return {
   keys = {
     {
       "<leader>sh",
-      function()
-        Snacks.picker.help()
-      end,
+      picker("help"),
       desc = "[S]earch [H]elp",
     },
     {
       "<leader>sk",
-      function()
-        Snacks.picker.keymaps()
-      end,
+      picker("keymaps"),
       desc = "[S]earch [K]eymaps",
     },
     {
       "<leader>ss",
-      function()
-        Snacks.picker.pickers()
-      end,
+      picker("pickers"),
       desc = "[S]earch [S]elect Picker",
     },
     {
       "<leader>sd",
-      function()
-        Snacks.picker.diagnostics()
-      end,
+      picker("diagnostics"),
       desc = "[S]earch [D]iagnostics",
     },
     {
       "<leader>sr",
-      function()
-        Snacks.picker.resume()
-      end,
+      picker("resume"),
       desc = "[S]earch [R]esume",
     },
     {
       "<leader>s.",
-      function()
-        Snacks.picker.recent()
-      end,
+      picker("recent"),
       desc = '[S]earch Recent Files ("." for repeat)',
     },
     {
       "<leader><leader>",
-      function()
-        Snacks.picker.buffers()
-      end,
+      picker("buffers"),
       desc = "[ ] Find existing buffers",
     },
     {
       "<leader>/",
-      function()
-        Snacks.picker.lines()
-      end,
+      picker("lines"),
       desc = "[/] Fuzzily search in current buffer",
     },
     {
       "<leader>s/",
-      function()
-        Snacks.picker.grep_buffers()
-      end,
+      picker("grep_buffers"),
       desc = "[S]earch [/] in Open Files",
     },
     {
       "<leader>sn",
-      function()
-        Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
-      end,
+      picker("files", { cwd = vim.fn.stdpath("config") }),
       desc = "[S]earch [N]eovim files",
     },
   },

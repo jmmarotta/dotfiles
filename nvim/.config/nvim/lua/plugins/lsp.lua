@@ -58,6 +58,8 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
         callback = function(event)
+          local snacks = require("snacks")
+
           -- NOTE: Remember that Lua is a real programming language, and as such it is possible
           -- to define small helper and utility functions so you don't have to repeat yourself.
           --
@@ -77,16 +79,16 @@ return {
           map("gra", vim.lsp.buf.code_action, "[G]oto Code [A]ction", { "n", "x" })
 
           -- Find references for the word under your cursor.
-          map("grr", Snacks.picker.lsp_references, "[G]oto [R]eferences")
+          map("grr", snacks.picker.lsp_references, "[G]oto [R]eferences")
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map("gri", Snacks.picker.lsp_implementations, "[G]oto [I]mplementation")
+          map("gri", snacks.picker.lsp_implementations, "[G]oto [I]mplementation")
 
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map("grd", Snacks.picker.lsp_definitions, "[G]oto [D]efinition")
+          map("grd", snacks.picker.lsp_definitions, "[G]oto [D]efinition")
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
@@ -94,16 +96,16 @@ return {
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map("gO", Snacks.picker.lsp_symbols, "Open Document Symbols")
+          map("gO", snacks.picker.lsp_symbols, "Open Document Symbols")
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map("gW", Snacks.picker.lsp_workspace_symbols, "Open Workspace Symbols")
+          map("gW", snacks.picker.lsp_workspace_symbols, "Open Workspace Symbols")
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
-          map("grt", Snacks.picker.lsp_type_definitions, "[G]oto [T]ype Definition")
+          map("grt", snacks.picker.lsp_type_definitions, "[G]oto [T]ype Definition")
 
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
@@ -264,6 +266,9 @@ return {
               completion = {
                 callSnippet = "Replace",
               },
+              diagnostics = {
+                globals = { "vim" },
+              },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
             },
@@ -283,6 +288,7 @@ return {
       -- Additional tools (formatters, linters, etc.)
       local additional_tools = {
         "stylua", -- Used to format Lua code
+        "luacheck", -- Used to lint Lua code
         "ruff", -- Used to lint Python code
         "oxfmt", -- Used to format TypeScript/JavaScript
         "oxlint", -- Used to lint TypeScript/JavaScript
@@ -314,17 +320,8 @@ return {
           on_init = config.on_init,
         })
 
-        -- Enable the LSP for the configured filetypes
-        if config.filetypes then
-          for _, ft in ipairs(config.filetypes) do
-            vim.api.nvim_create_autocmd("FileType", {
-              pattern = ft,
-              callback = function(args)
-                vim.lsp.enable(name, args.buf)
-              end,
-            })
-          end
-        end
+        -- Enable the LSP config globally; Neovim will attach on matching filetypes.
+        vim.lsp.enable(name)
       end
 
       -- Build ensure_installed list from servers and additional tools
