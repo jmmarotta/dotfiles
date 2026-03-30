@@ -335,6 +335,8 @@ require("lazy").setup({
 
   require("plugins.opencode"),
 
+  require("plugins.openplan"),
+
   -- example of loading a local plugin
   -- {
   --   dir = "~/projects/reapo.nvim",
