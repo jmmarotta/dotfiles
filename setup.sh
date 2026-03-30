@@ -23,7 +23,7 @@ brew bundle install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # stow tools
-# If ~/.config/mise/config.toml or ~/.luarocks/config.lua already exist as
+# If ~/.config/mise/config.toml or ~/.local/bin/luarocks already exist as
 # regular files, adopt those packages first with:
 #   stow --adopt mise luarocks
 # and then re-run stow for the remaining packages.
@@ -33,6 +33,9 @@ source $HOME/.zshrc
 
 # install programming languages from the mise config file in ~/.config/mise/config.yaml
 mise install
+
+# install a dedicated LuaRocks build against Homebrew LuaJIT
+install-luarocks-luajit
 
 # install rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

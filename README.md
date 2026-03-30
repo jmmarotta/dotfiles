@@ -20,7 +20,7 @@ https://gist.github.com/andreibosco/cb8506780d0942a712fc
 stow nvim zsh tmux mise luarocks
 ```
 
-If `~/.config/mise/config.toml` or `~/.luarocks/config.lua` already exist as real
+If `~/.config/mise/config.toml` or `~/.local/bin/luarocks` already exist as real
 files on the machine, adopt them first:
 
 ```
@@ -28,9 +28,16 @@ stow --adopt mise luarocks
 stow nvim zsh tmux
 ```
 
-Then verify LuaRocks is targeting Neovim's LuaJIT-compatible runtime:
+Then install a dedicated LuaRocks build against Homebrew LuaJIT:
 
 ```
+install-luarocks-luajit
+```
+
+Verify:
+
+```
+luarocks --version
 luarocks config lua_version
 luarocks config variables.LUA
 ```
@@ -38,6 +45,7 @@ luarocks config variables.LUA
 Expected:
 
 ```
+3.x
 5.1
 /opt/homebrew/opt/luajit/bin/luajit
 ```

@@ -1,0 +1,34 @@
+#!/bin/sh
+
+set -eu
+
+version="${1:-3.13.0}"
+prefix="${PREFIX:-$HOME/.local/opt/luarocks-luajit}"
+luajit_prefix="${LUAJIT_PREFIX:-/opt/homebrew/opt/luajit}"
+archive="luarocks-$version.tar.gz"
+tmpdir="$(mktemp -d)"
+srcdir="$tmpdir/luarocks-$version"
+
+cleanup() {
+  rm -rf "$tmpdir"
+}
+
+trap cleanup EXIT INT TERM
+
+if [ ! -x "$luajit_prefix/bin/luajit" ]; then
+  printf 'install-luarocks-luajit: missing LuaJIT at %s\n' "$luajit_prefix/bin/luajit" >&2
+  printf 'install-luarocks-luajit: install Homebrew luajit first\n' >&2
+  exit 1
+fi
+
+curl -fsSL "https://luarocks.org/releases/$archive" -o "$tmpdir/$archive"
+tar -xzf "$tmpdir/$archive" -C "$tmpdir"
+
+cd "$srcdir"
+./configure \
+  --prefix="$prefix" \
+  --with-lua="$luajit_prefix" \
+  --with-lua-include="$luajit_prefix/include/luajit-2.1" \
+  --with-lua-lib="$luajit_prefix/lib"
+make
+make install

@@ -5,6 +5,19 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local lint = require("lint")
+      local config_dir = vim.fn.stdpath("config")
+
+      lint.linters.luacheck = vim.tbl_deep_extend("force", lint.linters.luacheck or {}, {
+        args = {
+          "--config",
+          config_dir .. "/.luacheckrc",
+          "--formatter",
+          "plain",
+          "--codes",
+          "--ranges",
+          "-",
+        },
+      })
 
       lint.linters_by_ft = {
         lua = { "luacheck" },

@@ -14,6 +14,7 @@ typeset -U path PATH
 path=(
   "$HOME/bin"
   "$HOME/.local/bin"
+  "$HOME/.local/opt/luarocks-luajit/bin"
   "/usr/local/bin"
   "$HOME/.cargo/bin"
   "$HOME/.bun/bin"

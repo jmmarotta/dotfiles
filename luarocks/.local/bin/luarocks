@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -eu
+
+prefix="${LUAROCKS_LUAJIT_PREFIX:-$HOME/.local/opt/luarocks-luajit}"
+exec "$prefix/bin/luarocks" "$@"

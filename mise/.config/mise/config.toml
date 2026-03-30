@@ -1,8 +1,9 @@
 [tools]
+# LuaJIT is installed with Homebrew for Neovim/LuaRocks compatibility.
+# luajit = "2.1"
 ruby = "3.3"
 python = "3"
 node = "24"
 bun = "1"
 go = "1"
 zig = "0.15.2"
-luajit = "2.1"
