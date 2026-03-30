@@ -12,6 +12,7 @@ split-preserve-zoom = navigation
 macos-option-as-alt = left
 copy-on-select = false
 confirm-close-surface = true
+scrollback-limit = 50000000
 
 keybind = ctrl+space=activate_key_table:tmux
 
