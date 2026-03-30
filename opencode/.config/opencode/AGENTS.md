@@ -22,6 +22,8 @@ Below are non-exhaustive guidelines for each step.
 
 - Reread the active plan/spec and relevant context.
 - Implement the chosen approach.
+- Do not implement fallback solutions unless the user explicitly asks for them or a documented requirement requires them.
+- Prefer repo-local tmp directories over shared root-level tmp directories when that fits the task.
 - Avoid broad research unless new evidence invalidates the plan.
 - Use the `software-implementation` skill for detailed guidance.
 
