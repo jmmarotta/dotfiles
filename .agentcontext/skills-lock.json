@@ -7,13 +7,6 @@
       "rev": "991716e214d206384249322e9ef99a2fe059bb9b"
     },
     {
-      "origin": "https://github.com/jmmarotta/openplan",
-      "version": "v0.0.0-20260325145722-c916e2a88c24",
-      "rev": "c916e2a88c243f6d9fff0e010ae663ef1decbbe7",
-      "subdir": "skills/openplan",
-      "name": "openplan"
-    },
-    {
       "origin": "https://github.com/jmmarotta/skills",
       "version": "v0.0.0-20260324142629-010021cbfdcc",
       "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
@@ -47,13 +40,6 @@
       "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
       "subdir": "skills/repo-bootstrap",
       "name": "repo-bootstrap"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260324142629-010021cbfdcc",
-      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
-      "subdir": "skills/research-grounding",
-      "name": "research-grounding"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
@@ -103,13 +89,6 @@
       "rev": "0b75e829b49ce98b099372e34258fe0849355302",
       "subdir": "skills/playwriter",
       "name": "playwriter"
-    },
-    {
-      "origin": "https://github.com/remotion-dev/skills",
-      "version": "v0.0.0-20260319124356-d5d395582c62",
-      "rev": "d5d395582c6227249cec74f53ab79aca77a4ff16",
-      "subdir": "skills/remotion",
-      "name": "remotion"
     }
   ]
 }
