@@ -33,12 +33,8 @@ Below are non-exhaustive guidelines for each step.
 - A task is complete only when that verification passes, or when you explicitly report why it could not be run.
 - Prefer deterministic finish lines.
 
-## OpenPlan
+## Frontend
 
-- In repositories with `.plans/` or `.plans/openplan.jsonc`, use `openplan`.
-- Initialize OpenPlan with `openplan init` if the user asks.
-
-# Context Gathering
-
-- Use `llm-tldr` when broad repo understanding, semantic code search, symbol context, or change-impact analysis would help.
-- Prefer direct file reads and standard search when the target file or 1-2 symbols are already known.
+- Preserve the existing design system when one exists.
+- Otherwise, avoid generic layouts: choose an intentional visual direction, expressive typography, purposeful color and motion, a non-flat background, and ensure the result works on desktop and mobile.
+- Use the `frontend-design` skill when necessary
