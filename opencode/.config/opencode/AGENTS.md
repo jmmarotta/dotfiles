@@ -18,6 +18,18 @@ Below are non-exhaustive guidelines for each step.
 - Propose viable approaches with recommendations.
 - Use the `software-planning` skill for detailed guidance.
 
+### Plan Persistence
+
+For non-trivial plans, write the plan to disk before presenting it:
+- `.plans/{plan-title}.md` for standalone work
+- `.plans/{project}/{plan-title}.md` when grouping related plans under a project
+
+`.plans/` is relative to the repo root when inside a git repo, otherwise the current working directory. `{project}` and `{plan-title}` are short kebab-case slugs. The agent infers `{project}` from context; you can correct it. Default to flat unless a project grouping is specified or obvious from context.
+
+After writing, report the file path and a brief summary in chat, then pause for approval before proceeding to implementation.
+
+When implementation is complete, suggest moving the plan to `archive/` mirroring its original path (e.g. `.plans/archive/{plan-title}.md` or `.plans/archive/{project}/{plan-title}.md`), then wait for confirmation before moving.
+
 ## Implementation
 
 - Reread the active plan/spec and relevant context.
