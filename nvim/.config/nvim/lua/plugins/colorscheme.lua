@@ -1,16 +1,46 @@
 return {
   {
-    "sainnhe/gruvbox-material",
-    lazy = false, -- Load immediately
-    priority = 1000, -- Ensure it loads before other plugins
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
-      -- Optional: customize the appearance (choose 'hard', 'medium', or 'soft')
-      vim.g.gruvbox_material_background = "hard"
-      -- Optional: you can also adjust other settings, e.g.,
-      -- vim.g.gruvbox_material_foreground = "original"
-      -- Set gruvbox-material as the active colorscheme
-      vim.g.gruvbox_material_enable_italic = true
-      vim.cmd("colorscheme gruvbox-material")
+      local function detect_system_background()
+        if vim.fn.has("macunix") == 0 then
+          return vim.o.background
+        end
+        vim.fn.system({ "defaults", "read", "-g", "AppleInterfaceStyle" })
+        return vim.v.shell_error == 0 and "dark" or "light"
+      end
+
+      -- setup must run before loading the colorscheme so that
+      -- the background -> theme mapping (wave/lotus) is registered
+      require("kanagawa").setup({
+        commentStyle = { italic = true },
+        keywordStyle = { italic = true },
+        background = {
+          dark = "wave",
+          light = "lotus",
+        },
+      })
+
+      -- set vim.o.background from macOS appearance, then load kanagawa;
+      -- kanagawa will select wave or lotus based on the background value
+      vim.o.background = detect_system_background()
+      vim.cmd.colorscheme("kanagawa")
+
+      -- re-sync on focus so switching macOS appearance updates the theme
+      -- without restarting nvim
+      local group = vim.api.nvim_create_augroup("kanagawa-system-appearance", { clear = true })
+      vim.api.nvim_create_autocmd({ "FocusGained", "VimResume" }, {
+        group = group,
+        callback = function()
+          local bg = detect_system_background()
+          if vim.o.background ~= bg then
+            vim.o.background = bg
+            vim.cmd.colorscheme("kanagawa")
+          end
+        end,
+      })
     end,
   },
   { -- You can easily change to a different colorscheme.

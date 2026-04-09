@@ -1,5 +1,5 @@
 shell-integration = zsh
-theme = "Gruvbox Material"
+theme = "light:Kanagawa Lotus,dark:Kanagawa Wave"
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 14
 keybind = shift+enter=text:\x1b\r

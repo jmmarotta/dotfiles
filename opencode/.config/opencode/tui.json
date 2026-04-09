@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/tui.json",
-  "theme": "gruvbox-material",
+  "theme": "kanagawa",
   "scroll_acceleration": {
     "enabled": true
   },
