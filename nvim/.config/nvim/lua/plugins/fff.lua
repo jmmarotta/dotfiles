@@ -7,6 +7,9 @@ return {
   opts = {
     lazy_sync = true,
     prompt = "> ",
+    hl = {
+      normal = "NormalFloat",
+    },
   },
   keys = {
     {
