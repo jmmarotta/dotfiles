@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/tui.json",
-  "theme": "everforest-soft",
+  "theme": "everforest-medium",
   "scroll_acceleration": {
     "enabled": true
   },
