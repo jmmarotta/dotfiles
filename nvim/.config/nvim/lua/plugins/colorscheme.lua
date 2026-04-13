@@ -28,7 +28,8 @@ return {
             -- #F4F1EA light warm paper, spread 10
             -- #F5F1E8 gentle cream, spread 13
             -- #FFFCF0 Flexoki-style warm cream, spread 15
-            pearlWhite0 = "#F4F1EA",
+            -- #EFEADF warmer and darker, contrast 12.66:1
+            pearlWhite0 = "#EFEADF",
           },
           theme = {
             all = {
