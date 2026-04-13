@@ -1,6 +1,6 @@
 return {
   {
-    "rebelot/kanagawa.nvim",
+    "neanias/everforest-nvim",
     lazy = false,
     priority = 1000,
     config = function()
@@ -12,55 +12,25 @@ return {
         return vim.v.shell_error == 0 and "dark" or "light"
       end
 
-      require("kanagawa").setup({
-        commentStyle = { italic = true },
-        keywordStyle = { italic = true },
-        background = {
-          dark = "wave",
-          light = "lotus",
-        },
-        colors = {
-          theme = {
-            all = {
-              ui = { bg_gutter = "none" },
-            },
-          },
-        },
-        overrides = function(colors)
-          local theme = colors.theme
-          local makeDiagnosticColor = function(color)
-            local c = require("kanagawa.lib.color")
-            return { fg = color, bg = c(color):blend(theme.ui.bg, 0.95):to_hex() }
-          end
-
-          return {
-            -- Tint background of diagnostic messages with their foreground color.
-            DiagnosticVirtualTextHint = makeDiagnosticColor(theme.diag.hint),
-            DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
-            DiagnosticVirtualTextWarn = makeDiagnosticColor(theme.diag.warning),
-            DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
-            Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
-            PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
-            PmenuSbar = { bg = theme.ui.bg_m1 },
-            PmenuThumb = { bg = theme.ui.bg_p2 },
-            NormalFloat = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
-            FloatBorder = { fg = theme.ui.special, bg = theme.ui.bg_m1 },
-            FloatTitle = { fg = theme.ui.special, bg = theme.ui.bg_m1, bold = true },
-          }
-        end,
+      require("everforest").setup({
+        background = "soft", -- Alternatives: "medium", "hard"
+        italics = true,
+        disable_italic_comments = false,
+        sign_column_background = "none",
+        ui_contrast = "low",
       })
 
       vim.o.background = detect_system_background()
-      vim.cmd.colorscheme("kanagawa")
+      vim.cmd.colorscheme("everforest")
 
-      local group = vim.api.nvim_create_augroup("kanagawa-system-appearance", { clear = true })
+      local group = vim.api.nvim_create_augroup("everforest-system-appearance", { clear = true })
       vim.api.nvim_create_autocmd({ "FocusGained", "VimResume" }, {
         group = group,
         callback = function()
           local bg = detect_system_background()
           if vim.o.background ~= bg then
             vim.o.background = bg
-            vim.cmd.colorscheme("kanagawa")
+            vim.cmd.colorscheme("everforest")
           end
         end,
       })
@@ -71,7 +41,7 @@ return {
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    "neanias/everforest-nvim",
+    "rebelot/kanagawa.nvim",
     enabled = false,
     priority = 1000, -- Make sure to load this before all the other start plugins.
     -- init = function()
