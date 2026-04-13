@@ -50,17 +50,6 @@ return {
             DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
             DiagnosticVirtualTextWarn = makeDiagnosticColor(theme.diag.warning),
             DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
-
-            -- Keep the completion popup darker and self-contained.
-            Pmenu = { fg = theme.ui.pmenu.fg, bg = theme.ui.pmenu.bg },
-            PmenuSel = { fg = theme.ui.pmenu.fg_sel, bg = theme.ui.pmenu.bg_sel },
-            PmenuSbar = { bg = theme.ui.pmenu.bg_sbar },
-            PmenuThumb = { bg = theme.ui.pmenu.bg_thumb },
-
-            -- Match floating windows and titles to the popup surface.
-            NormalFloat = { fg = theme.ui.float.fg, bg = theme.ui.float.bg },
-            FloatBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.float.bg_border },
-            FloatTitle = { fg = theme.ui.special, bg = theme.ui.float.bg, bold = true },
           }
         end,
       })
