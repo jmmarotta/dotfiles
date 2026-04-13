@@ -8,85 +8,85 @@
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260324142629-010021cbfdcc",
-      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
+      "version": "v0.0.0-20260410211321-daf3e60f3255",
+      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/agent-instruction-writing",
       "name": "agent-instruction-writing"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260324142629-010021cbfdcc",
-      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
+      "version": "v0.0.0-20260410211321-daf3e60f3255",
+      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/code-review",
       "name": "code-review"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260324142629-010021cbfdcc",
-      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
+      "version": "v0.0.0-20260410211321-daf3e60f3255",
+      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/frontend-design",
       "name": "frontend-design"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260324142629-010021cbfdcc",
-      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
+      "version": "v0.0.0-20260410211321-daf3e60f3255",
+      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/go-practices",
       "name": "go-practices"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260324142629-010021cbfdcc",
-      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
+      "version": "v0.0.0-20260410211321-daf3e60f3255",
+      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/repo-bootstrap",
       "name": "repo-bootstrap"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260324142629-010021cbfdcc",
-      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
+      "version": "v0.0.0-20260410211321-daf3e60f3255",
+      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/skill-creator",
       "name": "skill-creator"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260324142629-010021cbfdcc",
-      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
+      "version": "v0.0.0-20260410211321-daf3e60f3255",
+      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/software-design",
       "name": "software-design"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260324142629-010021cbfdcc",
-      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
+      "version": "v0.0.0-20260410211321-daf3e60f3255",
+      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/software-implementation",
       "name": "software-implementation"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260324142629-010021cbfdcc",
-      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
+      "version": "v0.0.0-20260410211321-daf3e60f3255",
+      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/software-planning",
       "name": "software-planning"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260324142629-010021cbfdcc",
-      "rev": "010021cbfdcc3fdb8fc1d459a31a78c11286f794",
+      "version": "v0.0.0-20260410211321-daf3e60f3255",
+      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/websearch",
       "name": "websearch"
     },
     {
       "origin": "https://github.com/msmps/opentui-skill",
-      "version": "v0.0.0-20260215192008-87c512939fde",
-      "rev": "87c512939fde1b263ac69a5c19e65d6b04ce2f29",
+      "version": "v0.0.0-20260325214521-61e20f97fbde",
+      "rev": "61e20f97fbde02ccf115dc49efdeab59cbf60bee",
       "subdir": "skill/opentui",
       "name": "opentui"
     },
     {
       "origin": "https://github.com/remorses/playwriter",
-      "version": "v0.0.0-20260324180300-0b75e829b49c",
-      "rev": "0b75e829b49ce98b099372e34258fe0849355302",
+      "version": "v0.0.0-20260407205514-f673205c97d8",
+      "rev": "f673205c97d8341ede37bb8e7fbffb6139180f90",
       "subdir": "skills/playwriter",
       "name": "playwriter"
     }
