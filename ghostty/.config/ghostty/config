@@ -8,6 +8,7 @@ window-save-state = always
 window-inherit-working-directory = true
 tab-inherit-working-directory = true
 split-inherit-working-directory = true
+unfocused-split-opacity = 0.75
 split-preserve-zoom = navigation
 macos-option-as-alt = left
 copy-on-select = false
