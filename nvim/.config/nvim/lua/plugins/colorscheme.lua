@@ -1,6 +1,6 @@
 return {
   {
-    "rebelot/kanagawa.nvim",
+    "webhooked/kanso.nvim",
     lazy = false,
     priority = 1000,
     config = function()
@@ -12,16 +12,24 @@ return {
         return vim.v.shell_error == 0 and "dark" or "light"
       end
 
-      -- setup must run before loading the colorscheme so that
-      -- the background -> theme mapping (wave/lotus) is registered
-      require("kanagawa").setup({
+      require("kanso").setup({
         commentStyle = { italic = true },
         keywordStyle = { italic = true },
         background = {
-          dark = "wave",
-          light = "lotus",
+          dark = "ink",
+          light = "pearl",
         },
         colors = {
+          palette = {
+            -- Kanso Pearl background options:
+            -- #F2F1EF stock Pearl, spread 3
+            -- #F3F1ED near-neutral, spread 6
+            -- #F3F1EB subtle warm paper, spread 8
+            -- #F4F1EA light warm paper, spread 10
+            -- #F5F1E8 gentle cream, spread 13
+            -- #FFFCF0 Flexoki-style warm cream, spread 15
+            pearlWhite0 = "#F4F1EA",
+          },
           theme = {
             all = {
               ui = { bg_gutter = "none" },
@@ -31,44 +39,41 @@ return {
         overrides = function(colors)
           local theme = colors.theme
           local makeDiagnosticColor = function(color)
-            local c = require("kanagawa.lib.color")
+            local c = require("kanso.lib.color")
             return { fg = color, bg = c(color):blend(theme.ui.bg, 0.95):to_hex() }
           end
 
           return {
-            -- Tint background of diagnostic messages with their foreground color
+            -- Tint diagnostic virtual text with a faint version of its foreground color.
             DiagnosticVirtualTextHint = makeDiagnosticColor(theme.diag.hint),
             DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
             DiagnosticVirtualTextWarn = makeDiagnosticColor(theme.diag.warning),
             DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
-            -- Dark completion (popup) menu
-            Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
-            PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
-            PmenuSbar = { bg = theme.ui.bg_m1 },
-            PmenuThumb = { bg = theme.ui.bg_p2 },
-            -- Floats: one step darker than editor bg, border invisible
-            NormalFloat = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
-            FloatBorder = { fg = theme.ui.special, bg = theme.ui.bg_m1 },
-            FloatTitle = { fg = theme.ui.special, bg = theme.ui.bg_m1, bold = true },
+
+            -- Keep the completion popup darker and self-contained.
+            Pmenu = { fg = theme.ui.pmenu.fg, bg = theme.ui.pmenu.bg },
+            PmenuSel = { fg = theme.ui.pmenu.fg_sel, bg = theme.ui.pmenu.bg_sel },
+            PmenuSbar = { bg = theme.ui.pmenu.bg_sbar },
+            PmenuThumb = { bg = theme.ui.pmenu.bg_thumb },
+
+            -- Match floating windows and titles to the popup surface.
+            NormalFloat = { fg = theme.ui.float.fg, bg = theme.ui.float.bg },
+            FloatBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.float.bg_border },
+            FloatTitle = { fg = theme.ui.special, bg = theme.ui.float.bg, bold = true },
           }
         end,
       })
 
-      -- set vim.o.background from macOS appearance, then load kanagawa;
-      -- kanagawa will select wave or lotus based on the background value
       vim.o.background = detect_system_background()
-      vim.cmd.colorscheme("kanagawa")
+      vim.cmd.colorscheme("kanso")
 
-      -- re-sync on focus so switching macOS appearance updates the theme
-      -- without restarting nvim
-      local group = vim.api.nvim_create_augroup("kanagawa-system-appearance", { clear = true })
+      local group = vim.api.nvim_create_augroup("kanso-system-appearance", { clear = true })
       vim.api.nvim_create_autocmd({ "FocusGained", "VimResume" }, {
         group = group,
         callback = function()
           local bg = detect_system_background()
           if vim.o.background ~= bg then
             vim.o.background = bg
-            vim.cmd.colorscheme("kanagawa")
           end
         end,
       })
