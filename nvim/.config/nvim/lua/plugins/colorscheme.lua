@@ -1,6 +1,6 @@
 return {
   {
-    "webhooked/kanso.nvim",
+    "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
     config = function()
@@ -12,25 +12,14 @@ return {
         return vim.v.shell_error == 0 and "dark" or "light"
       end
 
-      require("kanso").setup({
+      require("kanagawa").setup({
         commentStyle = { italic = true },
         keywordStyle = { italic = true },
         background = {
-          dark = "ink",
-          light = "pearl",
+          dark = "wave",
+          light = "lotus",
         },
         colors = {
-          palette = {
-            -- Kanso Pearl background options:
-            -- #F2F1EF stock Pearl, spread 3
-            -- #F3F1ED near-neutral, spread 6
-            -- #F3F1EB subtle warm paper, spread 8
-            -- #F4F1EA light warm paper, spread 10
-            -- #F5F1E8 gentle cream, spread 13
-            -- #FFFCF0 Flexoki-style warm cream, spread 15
-            -- #EFEADF warmer and darker, contrast 12.66:1
-            pearlWhite0 = "#EFEADF",
-          },
           theme = {
             all = {
               ui = { bg_gutter = "none" },
@@ -40,30 +29,38 @@ return {
         overrides = function(colors)
           local theme = colors.theme
           local makeDiagnosticColor = function(color)
-            local c = require("kanso.lib.color")
+            local c = require("kanagawa.lib.color")
             return { fg = color, bg = c(color):blend(theme.ui.bg, 0.95):to_hex() }
           end
 
           return {
-            -- Tint diagnostic virtual text with a faint version of its foreground color.
+            -- Tint background of diagnostic messages with their foreground color.
             DiagnosticVirtualTextHint = makeDiagnosticColor(theme.diag.hint),
             DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
             DiagnosticVirtualTextWarn = makeDiagnosticColor(theme.diag.warning),
             DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
+            Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
+            PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
+            PmenuSbar = { bg = theme.ui.bg_m1 },
+            PmenuThumb = { bg = theme.ui.bg_p2 },
+            NormalFloat = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
+            FloatBorder = { fg = theme.ui.special, bg = theme.ui.bg_m1 },
+            FloatTitle = { fg = theme.ui.special, bg = theme.ui.bg_m1, bold = true },
           }
         end,
       })
 
       vim.o.background = detect_system_background()
-      vim.cmd.colorscheme("kanso")
+      vim.cmd.colorscheme("kanagawa")
 
-      local group = vim.api.nvim_create_augroup("kanso-system-appearance", { clear = true })
+      local group = vim.api.nvim_create_augroup("kanagawa-system-appearance", { clear = true })
       vim.api.nvim_create_autocmd({ "FocusGained", "VimResume" }, {
         group = group,
         callback = function()
           local bg = detect_system_background()
           if vim.o.background ~= bg then
             vim.o.background = bg
+            vim.cmd.colorscheme("kanagawa")
           end
         end,
       })
