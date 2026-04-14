@@ -62,6 +62,8 @@ keybind = chain=deactivate_key_table
 keybind = tmux/0=last_tab
 keybind = chain=deactivate_key_table
 keybind = tmux/[=activate_key_table:copy_mode
+keybind = tmux/r=reload_config
+keybind = chain=deactivate_key_table
 keybind = tmux/q=close_surface
 keybind = chain=deactivate_key_table
 keybind = tmux/ctrl+c=deactivate_key_table
