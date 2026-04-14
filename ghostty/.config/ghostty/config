@@ -2,7 +2,6 @@ shell-integration = zsh
 theme = "light:Everforest Light Medium,dark:Everforest Dark Medium"
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 14
-keybind = shift+enter=text:\x1b\r
 
 window-save-state = always
 window-inherit-working-directory = true
@@ -62,6 +61,8 @@ keybind = chain=deactivate_key_table
 keybind = tmux/0=last_tab
 keybind = chain=deactivate_key_table
 keybind = tmux/[=activate_key_table:copy_mode
+keybind = tmux/s=write_scrollback_file:open
+keybind = chain=deactivate_key_table
 keybind = tmux/r=reload_config
 keybind = chain=deactivate_key_table
 keybind = tmux/q=close_surface
