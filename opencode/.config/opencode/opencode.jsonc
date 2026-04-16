@@ -1,10 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "anthropic/claude-sonnet-4-6",
+  "model": "anthropic/claude-opus-4-7",
   "agent": {
     "build": {
       "mode": "primary",
-      "model": "anthropic/claude-sonnet-4-6",
+      "model": "anthropic/claude-opus-4-7",
       "prompt": "{file:./prompts/system.txt}",
     },
     "explore": {
@@ -31,6 +31,29 @@
     "external_directory": {
       "*": "allow",
       "{env:HOME}/.config/opencode/skills/*": "allow"
+    }
+  },
+  "provider": {
+    "anthropic": {
+      "models": {
+        "claude-opus-4-7": {
+          "name": "Claude Opus 4.7",
+          "attachment": true,
+          "reasoning": true,
+          "tool_call": true,
+          "temperature": true,
+          "cost": {
+            "input": 5,
+            "output": 25,
+            "cache_read": 0.5,
+            "cache_write": 6.25
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          }
+        }
+      }
     }
   },
   "autoupdate": true
