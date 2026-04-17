@@ -21,6 +21,8 @@ Only when the user asks. Write to disk at:
 
 `.plans/` is relative to the repo root (or cwd outside a git repo). `{project}` and `{plan-title}` are short kebab-case slugs; infer `{project}` from context. Default to flat unless a project grouping is specified or obvious.
 
+Plans should be pragmatic, direct, and concise. Explain reasoning and tradeoffs clearly. Content should be easily digestible without watering it down.
+
 After writing, report the path and a brief summary, then pause for approval before implementing.
 
 When implementation is complete, suggest moving the plan to `archive/` mirroring its original path (e.g. `.plans/archive/{plan-title}.md`). Wait for confirmation before moving.
