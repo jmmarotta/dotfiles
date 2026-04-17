@@ -4,6 +4,13 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
+      local base_opts = {
+        italics = true,
+        disable_italic_comments = false,
+        sign_column_background = "none",
+        ui_contrast = "low",
+      }
+
       local function detect_system_background()
         if vim.fn.has("macunix") == 0 then
           return vim.o.background
@@ -12,16 +19,15 @@ return {
         return vim.v.shell_error == 0 and "dark" or "light"
       end
 
-      require("everforest").setup({
-        background = "medium", -- Alternatives: "soft", "hard"
-        italics = true,
-        disable_italic_comments = false,
-        sign_column_background = "none",
-        ui_contrast = "low",
-      })
+      local function apply_colorscheme(background)
+        require("everforest").setup(vim.tbl_extend("force", base_opts, {
+          background = background == "dark" and "medium" or "soft",
+        }))
+        vim.o.background = background
+        vim.cmd.colorscheme("everforest")
+      end
 
-      vim.o.background = detect_system_background()
-      vim.cmd.colorscheme("everforest")
+      apply_colorscheme(detect_system_background())
 
       local group = vim.api.nvim_create_augroup("everforest-system-appearance", { clear = true })
       vim.api.nvim_create_autocmd({ "FocusGained", "VimResume" }, {
@@ -29,8 +35,7 @@ return {
         callback = function()
           local bg = detect_system_background()
           if vim.o.background ~= bg then
-            vim.o.background = bg
-            vim.cmd.colorscheme("everforest")
+            apply_colorscheme(bg)
           end
         end,
       })

@@ -1,5 +1,5 @@
 shell-integration = zsh
-theme = "light:Everforest Light Medium,dark:Everforest Dark Medium"
+theme = "light:Everforest Light Soft,dark:Everforest Dark Medium"
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 14
 
