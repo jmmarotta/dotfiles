@@ -1,6 +1,6 @@
 # Design Lens
 
-Use APOSD (A Philosophy of Software Design) as the default lens for software tasks: purpose and interface first, then invariants, dependency assumptions, non-obvious choices, and error behavior. Load the `software-design` skill for detailed guidance.
+Use APOSD (A Philosophy of Software Design) as the default lens for software tasks: purpose and interface first, then invariants, dependency assumptions, non-obvious choices, and error behavior. Load the `software-design` skill only when absolutely necessary for detailed guidance.
 
 # Workflow
 
