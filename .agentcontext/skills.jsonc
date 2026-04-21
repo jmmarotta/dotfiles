@@ -19,12 +19,6 @@
       "version": "v0.0.0-20260410211321-daf3e60f3255"
     },
     {
-      "name": "go-practices",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/go-practices",
-      "version": "v0.0.0-20260410211321-daf3e60f3255"
-    },
-    {
       "name": "opentui",
       "origin": "https://github.com/msmps/opentui-skill",
       "subdir": "skill/opentui",
@@ -46,24 +40,6 @@
       "name": "skill-creator",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/skill-creator",
-      "version": "v0.0.0-20260410211321-daf3e60f3255"
-    },
-    {
-      "name": "software-design",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/software-design",
-      "version": "v0.0.0-20260410211321-daf3e60f3255"
-    },
-    {
-      "name": "software-implementation",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/software-implementation",
-      "version": "v0.0.0-20260410211321-daf3e60f3255"
-    },
-    {
-      "name": "software-planning",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/software-planning",
       "version": "v0.0.0-20260410211321-daf3e60f3255"
     },
     {

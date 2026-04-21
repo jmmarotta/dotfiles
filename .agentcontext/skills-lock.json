@@ -31,13 +31,6 @@
       "origin": "https://github.com/jmmarotta/skills",
       "version": "v0.0.0-20260410211321-daf3e60f3255",
       "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
-      "subdir": "skills/go-practices",
-      "name": "go-practices"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260410211321-daf3e60f3255",
-      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/repo-bootstrap",
       "name": "repo-bootstrap"
     },
@@ -47,27 +40,6 @@
       "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/skill-creator",
       "name": "skill-creator"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260410211321-daf3e60f3255",
-      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
-      "subdir": "skills/software-design",
-      "name": "software-design"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260410211321-daf3e60f3255",
-      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
-      "subdir": "skills/software-implementation",
-      "name": "software-implementation"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260410211321-daf3e60f3255",
-      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
-      "subdir": "skills/software-planning",
-      "name": "software-planning"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
