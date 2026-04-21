@@ -73,7 +73,7 @@ return {
     {
       "<leader>op",
       function()
-        require("opencode").ask("", { submit = true })
+        require("opencode").ask("@buffer ", { submit = true })
       end,
       mode = { "n", "x" },
       desc = "[O]pencode [P]rompt",
