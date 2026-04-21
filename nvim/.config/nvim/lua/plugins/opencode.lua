@@ -71,12 +71,12 @@ return {
       desc = "[O]pencode [A]sk",
     },
     {
-      "<leader>op",
+      "<leader>ob",
       function()
         require("opencode").ask("@buffer ", { submit = true })
       end,
       mode = { "n", "x" },
-      desc = "[O]pencode [P]rompt",
+      desc = "[O]pencode [B]uffer",
     },
     {
       "<leader>os",
