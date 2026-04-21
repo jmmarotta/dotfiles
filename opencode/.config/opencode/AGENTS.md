@@ -1,39 +1,35 @@
 # Design Lens
 
-Use APOSD (A Philosophy of Software Design) as the default lens for software tasks: purpose and interface first, then invariants, dependency assumptions, non-obvious choices, and error behavior. Load the `software-design` skill only when absolutely necessary for detailed guidance.
+Use APOSD (A Philosophy of Software Design) as the default lens for software tasks: purpose and interface first, then invariants, dependency assumptions, non-obvious choices, and error behavior.
 
 # Workflow
 
-Separate planning and implementation for non-trivial work. Work is non-trivial when it spans multiple files, changes behavior, involves design tradeoffs, or needs explicit verification planning.
+Separate planning and implementation for non-trivial work.
 
 ## Planning
 
 1. Inspect the system and identify touch points.
 2. Propose viable approaches with a recommendation.
 3. Identify how the change will be verified.
-4. Load the `software-planning` skill for detailed guidance.
-
-### Persisting a Plan
-
-Only when the user asks. Write to disk at:
-- `.plans/{plan-title}.md` for standalone work
-- `.plans/{project}/{plan-title}.md` when grouping related plans
-
-`.plans/` is relative to the repo root (or cwd outside a git repo). `{project}` and `{plan-title}` are short kebab-case slugs; infer `{project}` from context. Default to flat unless a project grouping is specified or obvious.
-
-Plans should be pragmatic, direct, and concise. Explain reasoning and tradeoffs clearly. Content should be easily digestible without watering it down.
-
-After writing, report the path and a brief summary, then pause for approval before implementing.
-
-When implementation is complete, suggest moving the plan to `archive/` mirroring its original path (e.g. `.plans/archive/{plan-title}.md`). Wait for confirmation before moving.
+4. Ask questions if necessary for clarification.
 
 ## Implementation
 
 1. Reread the active plan/spec and relevant context.
 2. Implement the chosen approach. Do not implement fallback solutions unless explicitly requested or required by a documented requirement.
 3. Prefer repo-local tmp directories over shared root-level ones.
-4. Avoid broad research unless new evidence invalidates the plan.
-5. Load the `software-implementation` skill for detailed guidance.
+4. Avoid broad research and planning unless new evidence invalidates the plan or surfaces a new design issue.
+5. If the change drifts into a new design problem, return to planning before continuing.
+6. Inline helpers whose body is a single expression mirroring the underlying API. Any abstraction (helper, wrapper, class) earns its existence only when it enforces an invariant, hides non-obvious complexity, or eliminates duplication callers would otherwise get wrong.
+
+## Persisting Output
+
+When the user asks to persist output (plans, design notes, research, specs, comparisons), write to `.draft/` relative to the repo root (or cwd outside a git repo).
+
+- `.draft/{title}.md` for standalone artifacts
+- `.draft/{project}/{title}.md` when grouping related artifacts
+
+Use short kebab-case slugs. Default to flat unless a project grouping is specified or obvious. Report the path and a brief summary after writing, then pause for review before acting on it.
 
 ## Completion
 
@@ -41,4 +37,4 @@ A task is complete only when its verification passes, or you explicitly report w
 
 ## Frontend
 
-Preserve the existing design system when one exists. Otherwise, choose an intentional visual direction: expressive typography, purposeful color and motion, a non-flat background, and responsive across desktop and mobile. Avoid generic layouts. Load the `frontend-design` skill when necessary.
+Preserve the existing design system when one exists. Otherwise, choose an intentional visual direction and load the `frontend-design` skill when necessary.
