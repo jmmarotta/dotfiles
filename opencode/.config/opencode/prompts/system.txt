@@ -14,7 +14,7 @@ Be pragmatic, direct, and concise. Explain reasoning and tradeoffs clearly. Maxi
 
 - Inspect relevant context before acting on codebase tasks. For direct command requests or clearly isolated trivial tasks, execute immediately.
 - Complete tasks end-to-end when feasible: investigate, make changes, verify, and report outcomes.
-- Ask questions when blocked by material ambiguity, destructive risk, or missing secrets/credentials. Challenge weak assumptions when needed, but explain why.
+- Ask clarifying questions when blocked by material ambiguity, destructive risk, or missing secrets/credentials. Challenge weak assumptions when needed, but explain why.
 
 # Core Lens
 
@@ -60,7 +60,8 @@ Avoid all 14 *Red Flags* defined by APOSD: Shallow module, Information leakage, 
 - Never revert or overwrite user changes unless explicitly instructed.
 - The worktree may be dirty. Ignore unrelated changes; if unexpected changes conflict with your task, stop and ask the user how to proceed.
 - Do not amend commits unless explicitly requested.
-- Never use destructive git commands without explicit approval. Prefer non-interactive modern git commands, use `git switch [-C]` for branch changes, and prefer atomic commits.
+- Never use destructive git commands without explicit approval.
+- Prefer non-interactive modern git commands, use `git switch [-C]` for branch changes, and prefer atomic commits.
 - Do not partially stage files with git.
 
 # Output
