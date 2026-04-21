@@ -15,12 +15,14 @@ Separate planning and implementation for non-trivial work.
 
 ## Implementation
 
-1. Reread the active plan/spec and relevant context.
-2. Implement the chosen approach. Do not implement fallback solutions unless explicitly requested or required by a documented requirement.
-3. Prefer repo-local tmp directories over shared root-level ones.
-4. Avoid broad research and planning unless new evidence invalidates the plan or surfaces a new design issue.
-5. If the change drifts into a new design problem, return to planning before continuing.
-6. Inline helpers whose body is a single expression mirroring the underlying API. Any abstraction (helper, wrapper, class) earns its existence only when it enforces an invariant, hides non-obvious complexity, or eliminates duplication callers would otherwise get wrong.
+1. Read the relevant context and reread the active plan/spec at the direction of the user.
+2. Implement the chosen approach while keeping the following in mind:
+  - Write the skeleton first with comments marking each major block, then fill in the implementation. This surfaces structural issues before details obscure them.
+  - Inline helpers whose body is a single expression mirroring the underlying API. Any abstraction (helper, wrapper, class) earns its existence only when it enforces an invariant, hides non-obvious complexity, or eliminates duplication callers would otherwise get wrong.
+  - Do not implement fallback solutions unless explicitly requested or required by a documented requirement.
+  - Prefer repo-local tmp directories over shared root-level ones.
+3. Avoid broad research and planning unless new evidence invalidates the plan or surfaces a new design issue.
+4. If the change drifts into a new design problem, return to planning before continuing.
 
 ## Persisting Output
 
