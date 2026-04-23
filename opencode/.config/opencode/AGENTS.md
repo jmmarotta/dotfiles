@@ -19,7 +19,7 @@ Separate planning and implementation for non-trivial work.
 2. Implement the chosen approach while keeping the following in mind:
   - Write the skeleton first with comments marking each major block, then fill in the implementation. This surfaces structural issues before details obscure them.
   - Inline helpers whose body is a single expression mirroring the underlying API. Any abstraction (helper, wrapper, class) earns its existence only when it enforces an invariant, hides non-obvious complexity, or eliminates duplication callers would otherwise get wrong.
-  - Do not implement fallback solutions unless explicitly requested or required by a documented requirement.
+  - Do not implement fallback or defensive solutions unless explicitly requested or stated by documented requirements.
   - Prefer repo-local tmp directories over shared root-level ones.
 3. Avoid broad research and planning unless new evidence invalidates the plan or surfaces a new design issue.
 4. If the change drifts into a new design problem, return to planning before continuing.
