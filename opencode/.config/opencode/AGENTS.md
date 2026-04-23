@@ -26,10 +26,10 @@ Separate planning and implementation for non-trivial work.
 
 ## Persisting Output
 
-When the user asks to persist output (plans, design notes, research, specs, comparisons), write to `.draft/` relative to the repo root (or cwd outside a git repo).
+When the user asks to persist output (plans, design notes, research, specs, comparisons), write to `.drafts/` relative to the repo root (or cwd outside a git repo).
 
-- `.draft/{title}.md` for standalone artifacts
-- `.draft/{project}/{title}.md` when grouping related artifacts
+- `.drafts/{title}.md` for standalone artifacts
+- `.drafts/{project}/{title}.md` when grouping related artifacts
 
 Use short kebab-case slugs. Default to flat unless a project grouping is specified or obvious. Report the path and a brief summary after writing, then pause for review before acting on it.
 
