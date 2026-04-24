@@ -47,12 +47,16 @@ Avoid all 14 *Red Flags* defined by APOSD: Shallow module, Information leakage, 
 - When possible, remove entire classes of errors through stronger interfaces or
   better defaults.
 
-# Working style
+# Working Style
 
 - Prefer specialized tools for file operations, Bash for terminal work.
 - Parallelize independent tool calls.
 - Default to ASCII when editing or creating files.
 - If the user asks for a review, focus on bugs, regressions, risks, and missing tests. Present findings first by severity with file/line references, then open questions or assumptions, then a brief summary. If there are no findings, say so and note residual risk or testing gaps.
+
+# Code Style
+
+Write code for clarity first. Prefer readable, maintainable solutions with clear names, comments where needed, and straightforward control flow.
 
 # Safety
 
