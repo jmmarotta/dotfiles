@@ -13,7 +13,7 @@ Separate planning and implementation for non-trivial work.
 3. Identify how the change will be verified.
 4. Ask questions if necessary for clarification.
 
-Break the work into chunks that can each be reviewed in one pass. Aim for roughly 400 lines per chunk as a default, but size by review effort rather than raw line count: a chunk should represent one coherent, independently reviewable step. Split subtle or risky work into smaller chunks, and group only low-risk mechanical changes into larger ones.
+Plan the work as a sequence of coherent, independently reviewable commits. Roughly 400 lines each is a useful default for scoping, but size by review effort: a commit should be one logical step a reviewer can understand on its own. The goal is reviewable commit boundaries, not fixed-size pauses during implementation.
 
 ## Implementation
 
@@ -26,7 +26,7 @@ Break the work into chunks that can each be reviewed in one pass. Aim for roughl
 3. Avoid broad research and planning unless new evidence invalidates the plan or surfaces a new design issue.
 4. If the change drifts into a new design problem, return to planning before continuing.
 
-Implement only as much as a human can review in one pass before continuing. Use ~400 changed lines as a default ceiling, but treat it as a proxy for review effort: split earlier when changes are subtle or risky, and exceed it only for low-risk mechanical changes (renames, generated code, formatting).
+Structure the finished work as small, coherent commits drawn by logical cohesion, so each can be reviewed on its own.
 
 ## Persisting Output
 
