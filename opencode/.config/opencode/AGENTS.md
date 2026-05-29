@@ -13,6 +13,8 @@ Separate planning and implementation for non-trivial work.
 3. Identify how the change will be verified.
 4. Ask questions if necessary for clarification.
 
+Break the work into chunks that can each be reviewed in one pass. Aim for roughly 400 lines per chunk as a default, but size by review effort rather than raw line count: a chunk should represent one coherent, independently reviewable step. Split subtle or risky work into smaller chunks, and group only low-risk mechanical changes into larger ones.
+
 ## Implementation
 
 1. Read the relevant context and reread the active plan/spec at the direction of the user.
@@ -23,6 +25,8 @@ Separate planning and implementation for non-trivial work.
   - Prefer repo-local tmp directories over shared root-level ones.
 3. Avoid broad research and planning unless new evidence invalidates the plan or surfaces a new design issue.
 4. If the change drifts into a new design problem, return to planning before continuing.
+
+Implement only as much as a human can review in one pass before continuing. Use ~400 changed lines as a default ceiling, but treat it as a proxy for review effort: split earlier when changes are subtle or risky, and exceed it only for low-risk mechanical changes (renames, generated code, formatting).
 
 ## Persisting Output
 
