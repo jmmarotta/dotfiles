@@ -8,8 +8,6 @@ if [ -f "$HOME/.cargo/env" ]; then
   . "$HOME/.cargo/env"
 fi
 
-export PNPM_HOME="$HOME/Library/pnpm"
-
 typeset -U path PATH
 path=(
   "$HOME/bin"
@@ -18,7 +16,7 @@ path=(
   "/usr/local/bin"
   "$HOME/.cargo/bin"
   "$HOME/.bun/bin"
-  "$PNPM_HOME"
+  "$HOME/Library/pnpm/bin"
   "/opt/cloud66/bin"
   "/opt/homebrew/opt/gnu-sed/libexec/gnubin"
   "/opt/homebrew/opt/ed/libexec/gnubin"
