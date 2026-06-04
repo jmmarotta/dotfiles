@@ -15,7 +15,7 @@ Separate planning and implementation for non-trivial work.
 
 Plan implementation as a sequence of coherent, independently reviewable commits. Roughly 400 lines each is a useful default for scoping, but size by review effort: a commit should be one logical step a reviewer can understand on its own. The goal is reviewable commit boundaries, not fixed-size pauses during implementation.
 
-High-level plans and roadmaps should be organized by capability or milestone, not commit boundaries; commit granularity is an implementation-planning concern.
+High-level plans and roadmaps should stay abstract and non-prescriptive about specific implementation. Organize them by capability or milestone, not commit boundaries; commit granularity is an implementation-planning concern.
 
 ## Implementation
 
