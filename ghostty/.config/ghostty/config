@@ -76,8 +76,8 @@ keybind = tmux/catch_all=ignore
 
 keybind = copy_mode/j=scroll_page_lines:1
 keybind = copy_mode/k=scroll_page_lines:-1
-keybind = copy_mode/ctrl+d=scroll_page_down
-keybind = copy_mode/ctrl+u=scroll_page_up
+keybind = copy_mode/ctrl+d=scroll_page_fractional:0.5
+keybind = copy_mode/ctrl+u=scroll_page_fractional:-0.5
 keybind = copy_mode/ctrl+f=scroll_page_down
 keybind = copy_mode/ctrl+b=scroll_page_up
 keybind = copy_mode/shift+j=scroll_page_down
