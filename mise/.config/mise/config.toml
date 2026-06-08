@@ -7,3 +7,20 @@ node = "26"
 bun = "1"
 go = "1"
 zig = "0.15.2"
+
+# Version-sensitive project tools live in mise so terminal workflows and
+# terminal Neovim resolve the same toolchain. Project-local mise configs can
+# override these global defaults when a repo needs a specific version.
+rust = "stable"
+terraform = "latest"
+tflint = "latest"
+helm = "latest"
+golangci-lint = "latest"
+ruff = "latest"
+stylua = "latest"
+lua-language-server = "latest"
+actionlint = "latest"
+terraform-ls = "latest"
+zls = "latest"
+rust-analyzer = "latest"
+"go:golang.org/x/tools/gopls" = "latest"

@@ -48,8 +48,9 @@ return {
       -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
       -- and elegantly composed help section, `:help lsp-vs-treesitter`
 
-      -- Setup Mason first
-      require("mason").setup()
+      -- Setup Mason first. Mason is a fallback installer only; terminal Neovim
+      -- should prefer the same PATH tools that the shell resolves via mise.
+      require("mason").setup({ PATH = "skip" })
 
       --  This function gets run when an LSP attaches to a particular buffer.
       --    That is to say, every time a new file is opened that is associated with
@@ -199,8 +200,14 @@ return {
       --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
       local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-      -- Helper function to get mason binary path
-      local function get_mason_bin(name)
+      -- Resolve editor tools from the shell first so Neovim uses the same
+      -- mise-managed versions as terminal workflows. Mason remains an explicit
+      -- fallback for tools that are not available on PATH.
+      local function resolve_tool(name)
+        if vim.fn.executable(name) == 1 then
+          return name
+        end
+
         return vim.fn.stdpath("data") .. "/mason/bin/" .. name
       end
 
@@ -303,7 +310,7 @@ return {
       -- Configure all LSP servers
       -- Servers will automatically start when a matching filetype is detected
       for name, config in pairs(servers) do
-        local cmd = { get_mason_bin(config.bin_name or config.mason_name or name) }
+        local cmd = { resolve_tool(config.bin_name or config.mason_name or name) }
         if config.cmd_args then
           vim.list_extend(cmd, config.cmd_args)
         end
