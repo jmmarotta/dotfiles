@@ -10,13 +10,6 @@
       "origin": "https://github.com/jmmarotta/skills",
       "version": "v0.0.0-20260410211321-daf3e60f3255",
       "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
-      "subdir": "skills/agent-instruction-writing",
-      "name": "agent-instruction-writing"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260410211321-daf3e60f3255",
-      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/code-review",
       "name": "code-review"
     },
@@ -47,13 +40,6 @@
       "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
       "subdir": "skills/websearch",
       "name": "websearch"
-    },
-    {
-      "origin": "https://github.com/msmps/opentui-skill",
-      "version": "v0.0.0-20260325214521-61e20f97fbde",
-      "rev": "61e20f97fbde02ccf115dc49efdeab59cbf60bee",
-      "subdir": "skill/opentui",
-      "name": "opentui"
     },
     {
       "origin": "https://github.com/remorses/playwriter",
