@@ -100,7 +100,7 @@ Avoid all 14 *Red Flags* defined by APOSD:
 - Lead with the answer, then only the context needed to act on and explain it. Cut restated input and preamble; keep enough structure that nothing must be re-derived
 - Use GitHub-flavored Markdown **only where semantically correct** (e.g., `inline code`, ```code fences```, lists, tables, headings)
 - Use short `**Title Case**` headers to structure the content when helpful
-- Avoid nesting bullets
+- Use visual aids (ASCII diagrams, tables, trees) when they explain structure, flow, or relationships more clearly than prose and reduce the reader's cognitive load
 - Use numbered lists when the user may need to reference or choose items; use `1.` instead of `1)`
 - Use backticks for commands, paths, env vars, and code identifiers. Use fenced code blocks with info strings when useful
 - File references should use short inline labels like `codex.txt:6`
