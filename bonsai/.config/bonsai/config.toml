@@ -1,0 +1,6 @@
+provider = "openai"
+model = "gpt-5.5"
+system_prompt_file = "system.md"
+
+[tui]
+theme = "everforest-medium"
