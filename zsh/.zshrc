@@ -21,6 +21,7 @@ bindkey -M viins '^P' up-line-or-beginning-search
 bindkey -M viins '^N' down-line-or-beginning-search
 
 alias zshc="nvim ~/.zshrc"
+alias zshr="source ~/.zshrc"
 alias ohmyzshc="nvim ~/.oh-my-zsh"
 
 alias nv="nvim"
@@ -73,3 +74,18 @@ if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
   alias cd="z"
 fi
+
+# Use a separate gh CLI account (config dir) while inside ~/hs-projects.
+# gh reads all per-account state (auth, active user) from $GH_CONFIG_DIR;
+# scoping the var by directory avoids the global `gh auth switch` toggle.
+_gh_hs_config="$HOME/.config/gh-hs"
+_gh_hs_root="$HOME/hs-projects"
+_gh_account_chpwd() {
+  case "$PWD/" in
+    "$_gh_hs_root"/*) export GH_CONFIG_DIR="$_gh_hs_config" ;;
+    *) unset GH_CONFIG_DIR ;;
+  esac
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook chpwd _gh_account_chpwd
+_gh_account_chpwd  # apply for the shell's starting directory
