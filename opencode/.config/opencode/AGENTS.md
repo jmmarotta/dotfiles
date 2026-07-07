@@ -26,7 +26,7 @@ High-level plans and roadmaps should stay abstract and non-prescriptive about sp
   - Do not implement fallback or defensive solutions unless explicitly requested or stated by documented requirements.
   - Prefer repo-local tmp directories over shared root-level ones.
 3. Avoid broad research and planning unless new evidence invalidates the plan or surfaces a new design issue.
-4. If the change drifts into a new design problem, return to planning before continuing.
+4. If the change drifts into a new design problem, return to planning before continuing, and update the persisted plan to match.
 
 Structure the finished work as small, coherent commits drawn by logical cohesion, so each can be reviewed on its own.
 
@@ -40,6 +40,8 @@ Prefer grouping by project: a directory named for the project, with individual f
 - `.drafts/{title}.md` is acceptable for a small or quick standalone artifact with no project to group under
 
 Use short kebab-case slugs for both project and file. Report the path and a brief summary after writing, then pause for review before acting on it.
+
+Persisted docs you are actively working from are living documents. When a decision, plan change, or completed action makes such a doc stale, update it in the same session: revise the affected sections in place rather than appending contradictions. If the user overrides something in a persisted plan, reflect that in the doc. Briefly mention each update (path and what changed).
 
 ## Completion
 
