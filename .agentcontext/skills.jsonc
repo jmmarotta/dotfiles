@@ -10,7 +10,7 @@
       "name": "frontend-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/frontend-design",
-      "version": "v0.0.0-20260410211321-daf3e60f3255"
+      "version": "v0.0.0-20260707133107-f1dafbc83c07"
     },
     {
       "name": "playwriter",
@@ -22,19 +22,19 @@
       "name": "repo-bootstrap",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/repo-bootstrap",
-      "version": "v0.0.0-20260410211321-daf3e60f3255"
+      "version": "v0.0.0-20260707133107-f1dafbc83c07"
     },
     {
       "name": "skill-creator",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/skill-creator",
-      "version": "v0.0.0-20260410211321-daf3e60f3255"
+      "version": "v0.0.0-20260707133107-f1dafbc83c07"
     },
     {
-      "name": "websearch",
+      "name": "web-access",
       "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/websearch",
-      "version": "v0.0.0-20260410211321-daf3e60f3255"
+      "subdir": "skills/web-access",
+      "version": "v0.0.0-20260707133107-f1dafbc83c07"
     }
   ]
 }

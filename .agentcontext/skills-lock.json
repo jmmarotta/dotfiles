@@ -16,30 +16,35 @@
     {
       "origin": "https://github.com/jmmarotta/skills",
       "version": "v0.0.0-20260410211321-daf3e60f3255",
-      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
+      "rev": "daf3e60f3255113d19a115aa967f97b291e07560"
+    },
+    {
+      "origin": "https://github.com/jmmarotta/skills",
+      "version": "v0.0.0-20260707133107-f1dafbc83c07",
+      "rev": "f1dafbc83c0732cf5b0289219404c9797ddbc3c0",
       "subdir": "skills/frontend-design",
       "name": "frontend-design"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260410211321-daf3e60f3255",
-      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
+      "version": "v0.0.0-20260707133107-f1dafbc83c07",
+      "rev": "f1dafbc83c0732cf5b0289219404c9797ddbc3c0",
       "subdir": "skills/repo-bootstrap",
       "name": "repo-bootstrap"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260410211321-daf3e60f3255",
-      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
+      "version": "v0.0.0-20260707133107-f1dafbc83c07",
+      "rev": "f1dafbc83c0732cf5b0289219404c9797ddbc3c0",
       "subdir": "skills/skill-creator",
       "name": "skill-creator"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260410211321-daf3e60f3255",
-      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
-      "subdir": "skills/websearch",
-      "name": "websearch"
+      "version": "v0.0.0-20260707133107-f1dafbc83c07",
+      "rev": "f1dafbc83c0732cf5b0289219404c9797ddbc3c0",
+      "subdir": "skills/web-access",
+      "name": "web-access"
     },
     {
       "origin": "https://github.com/remorses/playwriter",
