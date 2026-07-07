@@ -3,8 +3,8 @@
 	email = ### YOUR EMAIL ###
 [core]
 	editor = nvim
-	pager = delta
-	excludesfile = ~/.gitignore
+	pager = $HOME/dotfiles/git/.config/git/delta-adaptive
+	excludesfile = ~/.config/git/ignore
 [color]
 	ui = auto
 [commit]
@@ -50,7 +50,7 @@
 [delta]
 	navigate = true    # use n and N to move between diff sections
 	line-numbers = true
-	side-by-side = true
+	# side-by-side is toggled by the delta-adaptive pager based on terminal width
 [pull]
 	rebase = true
 [core]

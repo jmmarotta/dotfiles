@@ -1,0 +1,15 @@
+#!/bin/sh
+# Git pager: render diffs with delta, using side-by-side (split) layout only on
+# wide terminals and the default stacked (unified) layout otherwise.
+#
+# Referenced from gitconfig as:
+#   [core] pager = $HOME/dotfiles/git/.config/git/delta-adaptive
+#
+# tput reads the controlling terminal, not stdin, so the width is correct even
+# though git pipes the diff into this script's stdin. If width is unknown
+# (e.g. output is not a tty), fall back to stacked layout.
+width=$(tput cols 2>/dev/null || echo 0)
+if [ "$width" -ge 160 ]; then
+	exec delta --side-by-side "$@"
+fi
+exec delta "$@"
