@@ -300,9 +300,9 @@ require("lazy").setup({
   --
   require("plugins.gitsigns"),
 
-  require("plugins.diffview"),
+  require("plugins.codediff"),
 
-  require("plugins.neogit"),
+  require("plugins.fugitive"),
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
