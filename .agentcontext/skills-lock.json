@@ -2,16 +2,16 @@
   "schema": 1,
   "entries": [
     {
+      "origin": "https://github.com/Effect-TS/skills",
+      "version": "v0.0.0-20260515084812-b5026c68318f",
+      "rev": "b5026c68318f395bbfd258182ea6b524ff2be549",
+      "subdir": "skills/effect-ts",
+      "name": "effect-ts"
+    },
+    {
       "origin": "https://github.com/expo/skills",
       "version": "v0.0.0-20260309135357-991716e214d2",
       "rev": "991716e214d206384249322e9ef99a2fe059bb9b"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260410211321-daf3e60f3255",
-      "rev": "daf3e60f3255113d19a115aa967f97b291e07560",
-      "subdir": "skills/code-review",
-      "name": "code-review"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",

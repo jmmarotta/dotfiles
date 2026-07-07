@@ -1,10 +1,10 @@
 {
   "skills": [
     {
-      "name": "code-review",
-      "origin": "https://github.com/jmmarotta/skills",
-      "subdir": "skills/code-review",
-      "version": "v0.0.0-20260410211321-daf3e60f3255"
+      "name": "effect-ts",
+      "origin": "https://github.com/Effect-TS/skills",
+      "subdir": "skills/effect-ts",
+      "version": "v0.0.0-20260515084812-b5026c68318f"
     },
     {
       "name": "frontend-design",
