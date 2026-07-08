@@ -1,6 +1,14 @@
-provider = "openai"
+provider = "codex"
 model = "gpt-5.5"
+service_tier = "standard"
 system_prompt_file = "system.md"
+favorite_models = [
+    "anthropic/claude-fable-5",
+    "openai-codex/gpt-5.5",
+    "anthropic/claude-opus-4-8",
+]
 
 [tui]
 theme = "everforest-medium"
+
+[tui.keytables]

@@ -32,12 +32,12 @@ Structure the finished work as small, coherent commits drawn by logical cohesion
 
 ## Persisting Output
 
-When the user asks to persist output (plans, design notes, research, specs, comparisons), write to `.drafts/` relative to the repo root (or cwd outside a git repo).
+When the user asks to persist output (plans, design notes, research, specs, comparisons), write to `.artifacts/` relative to the repo root (or cwd outside a git repo).
 
 Prefer grouping by project: a directory named for the project, with individual files for each artifact underneath. This keeps related work organized in one place.
 
-- `.drafts/{project}/{title}.md` is the preferred layout; group related artifacts under one project directory
-- `.drafts/{title}.md` is acceptable for a small or quick standalone artifact with no project to group under
+- `.artifacts/{project}/{title}.md` is the preferred layout; group related artifacts under one project directory
+- `.artifacts/{title}.md` is acceptable for a small or quick standalone artifact with no project to group under
 
 Use short kebab-case slugs for both project and file. Report the path and a brief summary after writing, then pause for review before acting on it.
 
