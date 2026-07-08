@@ -1,6 +1,12 @@
 {
   "skills": [
     {
+      "name": "bonsai-subagent",
+      "origin": "https://github.com/jmmarotta/skills",
+      "subdir": "skills/bonsai-subagent",
+      "version": "v0.0.0-20260708210421-a7e8eca335ca"
+    },
+    {
       "name": "effect-ts",
       "origin": "https://github.com/Effect-TS/skills",
       "subdir": "skills/effect-ts",
@@ -10,31 +16,31 @@
       "name": "frontend-design",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/frontend-design",
-      "version": "v0.0.0-20260707133107-f1dafbc83c07"
+      "version": "v0.0.0-20260708210421-a7e8eca335ca"
     },
     {
       "name": "playwriter",
       "origin": "https://github.com/remorses/playwriter",
       "subdir": "skills/playwriter",
-      "version": "v0.0.0-20260407205514-f673205c97d8"
+      "version": "v0.0.0-20260703082315-e90b20fd6783"
     },
     {
       "name": "repo-bootstrap",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/repo-bootstrap",
-      "version": "v0.0.0-20260707133107-f1dafbc83c07"
+      "version": "v0.0.0-20260708210421-a7e8eca335ca"
     },
     {
       "name": "skill-creator",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/skill-creator",
-      "version": "v0.0.0-20260707133107-f1dafbc83c07"
+      "version": "v0.0.0-20260708210421-a7e8eca335ca"
     },
     {
       "name": "web-access",
       "origin": "https://github.com/jmmarotta/skills",
       "subdir": "skills/web-access",
-      "version": "v0.0.0-20260707133107-f1dafbc83c07"
+      "version": "v0.0.0-20260708210421-a7e8eca335ca"
     }
   ]
 }

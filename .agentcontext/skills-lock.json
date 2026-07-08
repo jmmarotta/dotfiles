@@ -15,41 +15,43 @@
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260410211321-daf3e60f3255",
-      "rev": "daf3e60f3255113d19a115aa967f97b291e07560"
+      "version": "v0.0.0-20260708210421-a7e8eca335ca",
+      "rev": "a7e8eca335ca50dd9d1d8271f0a2875efcf03870",
+      "subdir": "skills/bonsai-subagent",
+      "name": "bonsai-subagent"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260707133107-f1dafbc83c07",
-      "rev": "f1dafbc83c0732cf5b0289219404c9797ddbc3c0",
+      "version": "v0.0.0-20260708210421-a7e8eca335ca",
+      "rev": "a7e8eca335ca50dd9d1d8271f0a2875efcf03870",
       "subdir": "skills/frontend-design",
       "name": "frontend-design"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260707133107-f1dafbc83c07",
-      "rev": "f1dafbc83c0732cf5b0289219404c9797ddbc3c0",
+      "version": "v0.0.0-20260708210421-a7e8eca335ca",
+      "rev": "a7e8eca335ca50dd9d1d8271f0a2875efcf03870",
       "subdir": "skills/repo-bootstrap",
       "name": "repo-bootstrap"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260707133107-f1dafbc83c07",
-      "rev": "f1dafbc83c0732cf5b0289219404c9797ddbc3c0",
+      "version": "v0.0.0-20260708210421-a7e8eca335ca",
+      "rev": "a7e8eca335ca50dd9d1d8271f0a2875efcf03870",
       "subdir": "skills/skill-creator",
       "name": "skill-creator"
     },
     {
       "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260707133107-f1dafbc83c07",
-      "rev": "f1dafbc83c0732cf5b0289219404c9797ddbc3c0",
+      "version": "v0.0.0-20260708210421-a7e8eca335ca",
+      "rev": "a7e8eca335ca50dd9d1d8271f0a2875efcf03870",
       "subdir": "skills/web-access",
       "name": "web-access"
     },
     {
       "origin": "https://github.com/remorses/playwriter",
-      "version": "v0.0.0-20260407205514-f673205c97d8",
-      "rev": "f673205c97d8341ede37bb8e7fbffb6139180f90",
+      "version": "v0.0.0-20260703082315-e90b20fd6783",
+      "rev": "e90b20fd6783ae4f4051bb6986dbf9384e1f5a37",
       "subdir": "skills/playwriter",
       "name": "playwriter"
     }
