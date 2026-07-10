@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jmmarotta/bonsai/main/schemas/config-v1.schema.json",
+  "model": "codex/gpt-5.6-sol",
+  "smallModel": "codex/gpt-5.6-luna",
+  "thinkingLevel": "medium",
+  "serviceTier": "standard",
+  "systemPromptFile": "system.md",
+  "tui": {
+    "theme": "everforest-mixed"
+  }
+}
