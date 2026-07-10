@@ -10,7 +10,7 @@ split-inherit-working-directory = true
 unfocused-split-opacity = 0.9
 split-preserve-zoom = navigation
 macos-option-as-alt = left
-copy-on-select = false
+copy-on-select = clipboard
 confirm-close-surface = true
 scrollback-limit = 50000000
 
