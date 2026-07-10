@@ -1,5 +1,5 @@
-provider = "codex"
-model = "gpt-5.5"
+model = "codex/gpt-5.5"
+small_model = "codex/gpt-5.4-mini"
 service_tier = "standard"
 system_prompt_file = "system.md"
 favorite_models = [
@@ -9,6 +9,6 @@ favorite_models = [
 ]
 
 [tui]
-theme = "everforest-medium"
+theme = "everforest-mixed"
 
 [tui.keytables]
