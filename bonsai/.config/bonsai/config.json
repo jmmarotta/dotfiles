@@ -1,9 +1,13 @@
 {
   "$schema": "https://raw.githubusercontent.com/jmmarotta/bonsai/main/schemas/config-v1.schema.json",
-  "model": "codex/gpt-5.6-sol",
-  "smallModel": "codex/gpt-5.6-luna",
-  "effort": "medium",
-  "serviceTier": "standard",
+  "main": {
+    "model": "codex/gpt-5.6-sol",
+    "effort": "medium",
+    "serviceTier": "standard"
+  },
+  "smallModel": {
+    "model": "codex/gpt-5.6-luna"
+  },
   "systemPromptFile": "system.md",
   "tui": {
     "theme": "everforest-mixed"
