@@ -28,6 +28,10 @@ keybind = tmux/shift+digit_5=new_split:right
 keybind = chain=deactivate_key_table
 keybind = tmux/shift+quote=new_split:down
 keybind = chain=deactivate_key_table
+keybind = tmux/shift+t=new_split:right
+keybind = chain=goto_split:left
+keybind = chain=new_split:down
+keybind = chain=deactivate_key_table
 keybind = tmux/h=goto_split:left
 keybind = chain=deactivate_key_table
 keybind = tmux/j=goto_split:down
@@ -35,6 +39,14 @@ keybind = chain=deactivate_key_table
 keybind = tmux/k=goto_split:up
 keybind = chain=deactivate_key_table
 keybind = tmux/l=goto_split:right
+keybind = chain=deactivate_key_table
+keybind = tmux/shift+h=resize_split:left,1000
+keybind = chain=deactivate_key_table
+keybind = tmux/shift+j=resize_split:down,1000
+keybind = chain=deactivate_key_table
+keybind = tmux/shift+k=resize_split:up,1000
+keybind = chain=deactivate_key_table
+keybind = tmux/shift+l=resize_split:right,1000
 keybind = chain=deactivate_key_table
 keybind = tmux/z=toggle_split_zoom
 keybind = chain=deactivate_key_table
@@ -65,8 +77,8 @@ keybind = tmux/[=activate_key_table:copy_mode
 # type `nvim`, then press the keybind to insert the scrollback filepath and open it.
 keybind = tmux/s=write_scrollback_file:open
 keybind = chain=deactivate_key_table
-keybind = tmux/r=reload_config
-keybind = chain=deactivate_key_table
+keybind = tmux/r=deactivate_key_table
+keybind = chain=reload_config
 keybind = tmux/q=close_surface
 keybind = chain=deactivate_key_table
 keybind = tmux/ctrl+c=deactivate_key_table
