@@ -31,6 +31,8 @@ alias nvc="nvim ~/.config/nvim/init.lua"
 
 alias oc="opencode --port"
 alias occ="opencode --port --continue"
+alias bs="bonsai"
+alias bsc="bonsai --continue"
 alias plan="openplan"
 alias jj="git"
 alias tf="terraform"

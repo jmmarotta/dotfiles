@@ -1,0 +1,407 @@
+#compdef bonsai
+
+autoload -U is-at-least
+
+_bonsai() {
+    typeset -A opt_args
+    typeset -a _arguments_options
+    local ret=1
+
+    if is-at-least 5.2; then
+        _arguments_options=(-s -S -C)
+    else
+        _arguments_options=(-s -C)
+    fi
+
+    local context curcontext="$curcontext" state line
+    _arguments "${_arguments_options[@]}" : \
+'--model=[]:MODEL:_default' \
+'--root=[]:ROOT:_files -/' \
+'--session=[]:SESSION:_default' \
+'--mode=[]:MODE:(text json)' \
+'--log-level=[]:LOG_LEVEL:_default' \
+'(--session --no-session)--continue[]' \
+'-p[]' \
+'--print[]' \
+'(--session --continue)--no-session[]' \
+'--debug[]' \
+'-h[Print help]' \
+'--help[Print help]' \
+'-V[Print version]' \
+'--version[Print version]' \
+'::prompt:_default' \
+":: :_bonsai_commands" \
+"*::: :->bonsai" \
+&& ret=0
+    case $state in
+    (bonsai)
+        words=($line[2] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:bonsai-command-$line[2]:"
+        case $line[2] in
+            (auth)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_bonsai__subcmd__auth_commands" \
+"*::: :->auth" \
+&& ret=0
+
+    case $state in
+    (auth)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:bonsai-auth-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(login)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':provider -- Provider to sign in to:(codex)' \
+&& ret=0
+;;
+(logout)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':provider -- Provider to sign out from:(codex)' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_bonsai__subcmd__auth__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:bonsai-auth-help-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(login)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(logout)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
+(sessions)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+":: :_bonsai__subcmd__sessions_commands" \
+"*::: :->sessions" \
+&& ret=0
+
+    case $state in
+    (sessions)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:bonsai-sessions-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+'--root=[Workspace root. Defaults to the current directory]:ROOT:_files -/' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_bonsai__subcmd__sessions__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:bonsai-sessions-help-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+;;
+(completions)
+_arguments "${_arguments_options[@]}" : \
+'-h[Print help]' \
+'--help[Print help]' \
+':shell:(bash elvish fish powershell zsh)' \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+":: :_bonsai__subcmd__help_commands" \
+"*::: :->help" \
+&& ret=0
+
+    case $state in
+    (help)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:bonsai-help-command-$line[1]:"
+        case $line[1] in
+            (auth)
+_arguments "${_arguments_options[@]}" : \
+":: :_bonsai__subcmd__help__subcmd__auth_commands" \
+"*::: :->auth" \
+&& ret=0
+
+    case $state in
+    (auth)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:bonsai-help-auth-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(login)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(logout)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(sessions)
+_arguments "${_arguments_options[@]}" : \
+":: :_bonsai__subcmd__help__subcmd__sessions_commands" \
+"*::: :->sessions" \
+&& ret=0
+
+    case $state in
+    (sessions)
+        words=($line[1] "${words[@]}")
+        (( CURRENT += 1 ))
+        curcontext="${curcontext%:*:*}:bonsai-help-sessions-command-$line[1]:"
+        case $line[1] in
+            (list)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+(completions)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+(help)
+_arguments "${_arguments_options[@]}" : \
+&& ret=0
+;;
+        esac
+    ;;
+esac
+;;
+        esac
+    ;;
+esac
+}
+
+(( $+functions[_bonsai_commands] )) ||
+_bonsai_commands() {
+    local commands; commands=(
+'auth:Manage provider authentication' \
+'sessions:Inspect saved sessions' \
+'completions:Generate a completion script for a shell' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'bonsai commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__auth_commands] )) ||
+_bonsai__subcmd__auth_commands() {
+    local commands; commands=(
+'list:Show authentication status for each provider' \
+'login:Sign in to a provider' \
+'logout:Remove credentials for a provider' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'bonsai auth commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__auth__subcmd__help_commands] )) ||
+_bonsai__subcmd__auth__subcmd__help_commands() {
+    local commands; commands=(
+'list:Show authentication status for each provider' \
+'login:Sign in to a provider' \
+'logout:Remove credentials for a provider' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'bonsai auth help commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__auth__subcmd__help__subcmd__help_commands] )) ||
+_bonsai__subcmd__auth__subcmd__help__subcmd__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai auth help help commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__auth__subcmd__help__subcmd__list_commands] )) ||
+_bonsai__subcmd__auth__subcmd__help__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai auth help list commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__auth__subcmd__help__subcmd__login_commands] )) ||
+_bonsai__subcmd__auth__subcmd__help__subcmd__login_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai auth help login commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__auth__subcmd__help__subcmd__logout_commands] )) ||
+_bonsai__subcmd__auth__subcmd__help__subcmd__logout_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai auth help logout commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__auth__subcmd__list_commands] )) ||
+_bonsai__subcmd__auth__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai auth list commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__auth__subcmd__login_commands] )) ||
+_bonsai__subcmd__auth__subcmd__login_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai auth login commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__auth__subcmd__logout_commands] )) ||
+_bonsai__subcmd__auth__subcmd__logout_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai auth logout commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__completions_commands] )) ||
+_bonsai__subcmd__completions_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai completions commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__help_commands] )) ||
+_bonsai__subcmd__help_commands() {
+    local commands; commands=(
+'auth:Manage provider authentication' \
+'sessions:Inspect saved sessions' \
+'completions:Generate a completion script for a shell' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'bonsai help commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__help__subcmd__auth_commands] )) ||
+_bonsai__subcmd__help__subcmd__auth_commands() {
+    local commands; commands=(
+'list:Show authentication status for each provider' \
+'login:Sign in to a provider' \
+'logout:Remove credentials for a provider' \
+    )
+    _describe -t commands 'bonsai help auth commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__help__subcmd__auth__subcmd__list_commands] )) ||
+_bonsai__subcmd__help__subcmd__auth__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai help auth list commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__help__subcmd__auth__subcmd__login_commands] )) ||
+_bonsai__subcmd__help__subcmd__auth__subcmd__login_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai help auth login commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__help__subcmd__auth__subcmd__logout_commands] )) ||
+_bonsai__subcmd__help__subcmd__auth__subcmd__logout_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai help auth logout commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__help__subcmd__completions_commands] )) ||
+_bonsai__subcmd__help__subcmd__completions_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai help completions commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__help__subcmd__help_commands] )) ||
+_bonsai__subcmd__help__subcmd__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai help help commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__help__subcmd__sessions_commands] )) ||
+_bonsai__subcmd__help__subcmd__sessions_commands() {
+    local commands; commands=(
+'list:List sessions for a workspace' \
+    )
+    _describe -t commands 'bonsai help sessions commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__help__subcmd__sessions__subcmd__list_commands] )) ||
+_bonsai__subcmd__help__subcmd__sessions__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai help sessions list commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__sessions_commands] )) ||
+_bonsai__subcmd__sessions_commands() {
+    local commands; commands=(
+'list:List sessions for a workspace' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'bonsai sessions commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__sessions__subcmd__help_commands] )) ||
+_bonsai__subcmd__sessions__subcmd__help_commands() {
+    local commands; commands=(
+'list:List sessions for a workspace' \
+'help:Print this message or the help of the given subcommand(s)' \
+    )
+    _describe -t commands 'bonsai sessions help commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__sessions__subcmd__help__subcmd__help_commands] )) ||
+_bonsai__subcmd__sessions__subcmd__help__subcmd__help_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai sessions help help commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__sessions__subcmd__help__subcmd__list_commands] )) ||
+_bonsai__subcmd__sessions__subcmd__help__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai sessions help list commands' commands "$@"
+}
+(( $+functions[_bonsai__subcmd__sessions__subcmd__list_commands] )) ||
+_bonsai__subcmd__sessions__subcmd__list_commands() {
+    local commands; commands=()
+    _describe -t commands 'bonsai sessions list commands' commands "$@"
+}
+
+if [ "$funcstack[1]" = "_bonsai" ]; then
+    _bonsai "$@"
+else
+    compdef _bonsai bonsai
+fi
