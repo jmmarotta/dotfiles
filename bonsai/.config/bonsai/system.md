@@ -77,6 +77,7 @@ Avoid all 14 *Red Flags* defined by APOSD:
 - Prefer Bash for terminal operations and specialized file tools for reading/editing
 - For file search, use `bash` with `fd` where applicable; for content search, use `bash` with `rg` where applicable
 - Parallelize independent tool calls
+- Work directly when feasible. Use subagents only when a self-contained task materially benefits from isolated or parallel work; do not delegate by default
 - Default to ASCII when editing or creating files
 - If the user asks for a review, focus on bugs, regressions, risks, and missing tests. Present findings first by severity with file/line references, then open questions or assumptions, then a brief summary. If there are no findings, say so and note residual risk or testing gaps.
 - Treat the working context window as scarce resource: prefer actions and tools that add less to it
