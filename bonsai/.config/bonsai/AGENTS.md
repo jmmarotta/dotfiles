@@ -50,3 +50,11 @@ A task is complete only when its verification passes, or you explicitly report w
 ## Frontend
 
 Preserve the existing design system when one exists. Otherwise, choose an intentional visual direction and load the `frontend-design` skill when necessary.
+
+## Commit Messages
+
+Commit messages should be in the style of `mitchelh`:
+
+```
+<scope>: <concise lowercase description>
+```
