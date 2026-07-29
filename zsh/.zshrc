@@ -25,6 +25,15 @@ bindkey '^N' down-line-or-beginning-search
 bindkey -M viins '^P' up-line-or-beginning-search
 bindkey -M viins '^N' down-line-or-beginning-search
 
+# Ghostty forwards its unconsumed scroll shortcuts so full-screen TUIs can use
+# them. Ignore the legacy Alt sequences when ZLE owns the terminal instead.
+_ignore_ghostty_scroll_key() { : }
+zle -N _ignore_ghostty_scroll_key
+bindkey -M viins $'\e\x15' _ignore_ghostty_scroll_key # Ctrl+Alt+U
+bindkey -M vicmd $'\e\x15' _ignore_ghostty_scroll_key
+bindkey -M viins $'\e\x04' _ignore_ghostty_scroll_key # Ctrl+Alt+D
+bindkey -M vicmd $'\e\x04' _ignore_ghostty_scroll_key
+
 alias zshc="nvim ~/.zshrc"
 alias zshr="source ~/.zshrc"
 alias ohmyzshc="nvim ~/.oh-my-zsh"
