@@ -16,6 +16,10 @@ VI_MODE_SET_CURSOR=true
 plugins=(git vi-mode rails)
 source "$ZSH/oh-my-zsh.sh"
 
+# Keep EOF available to foreground programs without letting it exit Zsh and
+# close the terminal pane from an empty prompt.
+setopt ignore_eof
+
 bindkey '^P' up-line-or-beginning-search
 bindkey '^N' down-line-or-beginning-search
 bindkey -M viins '^P' up-line-or-beginning-search
