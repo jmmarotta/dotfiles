@@ -29,10 +29,16 @@ bindkey -M viins '^N' down-line-or-beginning-search
 # them. Ignore the legacy Alt sequences when ZLE owns the terminal instead.
 _ignore_ghostty_scroll_key() { : }
 zle -N _ignore_ghostty_scroll_key
+bindkey -M viins $'\e\x02' _ignore_ghostty_scroll_key # Ctrl+Alt+B
+bindkey -M vicmd $'\e\x02' _ignore_ghostty_scroll_key
+bindkey -M viins $'\e\x06' _ignore_ghostty_scroll_key # Ctrl+Alt+F
+bindkey -M vicmd $'\e\x06' _ignore_ghostty_scroll_key
 bindkey -M viins $'\e\x15' _ignore_ghostty_scroll_key # Ctrl+Alt+U
 bindkey -M vicmd $'\e\x15' _ignore_ghostty_scroll_key
 bindkey -M viins $'\e\x04' _ignore_ghostty_scroll_key # Ctrl+Alt+D
 bindkey -M vicmd $'\e\x04' _ignore_ghostty_scroll_key
+bindkey -M viins $'\e\x07' _ignore_ghostty_scroll_key # Ctrl+Alt+G
+bindkey -M vicmd $'\e\x07' _ignore_ghostty_scroll_key
 
 alias zshc="nvim ~/.zshrc"
 alias zshr="source ~/.zshrc"
