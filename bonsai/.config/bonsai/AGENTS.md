@@ -32,14 +32,16 @@ Structure the finished work as small, coherent commits drawn by logical cohesion
 
 ## Persisting Output
 
-When the user asks to persist output (plans, design notes, research, specs, comparisons), write to `.artifacts/` relative to the repo root (or cwd outside a git repo).
+When the user asks to persist output such as plans, design notes, research, specifications, or comparisons, write through the workspace's existing `.artifacts/` path. Treat that workspace-local path as the project-scoped interface, even when it resolves into an external private repository.
 
-Prefer grouping by project: a directory named for the project, with individual files for each artifact underneath. This keeps related work organized in one place.
+If `.artifacts` is missing or broken, consult `$ARTIFACTS_PATH/SETUP.md`. Ask the user before adopting or migrating the workspace. Do not create a local replacement directory, infer a namespace, or write directly into `$ARTIFACTS_PATH` except while following an approved setup procedure. If `$ARTIFACTS_PATH` or its setup guide is unavailable, ask the user.
 
-- `.artifacts/{project}/{title}.md` is the preferred layout; group related artifacts under one project directory
-- `.artifacts/{title}.md` is acceptable for a small or quick standalone artifact with no project to group under
+Prefer grouping related documents by topic or initiative:
 
-Use short kebab-case slugs for both project and file. Report the path and a brief summary after writing, then pause for review before acting on it.
+- `.artifacts/{topic}/{title}.md` for related documents
+- `.artifacts/{title}.md` for a small standalone document
+
+Use short kebab-case names. Report the workspace-local path after writing rather than the resolved external path, then pause for review before acting on the document.
 
 Persisted docs you are actively working from are living documents. When a decision, plan change, or completed action makes such a doc stale, update it in the same session: revise the affected sections in place rather than appending contradictions. If the user overrides something in a persisted plan, reflect that in the doc. Briefly mention each update (path and what changed).
 

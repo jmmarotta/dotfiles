@@ -7,12 +7,15 @@ return {
   opts = {
     lazy_sync = true,
     prompt = "> ",
+    follow_symlinks = true,
   },
   keys = {
     {
       "<leader>sf",
       function()
-        require("fff").find_files()
+        local fff = require("fff")
+        fff.scan_files()
+        fff.find_files()
       end,
       desc = "[S]earch [F]iles",
     },
