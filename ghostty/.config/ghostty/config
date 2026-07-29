@@ -14,16 +14,16 @@ copy-on-select = clipboard
 confirm-close-surface = true
 scrollback-limit = 50000000
 
-keybind = page_up=scroll_page_up
-keybind = ctrl+alt+b=scroll_page_up
-keybind = page_down=scroll_page_down
-keybind = ctrl+alt+f=scroll_page_down
-keybind = ctrl+alt+u=scroll_page_fractional:-0.5
-keybind = ctrl+alt+d=scroll_page_fractional:0.5
-keybind = ctrl+g=scroll_to_top
-keybind = home=scroll_to_top
-keybind = ctrl+alt+g=scroll_to_bottom
-keybind = end=scroll_to_bottom
+keybind = unconsumed:page_up=scroll_page_up
+keybind = unconsumed:ctrl+alt+b=scroll_page_up
+keybind = unconsumed:page_down=scroll_page_down
+keybind = unconsumed:ctrl+alt+f=scroll_page_down
+keybind = unconsumed:ctrl+alt+u=scroll_page_fractional:-0.5
+keybind = unconsumed:ctrl+alt+d=scroll_page_fractional:0.5
+keybind = unconsumed:ctrl+g=scroll_to_top
+keybind = unconsumed:home=scroll_to_top
+keybind = unconsumed:ctrl+alt+g=scroll_to_bottom
+keybind = unconsumed:end=scroll_to_bottom
 
 keybind = ctrl+space=activate_key_table:tmux
 
