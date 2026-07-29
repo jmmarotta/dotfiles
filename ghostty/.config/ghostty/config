@@ -11,6 +11,7 @@ unfocused-split-opacity = 0.9
 split-preserve-zoom = navigation
 macos-option-as-alt = left
 copy-on-select = clipboard
+selection-clear-on-copy = true
 confirm-close-surface = true
 scrollback-limit = 50000000
 
