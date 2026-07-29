@@ -77,17 +77,24 @@ if command -v zoxide >/dev/null 2>&1; then
   alias cd="z"
 fi
 
-# Use a separate gh CLI account (config dir) while inside ~/hs-projects.
-# gh reads all per-account state (auth, active user) from $GH_CONFIG_DIR;
-# scoping the var by directory avoids the global `gh auth switch` toggle.
+# Select work-scoped CLI state while inside ~/hs-projects. The personal
+# artifact store is the default everywhere else.
 _gh_hs_config="$HOME/.config/gh-hs"
-_gh_hs_root="$HOME/hs-projects"
-_gh_account_chpwd() {
+_hs_projects_root="$HOME/hs-projects"
+_personal_artifacts_root="$HOME/projects/artifacts"
+_hs_artifacts_root="$_hs_projects_root/artifacts"
+_workspace_environment_chpwd() {
   case "$PWD/" in
-    "$_gh_hs_root"/*) export GH_CONFIG_DIR="$_gh_hs_config" ;;
-    *) unset GH_CONFIG_DIR ;;
+    "$_hs_projects_root"/*)
+      export GH_CONFIG_DIR="$_gh_hs_config"
+      export ARTIFACTS_PATH="$_hs_artifacts_root"
+      ;;
+    *)
+      unset GH_CONFIG_DIR
+      export ARTIFACTS_PATH="$_personal_artifacts_root"
+      ;;
   esac
 }
 autoload -Uz add-zsh-hook
-add-zsh-hook chpwd _gh_account_chpwd
-_gh_account_chpwd  # apply for the shell's starting directory
+add-zsh-hook chpwd _workspace_environment_chpwd
+_workspace_environment_chpwd  # apply for the shell's starting directory
