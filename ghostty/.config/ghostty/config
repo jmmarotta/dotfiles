@@ -27,7 +27,7 @@ keybind = unconsumed:ctrl+g=scroll_to_top
 keybind = unconsumed:home=scroll_to_top
 keybind = unconsumed:ctrl+alt+g=scroll_to_bottom
 keybind = unconsumed:end=scroll_to_bottom
-keybind = ctrl+[=text:"\x1b"
+keybind = ctrl+[=text:\x1b
 
 keybind = ctrl+space=activate_key_table:tmux
 
