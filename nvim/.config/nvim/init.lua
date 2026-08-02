@@ -230,6 +230,11 @@ end
 
 vim.keymap.set("n", "<leader>yf", YankFloatContent, { desc = "[Y]ank [F]loating Window" })
 
+vim.keymap.set("n", "<leader>yp", function()
+  vim.fn.setreg("+", vim.fn.expand("%:p"))
+  print("Absolute file path copied to clipboard")
+end, { desc = "[Y]ank absolute file [P]ath" })
+
 require("git_review").setup()
 
 -- [[ Basic Autocommands ]]
