@@ -17,13 +17,6 @@
       "origin": "https://github.com/jmmarotta/skills",
       "version": "v0.0.0-20260715191625-38023212eec8",
       "rev": "38023212eec893085724c391d23c388025ace9c9",
-      "subdir": "skills/bonsai-subagent",
-      "name": "bonsai-subagent"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260715191625-38023212eec8",
-      "rev": "38023212eec893085724c391d23c388025ace9c9",
       "subdir": "skills/frontend-design",
       "name": "frontend-design"
     },
@@ -31,22 +24,8 @@
       "origin": "https://github.com/jmmarotta/skills",
       "version": "v0.0.0-20260715191625-38023212eec8",
       "rev": "38023212eec893085724c391d23c388025ace9c9",
-      "subdir": "skills/repo-bootstrap",
-      "name": "repo-bootstrap"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260715191625-38023212eec8",
-      "rev": "38023212eec893085724c391d23c388025ace9c9",
       "subdir": "skills/skill-creator",
       "name": "skill-creator"
-    },
-    {
-      "origin": "https://github.com/jmmarotta/skills",
-      "version": "v0.0.0-20260715191625-38023212eec8",
-      "rev": "38023212eec893085724c391d23c388025ace9c9",
-      "subdir": "skills/web-access",
-      "name": "web-access"
     },
     {
       "origin": "https://github.com/remorses/playwriter",
