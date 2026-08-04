@@ -9,7 +9,54 @@
     "smallModel": {
       "model": "codex/gpt-5.6-luna"
     },
-    "systemPromptFile": "system.md"
+    "systemPromptFile": "system.md",
+    "task": {
+      "presets": {
+        "advisor": {
+          "agent": "bonsai",
+          "description": "Use Fable 5 for quick, independent technical advice, architecture and design decisions, tradeoff analysis, planning, and challenging assumptions. Do not use for implementation.",
+          "model": "anthropic/claude-fable-5",
+          "effort": "low",
+          "serviceTier": "standard"
+        },
+        "build": {
+          "agent": "bonsai",
+          "description": "Use for implementing code changes, running focused verification, and reporting completed work.",
+          "model": "codex/gpt-5.6-sol",
+          "effort": "medium",
+          "serviceTier": "priority"
+        },
+        "explore": {
+          "agent": "bonsai",
+          "description": "Use for focused codebase exploration, tracing behavior, locating relevant files, and reporting implementation findings. Do not modify files.",
+          "model": "codex/gpt-5.6-sol",
+          "effort": "low",
+          "serviceTier": "priority"
+        },
+        "review-anthropic": {
+          "agent": "bonsai",
+          "description": "Use Claude Opus 5 for thorough code review focused on correctness bugs, regressions, architectural and call-graph changes, performance and resource-use regressions, A Philosophy of Software Design (APOSD) red flags, design risks, and missing tests.",
+          "model": "anthropic/claude-opus-5",
+          "effort": "low",
+          "serviceTier": "standard"
+        },
+        "review-openai": {
+          "agent": "bonsai",
+          "description": "Use GPT-5.6 Sol for thorough code review focused on correctness bugs, regressions, architectural and call-graph changes, performance and resource-use regressions, A Philosophy of Software Design (APOSD) red flags, design risks, and missing tests.",
+          "model": "codex/gpt-5.6-sol",
+          "effort": "medium",
+          "serviceTier": "priority"
+        },
+        "research": {
+          "agent": "codex",
+          "description": "Use for web access: search authoritative sources for current documentation, release notes, pricing, and news, or fetch and extract content from a specific URL. Runs through an isolated Codex child so raw web content stays out of the parent context.",
+          "effort": "medium",
+          "serviceTier": "priority",
+          "webSearch": true,
+          "sandbox": "read-only"
+        }
+      }
+    }
   },
   "tui": {
     "theme": "everforest-mixed"
