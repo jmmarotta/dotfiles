@@ -10,8 +10,9 @@ Separate planning and implementation for non-trivial work.
 
 1. Inspect the system and identify touch points.
 2. Propose viable approaches with a recommendation.
-3. Identify how the change will be verified.
-4. Ask questions if necessary for clarification.
+3. Include a concise call graph showing the relevant execution path and marking planned changes.
+4. Identify how the change will be verified.
+5. Ask questions if necessary for clarification.
 
 Plan implementation as a sequence of coherent, independently reviewable commits. Roughly 400 lines each is a useful default for scoping, but size by review effort: a commit should be one logical step a reviewer can understand on its own. The goal is reviewable commit boundaries, not fixed-size pauses during implementation.
 
@@ -29,6 +30,10 @@ High-level plans and roadmaps should stay abstract and non-prescriptive about sp
 4. If the change drifts into a new design problem, return to planning before continuing, and update the persisted plan to match.
 
 Structure the finished work as small, coherent commits drawn by logical cohesion, so each can be reviewed on its own.
+
+## Review
+
+For non-trivial implementation work, run all configured `review-*` presets in parallel after implementation and focused verification. Reconcile their findings, address material issues, and rerun affected verification before completion.
 
 ## Persisting Output
 
