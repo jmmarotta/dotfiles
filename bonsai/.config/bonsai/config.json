@@ -35,14 +35,14 @@
         },
         "review-anthropic": {
           "agent": "bonsai",
-          "description": "Use Claude Opus 5 for thorough code review focused on correctness bugs, regressions, architectural and call-graph changes, performance and resource-use regressions, A Philosophy of Software Design (APOSD) red flags, design risks, and missing tests.",
+          "description": "Use Claude Opus 5 for code review focused on correctness bugs, regressions, architectural and call-graph changes, performance and resource-use regressions, A Philosophy of Software Design (APOSD) red flags, design risks, and missing tests.",
           "model": "anthropic/claude-opus-5",
           "effort": "low",
           "serviceTier": "standard"
         },
         "review-openai": {
           "agent": "bonsai",
-          "description": "Use GPT-5.6 Sol for thorough code review focused on correctness bugs, regressions, architectural and call-graph changes, performance and resource-use regressions, A Philosophy of Software Design (APOSD) red flags, design risks, and missing tests.",
+          "description": "Use GPT-5.6 Sol for code review focused on correctness bugs, regressions, architectural and call-graph changes, performance and resource-use regressions, A Philosophy of Software Design (APOSD) red flags, design risks, and missing tests.",
           "model": "codex/gpt-5.6-sol",
           "effort": "medium",
           "serviceTier": "priority"
