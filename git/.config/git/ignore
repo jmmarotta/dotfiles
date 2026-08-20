@@ -1,1 +1,4 @@
 .artifacts
+.worktrees/
+.repos/
+.tmp/
