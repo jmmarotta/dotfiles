@@ -55,22 +55,60 @@ If implementation follows a persisted plan, update it to reflect completed work 
 
 For non-trivial implementation work, run all configured `review-*` presets in parallel after implementation and focused verification. Treat their findings as input, not commands. Judge each finding against the code, requirements, and design goals; address the issues that matter, note why any material finding was not adopted, and rerun affected verification before completion.
 
-## Persisting Output
+## Artifact Setup
 
-When the user asks to persist output such as plans, design notes, research, specifications, or comparisons, write through the workspace's existing `.artifacts/` path. Treat that workspace-local path as the project-scoped interface, even when it resolves into an external private repository.
+When persisting documents or working within grove, the workspace should have a `.artifacts/` path.
 
 If `.artifacts` is missing or broken, consult `$ARTIFACTS_PATH/SETUP.md`. Ask the user before adopting or migrating the workspace. Do not create a local replacement directory, infer a namespace, or write directly into `$ARTIFACTS_PATH` except while following an approved setup procedure. If `$ARTIFACTS_PATH` or its setup guide is unavailable, ask the user.
 
-Prefer grouping related documents by topic or initiative:
+## Grove
 
-- `.artifacts/{topic}/{title}.md` for related documents
-- `.artifacts/{title}.md` for a small standalone document
+Use the workspace's existing `.artifacts/` path for Grove issues and their
+supporting documents. Treat workspace-local paths as the project interface,
+even when `.artifacts` resolves elsewhere. If the path or its Grove manifest is
+missing, run `grove agent setup` for the setup contract.
 
-Use short kebab-case names. Report the workspace-local path after writing rather than the resolved external path, then pause for review before acting on the document.
+Run `grove issue schema` before creating, editing, or otherwise working with an
+issue.
 
-Keep persisted plans concise and mindful of the reader's time. Include only the context, decisions, implementation outline, and verification needed to review and execute the plan. Reconcile review findings in place rather than appending review transcripts.
+### Grove Issues
 
-Persisted docs you are actively working from are living documents. When a decision, plan change, or completed action makes such a doc stale, update it in the same session: revise the affected sections in place rather than appending contradictions. If the user overrides something in a persisted plan, reflect that in the doc. Briefly mention each update (path and what changed).
+Issues are Markdown files with YAML frontmatter. Markdown under `.artifacts/`
+is authoritative.
+
+Use `grove issue create` to create an issue. Do not generate issue IDs, UUIDs,
+timestamps, filenames, or bundle paths yourself.
+
+Preserve unknown frontmatter and supporting documents. Do not move or rename
+an issue bundle when changing its title, body, status, or priority.
+
+### Persisted Documents
+
+Attach plans, research, designs, and other durable output to an existing issue
+that covers the work. Store documents directly beside the issue file using
+short, kebab-case names.
+
+If no issue covers durable output, create one with `grove issue create` before
+writing the document. Do not create orphan documents at the top level of
+`.artifacts`.
+
+Keep persisted plans concise. Include only the context, decisions,
+implementation outline, and verification needed to review and carry out the
+plan. Fold review findings into the relevant sections instead of appending
+review transcripts.
+
+Treat documents you are actively using as living documents. When decisions,
+completed work, review findings, or user direction make one stale, update it
+in the same session. Revise affected sections instead of appending
+contradictions. Briefly report the path and what changed.
+
+After writing a new plan or design, report its workspace-local path and pause
+for review before acting on it.
+
+### Scratch Work
+
+Use the repository-local `.tmp/` directory for throwaway working files that
+should not be kept. Do not create an issue solely for temporary scratch work.
 
 ## Completion
 
@@ -80,10 +118,19 @@ A task is complete only when its verification passes, or you explicitly report w
 
 Preserve the existing design system when one exists. Otherwise, choose an intentional visual direction and load the `frontend-design` skill when necessary.
 
-## Commit
+## Commits
 
-- Commit messages should be in the style of `mitchelh`: `<scope>: <concise lowercase description>`
-- When commits are requested, keep them small and group related concepts. Avoid partial commits or rewriting files solely to create a commit.
+Commit messages should be in the style of `mitchelh`: `<scope>: <concise lowercase description>`
+
+Keep commits small and group related concepts. Avoid partial commits or rewriting files to achieve intermediate states.
+
+## Worktrees
+
+When creating a Git worktree, place it under the primary checkout's
+`.worktrees/<name>/` directory.
+
+Remove worktrees with `git worktree remove`; do not delete their directories
+directly.
 
 ## Tmp Directories
 
