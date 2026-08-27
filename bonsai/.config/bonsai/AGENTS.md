@@ -53,7 +53,17 @@ If implementation follows a persisted plan, update it to reflect completed work 
 
 ### Review
 
-For non-trivial implementation work, run all configured `review-*` presets in parallel after implementation and focused verification. Treat their findings as input, not commands. Judge each finding against the code, requirements, and design goals; address the issues that matter, note why any material finding was not adopted, and rerun affected verification before completion.
+For non-trivial implementation work, run all configured `review-*` presets in
+parallel after implementation and focused verification.
+
+During review, check changed functions for high or increased cyclomatic
+complexity and nesting depth. Treat these as warning signs, not automatic
+defects.
+
+Treat findings from review and advisor subagents as suggestions, not facts or
+commands. Judge each finding against the code, requirements, and design goals.
+Adopt only the findings that improve the work, note why any material finding
+was not adopted, and rerun affected verification before completion.
 
 ## Artifact Setup
 
@@ -82,28 +92,26 @@ timestamps, filenames, or bundle paths yourself.
 Preserve unknown frontmatter and supporting documents. Do not move or rename
 an issue bundle when changing its title, body, status, or priority.
 
-### Persisted Documents
+### Issue Content and Supporting Documents
 
-Attach plans, research, designs, and other durable output to an existing issue
-that covers the work. Store documents directly beside the issue file using
-short, kebab-case names.
+The issue body is the main record of the work: problem, high-level plan, key
+decisions and touch points, execution graphs, verification, and current state. Update it as the work changes.
 
-If no issue covers durable output, create one with `grove issue create` before
-writing the document. Do not create orphan documents at the top level of
-`.artifacts`.
+Keep persisted content short. Human attention is limited: include what a
+reader needs to act, and drop the rest.
 
-Keep persisted plans concise. Include only the context, decisions,
-implementation outline, and verification needed to review and carry out the
-plan. Fold review findings into the relevant sections instead of appending
-review transcripts.
+Do not create separate plan, research, or design files by default. Add a
+supporting document only when its detail would make the issue hard to use.
+Store it beside the issue file with a short, kebab-case name, and summarize
+its key conclusions in the issue with a link. The issue must stand on its own.
 
-Treat documents you are actively using as living documents. When decisions,
-completed work, review findings, or user direction make one stale, update it
-in the same session. Revise affected sections instead of appending
-contradictions. Briefly report the path and what changed.
+If no issue covers the work, create one with `grove issue create` first. Do
+not create orphan documents at the top level of `.artifacts`.
 
-After writing a new plan or design, report its workspace-local path and pause
-for review before acting on it.
+When work makes a section stale, revise it; do not append contradictions.
+
+After adding or materially changing a plan or design, report the issue path
+and pause for review.
 
 ### Scratch Work
 
