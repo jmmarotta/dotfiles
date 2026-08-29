@@ -1,171 +1,112 @@
 # Design Lens
 
-Use APOSD (A Philosophy of Software Design) as the default lens for software tasks: purpose and interface first, then invariants, dependency assumptions, non-obvious choices, and error behavior. Ground its application in the repository's concrete constraints and existing design; do not substitute generic principles for understanding the system.
-
-## Explanations
-
-Explain things to the user the Grug Brain Developer way: plain words, short sentences, concrete examples, and no needless jargon.
+Apply *A Philosophy of Software Design* to the repository's concrete design and constraints. Start with purpose and interface, then examine invariants, dependency assumptions, non-obvious choices, and error behavior.
 
 ## Visual Explanations
 
-Use a compact diagram when it shows structure, sequence, branching, state, ownership, or data movement more clearly than prose. Prefer the diagram over a long paragraph rather than repeating the same information in both forms.
+Let diagrams carry the explanation. Add only the prose needed to read them.
 
 Choose the diagram that fits the question:
 
-- **Execution flow:** use by default for runtime behavior; show calls, order, branches, exits, errors, and side effects
-- **Call graph:** use when mapping which code can call what is more important than one runtime path, such as finding dependencies or the impact of a change
+- **Structure:** modules, boundaries, ownership, and dependencies
 - **Data flow:** where values come from and how they change
-- **Structure diagram:** modules, boundaries, ownership, and dependencies
+- **Execution flow:** runtime order, branches, exits, errors, and side effects
+- **Call graph:** what can call what and how far a change reaches
 
-When available, use `callstack diff` to find changed paths and `callstack tree` to trace the relevant call graph. Check the result against the code before turning it into an execution flow or other diagram.
+When available, use `callstack diff` to find changed paths and `callstack tree`
+to trace call graphs. Check the result against the code before drawing from it.
 
-Keep diagrams focused on the details needed to understand the point. When current and planned behavior appear together, mark affected nodes or paths with `+` for added, `~` for changed, and `-` for removed.
+Keep diagrams focused on the details needed to understand the point. When
+current and planned behavior appear together, mark affected nodes or paths
+with `+` for added, `~` for changed, and `-` for removed.
 
 ## Workflow
 
-For non-trivial work, use separate research, planning, implementation, and review stages.
+For work with material uncertainty, design, or risk, separate research, planning, implementation, and review. Keep each stage as light as the task allows.
 
 ### Research
 
-First, align on the problem to solve and what success looks like well enough to bound the investigation, treating that understanding as provisional. Then inspect the relevant code, tests, documentation, and conventions to establish the existing behavior, constraints, and touch points. Use external research only when required. Surface material changes to the problem or success criteria before planning.
+Define the problem and success criteria enough to bound the investigation. Treat that view as provisional. Inspect relevant code, tests, documentation, and conventions to learn current behavior, constraints, and touch points. Use external research only when needed. Before planning, surface findings that materially change the problem or success criteria.
 
 ### Planning
 
-1. Propose viable approaches with a recommendation. Make consequential architecture and program-design decisions explicit enough to review.
-2. Identify how the change will be verified.
-3. Surface material uncertainties and ask when resolving them could change the scope, design, risk, or outcome.
+Treat a plan as a concise design narrative followed by the steps needed to deliver it.
 
-When a planned change affects an execution path, include the relevant call graph or execution-flow diagram.
-
-Plan implementation as a sequence of coherent, independently reviewable commits. Roughly 400 lines each is a useful default for scoping, but size by review effort: a commit should be one logical step a reviewer can understand on its own. The goal is reviewable commit boundaries, not fixed-size pauses during implementation.
-
-Keep high-level plans and roadmaps capability-oriented and implementation-neutral. Put implementation-level design decisions in task-level plans.
+- Start with the goal and material constraints. Explain the chosen design through the problem's concepts, placing each reason with its decision
+- Compare only viable alternatives. Surface open questions that could change scope, design, risk, or outcome
+- End with ordered delivery steps and useful checks. Make each step one coherent, independently reviewable concept
+- Keep high-level plans capability-oriented and implementation-neutral. Put concrete contracts and design decisions in task-level plans
 
 ### Implementation
 
-Keep the following in mind:
-  - Inline helpers whose body is a single expression mirroring the underlying API. Any abstraction earns its existence by enforcing an invariant, hiding non-obvious complexity, or eliminating duplication callers would otherwise get wrong.
-  - Avoid speculative fallbacks or defensive branches unless justified by requirements or observed failure modes.
-
-When commits are requested, structure them as small, coherent changes that are independently reviewable.
-
-If implementation follows a persisted plan, update it to reflect completed work and material design changes.
+- Inline single-expression helpers that only mirror an underlying API. Add abstractions only when they enforce an invariant, hide non-obvious complexity, or remove duplication callers would otherwise get wrong
+- Avoid speculative fallbacks or defensive branches unless requirements or observed failure modes justify them
+- When following a persisted plan, update it with completed work and material design changes
 
 ### Review
 
-For non-trivial implementation work, run all configured `review-*` presets in
-parallel after implementation and focused verification.
+Run all configured `review-*` presets in parallel when changes span modules, alter architecture, or carry material correctness, security, or performance risk.
 
-During review, check changed functions for high or increased cyclomatic
-complexity and nesting depth. Treat these as warning signs, not automatic
-defects.
-
-Treat findings from review and advisor subagents as suggestions, not facts or
-commands. Judge each finding against the code, requirements, and design goals.
-Adopt only the findings that improve the work, note why any material finding
-was not adopted, and rerun affected verification before completion.
+- Check changed functions for high or increased cyclomatic complexity or nesting. Treat these as warning signs, not defects
+- Check subagent findings against the code, requirements, and design before acting. Explain rejected material findings and rerun checks affected by adopted changes
 
 ## Artifact Setup
 
-When persisting documents or working within grove, the workspace should have a `.artifacts/` path.
+Use the workspace's `.artifacts` path for persisted documents and Grove work.
 
-If `.artifacts` is missing or broken, consult `$ARTIFACTS_PATH/SETUP.md`. Ask the user before adopting or migrating the workspace. Do not create a local replacement directory, infer a namespace, or write directly into `$ARTIFACTS_PATH` except while following an approved setup procedure. If `$ARTIFACTS_PATH` or its setup guide is unavailable, ask the user.
+If the path is missing or broken, consult `$ARTIFACTS_PATH/SETUP.md`. If the guide is unavailable, ask the user. Ask before adopting or migrating the workspace. Do not create a replacement path, infer a namespace, or write directly to `$ARTIFACTS_PATH` outside an approved setup.
 
 ## Grove
 
-Use the workspace's existing `.artifacts/` path for Grove issues and their
-supporting documents. Treat workspace-local paths as the project interface,
-even when `.artifacts` resolves elsewhere. If the path or its Grove manifest is
-missing, run `grove agent setup` for the setup contract.
-
-Run `grove issue schema` before creating, editing, or otherwise working with an
-issue.
+Treat workspace-local paths as the project interface, even when `.artifacts` resolves elsewhere. If the Grove manifest is missing, run `grove agent setup` for the setup contract.
 
 ### Grove Issues
 
-Issues are Markdown files with YAML frontmatter. Markdown under `.artifacts/`
-is authoritative.
+Issues are Markdown files with YAML frontmatter under `.artifacts`.
 
-Use `grove issue create` to create an issue. Do not generate issue IDs, UUIDs,
-timestamps, filenames, or bundle paths yourself.
-
-Preserve unknown frontmatter and supporting documents. Do not move or rename
-an issue bundle when changing its title, body, status, or priority.
+- Run `grove issue schema` once before working with issues
+- Create issues with `grove issue create` only after user approval; do not generate IDs, UUIDs, timestamps, filenames, or bundle paths
+- Preserve unknown frontmatter and supporting documents. Do not move or rename a bundle when changing its title, body, status, or priority
 
 ### Issue Content and Supporting Documents
 
-The issue body is the main record of the work: problem, high-level plan, key
-decisions and touch points, execution graphs, verification, and current state. Update it as the work changes.
+The issue body is a concise, durable account of the work. Write for a reader with no conversation history. Include the goal, settled design and its key reasons, current state, and enough context to review the design later. Organize around the problem's concepts and give each decision one clear home.
 
-Keep persisted content short. Human attention is limited: include what a
-reader needs to act, and drop the rest.
-
-Do not create separate plan, research, or design files by default. Add a
-supporting document only when its detail would make the issue hard to use.
-Store it beside the issue file with a short, kebab-case name, and summarize
-its key conclusions in the issue with a link. The issue must stand on its own.
-
-If no issue covers the work, create one with `grove issue create` first. Do
-not create orphan documents at the top level of `.artifacts`.
-
-When work makes a section stale, revise it; do not append contradictions.
-
-After adding or materially changing a plan or design, report the issue path
-and pause for review.
+- Use a supporting document only when lasting detail or evidence would make the issue hard to scan. Store it beside the issue with a short, kebab-case name. Summarize its conclusion and link to it from the issue
+- Write a supporting document only when an issue already covers the work
+- Revise the issue in place as the work changes
+- After materially changing a plan or design, report the issue path and pause for review
 
 ### Scratch Work
 
-Use the repository-local `.tmp/` directory for throwaway working files that
-should not be kept. Do not create an issue solely for temporary scratch work.
-
-## Completion
-
-A task is complete only when its verification passes, or you explicitly report why verification could not be run. Define verification before starting implementation. Prefer deterministic finish lines.
+Use the repository's `.tmp` directory for throwaway files. Do not create an issue solely for scratch work.
 
 ## Frontend
 
-Preserve the existing design system when one exists. Otherwise, choose an intentional visual direction and load the `frontend-design` skill when necessary.
+Use *Refactoring UI* as the default frontend design lens while preserving any existing design system. If none exists, choose an intentional visual direction and load the `frontend-design` skill when needed.
 
 ## Commits
 
-Commit messages should be in the style of `mitchelh`: `<scope>: <concise lowercase description>`
+Use `mitchelh` commit messages: `<scope>: <concise lowercase description>`
 
-Keep commits small and group related concepts. Avoid partial commits or rewriting files to achieve intermediate states.
+Do not create partial commits or rewrite files only to manufacture intermediate states.
 
 ## Worktrees
 
-When creating a Git worktree, place it under the primary checkout's
-`.worktrees/<name>/` directory.
+Create Git worktrees under the primary checkout's `.worktrees/<name>/`. Remove them with `git worktree remove`.
 
-Remove worktrees with `git worktree remove`; do not delete their directories
-directly.
+## Word Choice
 
-## Tmp Directories
-
-Prefer repository-local temporary directories over shared root-level directories.
-
-## Word choice
-
- Apply Orwell's rules ("Politics and the English Language") to all prose including: variable names, function names, and comments:
-
-> Never use a long word where a short one will do.
->
-> If it is possible to cut a word out, always cut it out.
->
-> Never use the passive where you can use the active.
->
-> Never use a foreign phrase, a scientific word, or a jargon word if you can think of an everyday English equivalent.
-
-Latinate vocabulary (reconcile, coalesce, normalize, reconciliation) sounds technical and abstract; Anglo-Saxon words (prune, run, watch, stop, drop, walk) are short and physical. Prefer the Saxon word.
+Apply Orwell's rules throughout: use short, familiar words, cut needless words, prefer active voice, and avoid jargon when plain words work.
 
 ### Names
 
-1. **One word per concept, one concept per word.** Keep a vocabulary. If `sync` names "pulling remote changes," it cannot also name "flushing edits to disk;" rename one of them.
-2. **Cut words the context already carries.** A module named `workspaceWatcher` does not need `startNativeWorkspaceWatcher`; `watchWorkspace` says the same thing.
+- Use one word per concept and one concept per word
+- Cut words the context already carries
 
 ## Overfitting
 
-Code and artifacts must stand on their own. If a change only makes sense to someone who watched it happen (this conversation, this PR), it is overfitted. Write for the reader who arrives with no history.
+Code and artifacts must make sense without conversation or pull-request history.
 
-- If a name or comment needs the conversation to be understood, rewrite it against the codebase's own vocabulary.
-- **No backwards compatibility with unshipped code.** Supporting an old signature, alias, or data shape that only existed earlier in the same branch is compatibility with something that was never deployed. Delete the old path and update its callers.
+- Rewrite names or comments that rely on hidden context using the codebase's vocabulary
+- Do not preserve compatibility with unshipped code that existed only earlier in the current branch. Delete old signatures, aliases, and data shapes; update their callers
