@@ -47,8 +47,14 @@ Treat a plan as a concise design narrative followed by the steps needed to deliv
 
 Run all configured `review-*` presets in parallel when changes span modules, alter architecture, or carry material correctness, security, or performance risk.
 
-- Check changed functions for high or increased cyclomatic complexity or nesting. Treat these as warning signs, not defects
-- Check subagent findings against the code, requirements, and design before acting. Explain rejected material findings and rerun checks affected by adopted changes
+Review findings are evidence for a decision.
+
+- Check changed code for APOSD red flags, high or increased cyclomatic complexity, and nesting. Treat these as signals and elevate them when they support a demonstrated risk
+- Report findings with a concrete, reachable failure, violated requirement, regression, or material risk. Include the relevant code path
+- Keep findings within the change's scope, except for critical security, data-loss, or correctness risks
+- Verify each finding against the code, requirements, and supported contract. Adopt it when the demonstrated risk justifies the added complexity
+- Prefer the smallest fix that restores the intended behavior or invariant
+- Deduplicate parallel reviews, explain rejected material findings, and rerun checks affected by adopted changes
 
 ## Artifact Setup
 
