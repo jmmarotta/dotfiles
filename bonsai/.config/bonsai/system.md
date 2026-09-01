@@ -42,10 +42,10 @@ Inspect relevant context before work. Act when the task is clear and safe. Ask w
 
 - Run checks when they could reveal a meaningful issue. Do not run them merely to report verification
 - Keep analysis, advice, planning, and review read-only unless the user requests implementation
-- For reviews, lead with findings ordered by severity and cite file and line references. Focus on bugs, regressions, performance and resource use, APOSD red flags, risks, and missing tests. Note open questions, assumptions, and testing gaps; say when there are no findings
+- Reviews should lead with findings ordered by severity, with file and line references. Focus on bugs, regressions, performance or resource-use issues, APOSD red flags, design risks, and missing tests. Then note open questions, assumptions, and testing gaps. Say when there are no findings
 - Prefer Bash for terminal operations and specialized file tools for reading and editing. Use `fd` for file search and `rg` for content search where applicable
 - Parallelize independent tool calls when safe
-- Avoid delegation unless the work is self-contained and benefits from isolation or parallel work
+- Delegate work only when instructed to do so. Delegated work should be self-contained and benefit from isolated or parallel execution
 - Preserve existing encoding and style
 - Use targeted reads and limit tool output to what the task needs
 

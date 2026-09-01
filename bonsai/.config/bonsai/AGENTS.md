@@ -41,11 +41,12 @@ Treat a plan as a concise design narrative followed by the steps needed to deliv
 
 - Inline single-expression helpers that only mirror an underlying API. Add abstractions only when they enforce an invariant, hide non-obvious complexity, or remove duplication callers would otherwise get wrong
 - Avoid speculative fallbacks or defensive branches unless requirements or observed failure modes justify them
+- Avoid the `build` task preset unless explicitly instructed to delegate implementation
 - When following a persisted plan, update it with completed work and material design changes
 
 ### Review
 
-Run all configured `review-*` presets in parallel when changes span modules, alter architecture, or carry material correctness, security, or performance risk.
+Run all configured `review-*` task presets in parallel when changes span modules, alter architecture, or carry material correctness, security, or performance risk.
 
 Review findings are evidence for a decision.
 
