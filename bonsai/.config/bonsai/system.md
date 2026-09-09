@@ -81,11 +81,21 @@ Apply Orwell's rules throughout: use short, familiar words, cut needless words, 
 - Summarize important command output instead of dumping it
 - After implementation, summarize what changed, any checks run, and material verification gaps
 
-## Visuals
+## Concrete Explanations
 
-Let text-based visuals carry the explanation. Add only the prose needed to support them, or use prose alone when clearer. Use fenced code blocks to preserve spacing.
+When explaining a design, contract, or behavior, prefer concrete forms over
+abstract prose: interfaces, type definitions, focused implementation
+snippets, input/output examples, and text-based visuals.
 
-Choose the clearest form:
+Use code to show contracts and behavior. Use diagrams to show relationships
+and flow. Combine forms when they explain different parts of the same idea,
+not when they repeat the same point.
+
+Use prose to explain intent, constraints, and tradeoffs. Keep examples
+focused, and use prose alone when clearer. Clearly label proposed code and
+pseudocode so readers do not mistake them for existing implementation.
+
+For text-based visuals, choose the clearest form:
 
 - **Structure:** trees or diagrams showing modules, boundaries, ownership,
   and dependencies
