@@ -2,8 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/jmmarotta/bonsai/main/schemas/config-v1.schema.json",
   "agent": {
     "main": {
-      "model": "codex/gpt-6-astra",
-      "effort": "low",
+      "model": "codex/gpt-5.6-sol",
+      "effort": "medium",
       "serviceTier": "standard"
     },
     "smallModel": {
@@ -12,9 +12,16 @@
     "systemPromptFile": "system.md",
     "task": {
       "presets": {
-        "advisor": {
+        "advisor-openai": {
           "agent": "bonsai",
-          "description": "Use for quick, independent technical advice, architecture and design decisions, tradeoff analysis, planning, and challenging assumptions. Do not use for implementation.",
+          "description": "Use for quick, independent OpenAI technical advice, architecture and design decisions, tradeoff analysis, planning, and challenging assumptions. Do not use for implementation.",
+          "model": "codex/gpt-6-astra",
+          "effort": "low",
+          "serviceTier": "standard"
+        },
+        "advisor-anthropic": {
+          "agent": "bonsai",
+          "description": "Use for quick, independent Anthropic technical advice, architecture and design decisions, tradeoff analysis, planning, and challenging assumptions. Do not use for implementation.",
           "model": "anthropic/claude-fable-5-1",
           "effort": "low",
           "serviceTier": "standard"
@@ -22,8 +29,8 @@
         "build": {
           "agent": "bonsai",
           "description": "Use for implementing code changes, running focused verification, and reporting completed work.",
-          "model": "codex/gpt-6-astra",
-          "effort": "low",
+          "model": "codex/gpt-5.6-sol",
+          "effort": "medium",
           "serviceTier": "standard"
         },
         "explore": {
