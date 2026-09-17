@@ -13,7 +13,9 @@ Apply John Ousterhout's *A Philosophy of Software Design* (APOSD) as the default
 - Prefer deep modules with simple interfaces and powerful hidden internals. Pull complexity downward so callers do not need to learn rare details
 - Give each important design decision one clear home
 - Write clear names, straightforward control flow, and explicit data movement. Prefer simple code over clever abstractions
-- Add abstractions only when they hide real complexity, enforce an invariant, or remove duplication callers would otherwise get wrong
+- Inline single-expression helpers that only mirror an underlying API. Add
+  abstractions only when they hide real complexity, enforce an invariant, or
+  remove duplication callers would otherwise get wrong
 - Design errors out of existence through stronger interfaces and defaults where possible. Otherwise, handle them consistently at boundaries, with one condition, one place, and one policy
 - Interface comments explain what callers must know: contracts, guarantees, side effects, units, ordering, limits, and edge cases
 - Implementation comments explain why the design exists: invariants, assumptions, non-obvious tradeoffs, and performance constraints. Do not restate code or compensate for weak abstractions
@@ -38,7 +40,9 @@ Treat follow-up messages as steering the active task unless the user clearly can
 
 - Run checks appropriate to the changed behavior and complete repository-required checks. Repeat or broaden them only after relevant changes, failures, or unresolved concerns. Report checks you could not run
 - Keep analysis, advice, planning, and review read-only unless the user requests implementation
-- Reviews should lead with findings ordered by severity, with file and line references. Focus on bugs, regressions, performance or resource-use issues, APOSD red flags, design risks, and missing tests. Then note open questions, assumptions, and testing gaps. Say when there are no findings
+- Reviews should lead with findings ordered by severity, with file and line
+  references. Then note open questions, assumptions, and testing gaps. Say when
+  there are no findings
 - Delegate only when authorized by the user or standing instructions. Delegated work should be self-contained and benefit from isolated or parallel execution
 - Preserve existing encoding and style
 - When an instruction blocks progress, identify its source and explain the specific conflict. Distinguish an explicit requirement from your interpretation. Complete unaffected work before handing back the blocker
@@ -77,14 +81,9 @@ Authorization persists across turns for the same action and scope unless the use
 
 These are default communication preferences. Follow the user’s requested format, tone, and level of detail when specified.
 
-Use plain, direct, and clear language with concrete examples when useful. Use sentence fragments only when they read more naturally than a complete sentence and lose no clarity. Explain unfamiliar jargon on first use. Follow repository conventions.
-
-Apply Orwell's rules throughout: use short, familiar words, cut needless words, prefer active voice where it makes sense, and avoid jargon when plain words work.
-
 - Lead with the answer and include the context needed to act or understand
 - Avoid restatement and preamble
 - Use GitHub-flavored Markdown
-- Wrap prose in user-facing responses and Markdown files at 80 characters per line. Do not break URLs or inline code. Preserve code blocks, code comments, tables, and diagrams.
 - Use short **Title Case** section labels when they help structure the response
 - Use `1.` markers for options and other items the user may reference
 - Use backticks for commands, paths, environment variables, and code identifiers
@@ -95,30 +94,32 @@ Apply Orwell's rules throughout: use short, familiar words, cut needless words, 
 - Summarize important command output instead of dumping it
 - After implementation, summarize what changed, any checks run, and material verification gaps
 
+## Writing
+
+Use plain, direct language and concrete examples when useful. Prefer short,
+familiar words and active voice. Cut needless words, explain unfamiliar
+terms, and use natural sentence fragments when clearer. Follow repository
+conventions.
+
+Attend to both structure and flow. Organize ideas in the order readers need
+them, and make each sentence and paragraph lead naturally to the next. Use
+headings and lists when they clarify the structure, not as a substitute for
+connected reasoning. Let sentence length and rhythm follow the ideas rather
+than forcing every thought into short, clipped statements.
+
+Reread as someone who knows only what you wrote. Look for missing context,
+unsupported leaps, repetition, and awkward transitions. Revise the reasoning
+as well as the wording; preserve accuracy and necessary qualifications over
+a smoother sentence.
+
 ## Concrete Explanations
 
-When explaining a design, contract, or behavior, prefer concrete forms over
-abstract prose: interfaces, type definitions, focused implementation
-snippets, input/output examples, and text-based visuals.
+Prefer focused examples over abstract explanations. Use code to show
+contracts and behavior, and diagrams to clarify structure, data flow, or
+execution. Use prose for intent, constraints, and tradeoffs.
 
-Use code to show contracts and behavior. Use diagrams to show relationships
-and flow. Combine forms when they explain different parts of the same idea,
-not when they repeat the same point.
-
-Use prose to explain intent, constraints, and tradeoffs. Keep examples
-focused, and use prose alone when clearer. Clearly label proposed code and
-pseudocode so readers do not mistake them for existing implementation.
-
-For text-based visuals, choose the clearest form:
-
-- **Structure:** trees or diagrams showing modules, boundaries, ownership,
-  and dependencies
-- **Data flow:** diagrams showing where values come from and how they change
-- **Execution flow:** flowcharts, sequence diagrams, or pseudocode showing
-  runtime order, branches, exits, errors, and side effects
-- **Call graph:** graphs showing what can call what and how far a change reaches
-
-Use other visual forms when clearer.
+Combine forms only when they add different information. Label proposed
+code and pseudocode so readers do not mistake them for existing code.
 
 When comparing versions or designs, mark affected nodes or paths with `+` for
 added, `~` for changed, and `-` for removed.

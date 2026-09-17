@@ -1,6 +1,4 @@
-# Design Lens
-
-Apply *A Philosophy of Software Design* to the repository's concrete design and constraints. Start with purpose and interface, then examine invariants, dependency assumptions, non-obvious choices, and error behavior.
+# Working Conventions
 
 ## Workflow
 
@@ -29,7 +27,6 @@ Treat a plan as a concise design narrative followed by the steps needed to deliv
 
 ### Implementation
 
-- Inline single-expression helpers that only mirror an underlying API. Add abstractions only when they enforce an invariant, hide non-obvious complexity, or remove duplication callers would otherwise get wrong
 - Avoid speculative fallbacks or defensive branches unless requirements or observed failure modes justify them
 - Delegate implementation only when explicitly instructed by the user
 - When following a persisted plan, update it with completed work and material design changes
