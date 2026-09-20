@@ -2,34 +2,54 @@
 
 ## Workflow
 
-For work with material uncertainty, design, or risk, separate research, planning, implementation, and review. Keep each stage as light as the task allows.
+For work with material uncertainty, design, or risk, distinguish research, design, implementation planning, implementation, and review. These describe responsibilities, not a rigid sequence or mandatory ceremony. Keep the process proportional to the task and revisit decisions when evidence changes.
 
-These stages organize the work; they are not automatic approval gates. Move between them without asking unless a decision materially changes the agreed outcome, scope, or risk.
+Stages are not automatic approval gates. Continue within the authorized scope, pausing when a consequential decision requires user input or an applicable understanding check requires a response.
 
 ### Research
 
-Define the problem and success criteria enough to bound the investigation. Treat that view as provisional. Inspect relevant code, tests, documentation, and conventions to learn current behavior, constraints, and touch points. Use external research only when needed. Before planning, surface findings that materially change the problem or success criteria.
+Define the problem and success criteria enough to bound the investigation. Treat that view as provisional. Inspect relevant code, tests, documentation, and conventions to learn current behavior, constraints, and touch points. Use external research only when needed. Before design discussion, surface findings that materially change the problem or success criteria. For facts on which consequential choices depend, distinguish what the evidence establishes, what is inferred, and what remains unknown; identify which decisions those uncertainties affect.
 
-When available, use `callstack diff` to find changed paths and `callstack tree`
-to trace call relationships. Verify the output against the code before using
-it.
+When available, use `callstack diff` to find changed paths and `callstack tree` to trace call relationships. Verify the output against the code before using it.
 
 Use the `research` task for web access.
 
-### Planning
+### Design
 
-Treat a plan as a concise design narrative followed by the steps needed to deliver it.
+Develop the design collaboratively unless the user has authorized independent design decisions. Establish the consequential mechanisms, tradeoffs, and expected behavior before translating them into execution steps. Compare credible alternatives and resolve consequential uncertainties.
 
-- Start with the goal and material constraints. Explain the chosen design through the problem's concepts, placing each reason with its decision
-- Compare only viable alternatives. Surface open questions that could change scope, design, risk, or outcome
-- End with ordered delivery steps and useful checks. Make each step one coherent, independently reviewable concept
-- Keep high-level plans capability-oriented and implementation-neutral. Put concrete contracts and design decisions in task-level plans
+### Implementation Planning
+
+Draft and maintain the implementation plan from the resulting design. The plan records how to realize the design; it is not a substitute for design discussion. If planning exposes unresolved consequential decisions, return to design discussion unless the user has authorized the agent to make those decisions independently.
+
+- Start with a concise account of the goal, material constraints, chosen design, and reasons
+- Identify the main implementation touch points and how they interact, distinguishing existing behavior from proposed changes. Use focused diagrams, flows, call graphs, or pseudocode when they clarify the shape of the implementation better than prose alone
+- Follow with ordered delivery steps and useful checks tied to expected behavior; make each step one coherent, independently reviewable concept
+- Keep high-level plans capability-oriented and implementation-neutral; put concrete contracts and design decisions in task-level plans
+- Keep each decision's rationale in one clear home rather than duplicating it across artifacts
+
+### Design Understanding
+
+For substantial work involving unfamiliar, consequential design, establish understanding before implementation unless the user has authorized proceeding without understanding checks. Scale the effort to conceptual novelty, consequences, and understanding already demonstrated, not file count or lines changed. Routine, already-understood changes and disposable, isolated, low-consequence experiments do not require understanding checks.
+
+Explain and discuss before checking understanding. Ask a few focused, open-ended questions, one at a time, using the user's reasoning to identify what needs further attention. Do not require manual implementation, exact names, line-level recall, or repetition of reasoning already demonstrated.
+
+Check answers against the design and available evidence. Distinguish misunderstandings from inadequate explanations and unresolved design problems. Address gaps through focused explanation, a different representation, or further investigation, then revisit only what remains unclear.
+
+When an understanding check requires a response, wait rather than continuing into implementation. Once critical gaps are resolved and the user is ready, proceed autonomously within the agreed design. This is an explicit exception to the default of continuing directly through implementation. Honor a subsequent request to skip checks without treating it as evidence of understanding or authorization to decide unresolved design questions.
+
+After implementation, help the user connect the system as built to the design they understood. Explain consequential changes, discoveries, and implementation decisions, including those that followed the design but only became concrete during implementation. Use relevant code locations and verification evidence to make behavior, guarantees, and limitations understandable rather than recounting every edit.
+
+Let the user's demonstrated understanding guide further discussion. Where consequential gaps remain, explain first, then use focused, open-ended questions to help the user reconstruct or apply the actual behavior. Do not require a separate review ceremony or repeat reasoning already demonstrated. If the user has authorized proceeding without understanding checks, provide a concise handoff without requiring one.
+
+Distinguish implementation and verification status from the status of shared understanding when they differ. Do not imply that an outstanding understanding check is complete merely because implementation and verification are finished.
 
 ### Implementation
 
 - Avoid speculative fallbacks or defensive branches unless requirements or observed failure modes justify them
-- Delegate implementation only when explicitly instructed by the user
+- Delegate implementation to other agents only when explicitly instructed by the user
 - When following a persisted plan, update it with completed work and material design changes
+- Make routine implementation decisions independently. Before adopting changes that materially alter the agreed guarantees, trust boundaries, state ownership, or failure behavior, return to design discussion unless the user has authorized the agent to make those decisions independently. Explain material departures at handoff
 
 ### Review
 
