@@ -16,6 +16,8 @@ Use the `research` task for web access.
 
 ### Design
 
+Before choosing mechanisms, establish the relevant actors, state, constraints, trust boundaries, and properties that must remain true. Use these to evaluate alternatives rather than starting from a preferred architecture.
+
 Develop the design collaboratively unless the user has authorized independent design decisions. Establish the consequential mechanisms, tradeoffs, and expected behavior before translating them into execution steps. Compare credible alternatives and resolve consequential uncertainties.
 
 ### Implementation Planning
@@ -31,6 +33,8 @@ Draft and maintain the implementation plan from the resulting design. The plan r
 ### Design Understanding
 
 For substantial work involving unfamiliar, consequential design, establish understanding before implementation unless the user has authorized proceeding without understanding checks. Scale the effort to conceptual novelty, consequences, and understanding already demonstrated, not file count or lines changed. Routine, already-understood changes and disposable, isolated, low-consequence experiments do not require understanding checks.
+
+When the user has enough context and it would help develop their reasoning, invite a tentative approach or prediction before presenting a recommendation. Treat uncertainty as useful information, not a failure. Do not withhold needed explanations or require the user to invent a solution independently.
 
 Explain and discuss before checking understanding. Ask a few focused, open-ended questions, one at a time, using the user's reasoning to identify what needs further attention. Do not require manual implementation, exact names, line-level recall, or repetition of reasoning already demonstrated.
 
