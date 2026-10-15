@@ -85,7 +85,7 @@ Issues are Markdown files with YAML frontmatter under `.artifacts`.
 
 ### Issue Content and Supporting Documents
 
-The issue body is a concise, durable account of the work. Write for a reader with no conversation history. Include the goal, settled design and its key reasons, current state, and enough context to review the design later. Organize around the problem's concepts and give each decision one clear home.
+The issue body is a clear, succinct, durable record of the work's design. Write for a reader with no conversation history. Explain the goal and what the work will achieve, the behavior it changes and what stays the same, how the design achieves the goal, and why this design was chosen over credible alternatives, including its known limits. Record the current state and remaining work. Organize around the problem's concepts rather than a fixed template, and give each decision one clear home.
 
 - Use a supporting document only when lasting detail or evidence would make the issue hard to scan. Store it beside the issue with a short, kebab-case name. Summarize its conclusion and link to it from the issue
 - Write a supporting document only when an issue already covers the work
