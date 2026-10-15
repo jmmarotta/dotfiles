@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jmmarotta/bonsai/main/schemas/config-v1.schema.json",
   "agent": {
     "main": {
-      "model": "codex/gpt-5.6-sol",
+      "model": "codex/gpt-6.1-sol",
       "effort": "medium",
       "serviceTier": "standard"
     },
@@ -15,49 +15,58 @@
         "advisor-openai": {
           "agent": "bonsai",
           "description": "Use for quick, independent OpenAI technical advice, architecture and design decisions, tradeoff analysis, planning, and challenging assumptions. Do not use for implementation.",
-          "model": "codex/gpt-6-astra",
-          "effort": "low",
+          "model": "codex/gpt-6.1-sol",
+          "effort": "medium",
           "serviceTier": "standard"
         },
         "advisor-anthropic": {
           "agent": "bonsai",
           "description": "Use for quick, independent Anthropic technical advice, architecture and design decisions, tradeoff analysis, planning, and challenging assumptions. Do not use for implementation.",
-          "model": "anthropic/claude-fable-5-1",
+          "model": "anthropic/claude-opus-5-5",
           "effort": "low",
           "serviceTier": "standard"
         },
         "build": {
           "agent": "bonsai",
           "description": "Use for implementing code changes, running focused verification, and reporting completed work.",
-          "model": "codex/gpt-5.6-sol",
+          "model": "codex/gpt-6.1-sol",
           "effort": "medium",
           "serviceTier": "standard"
         },
         "explore": {
           "agent": "bonsai",
           "description": "Use for focused codebase exploration, tracing behavior, locating relevant files, and reporting implementation findings. Do not modify files.",
-          "model": "codex/gpt-6-astra",
+          "model": "codex/gpt-6.1-sol",
           "effort": "low",
           "serviceTier": "standard"
         },
         "review-anthropic": {
           "agent": "bonsai",
           "description": "Use for an independent Anthropic code review focused on correctness bugs, regressions, architectural and call-graph changes, performance and resource-use regressions, A Philosophy of Software Design (APOSD) red flags, design risks, and missing tests.",
-          "model": "anthropic/claude-fable-5-1",
+          "model": "anthropic/claude-opus-5-5",
           "effort": "low",
           "serviceTier": "standard"
         },
         "review-openai": {
           "agent": "bonsai",
           "description": "Use for an independent OpenAI code review focused on correctness bugs, regressions, architectural and call-graph changes, performance and resource-use regressions, A Philosophy of Software Design (APOSD) red flags, design risks, and missing tests.",
-          "model": "codex/gpt-6-astra",
-          "effort": "low",
+          "model": "codex/gpt-6.1-sol",
+          "effort": "medium",
           "serviceTier": "standard"
+        },
+        "computer-use": {
+          "agent": "codex",
+          "description": "Use for authorized desktop computer use through Codex's computer-use tools, including interacting with native applications. Use Playwriter instead for browser tasks. Include the authorized actions, target applications, and stopping conditions in the child prompt; do not expand access or bypass approvals. Desktop permissions are managed by Codex, not the filesystem sandbox. Report completed actions, blockers, and any remaining changes to desktop state.",
+          "model": "gpt-6.1-sol",
+          "effort": "medium",
+          "serviceTier": "standard",
+          "sandbox": "read-only"
         },
         "research": {
           "agent": "codex",
           "description": "Use for web access: search authoritative sources for current documentation, release notes, pricing, and news, or fetch and extract content from a specific URL. Runs through an isolated Codex child so raw web content stays out of the parent context.",
-          "effort": "low",
+          "model": "gpt-6.1-sol",
+          "effort": "medium",
           "serviceTier": "standard",
           "webSearch": true,
           "sandbox": "read-only"
