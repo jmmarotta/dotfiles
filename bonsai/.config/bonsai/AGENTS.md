@@ -8,13 +8,17 @@ Stages are not automatic approval gates. Continue within the authorized scope, p
 
 ### Research
 
-Define the problem and success criteria enough to bound the investigation. Treat that view as provisional. Inspect relevant code, tests, documentation, and conventions to learn current behavior, constraints, and touch points. Use external research only when needed. Before design discussion, surface findings that materially change the problem or success criteria. For facts on which consequential choices depend, distinguish what the evidence establishes, what is inferred, and what remains unknown; identify which decisions those uncertainties affect.
+Define the problem and success criteria enough to bound the investigation. Treat that view as provisional. Inspect relevant code, tests, documentation, and conventions to learn current behavior, constraints, and touch points. Note workspace state that affects the baseline, such as uncommitted changes. Use external research only when needed. Before design discussion, surface findings that materially change the problem or success criteria. For facts on which consequential choices depend, distinguish what the evidence establishes, what is inferred, and what remains unknown; identify which decisions those uncertainties affect.
 
 Use the `research` task for web access.
 
 ### Design
 
-Make collaboration and shared understanding central to the design process, not a final approval step. Follow the system prompt's Collaboration And Understanding guidance, adapting to the user's desired involvement. Ground consequential decisions in the intended behavior, relevant state, constraints, and trust boundaries. Use *A Philosophy of Software Design* to compare approaches by where complexity lives, what callers must understand, and how widely future changes would spread.
+Make collaboration and shared understanding central to the design process, not a final approval step. Ground consequential decisions in the intended behavior, relevant state, constraints, and trust boundaries. Use *A Philosophy of Software Design* to compare approaches by where complexity lives, what callers must understand, and how widely future changes would spread.
+
+Design for current callers and stated requirements. Note likely extensions instead of building for them.
+
+Before presenting a design or calling it settled, walk concrete examples through it: each affected surface or caller, places where different cases meet, and edge inputs such as empty, minimum, and maximum values. List anything unspecified as an open question instead of declaring the design complete.
 
 ### Implementation Planning
 
@@ -54,6 +58,10 @@ Use `mitchelh` commit messages: `<scope>: <concise lowercase description>`
 
 Do not create partial commits or rewrite files only to manufacture intermediate states.
 
+## Pull Requests
+
+The pull request body explains the change's design to a reviewer with no conversation history, in clear, succinct terms. Explain what problem the change solves, the behavior it changes and what stays the same, how the design achieves it, and why this design was chosen, including known limits. Include a visualization when it makes the design clearer.
+
 ## Worktrees
 
 Create Git worktrees under the primary checkout's `.worktrees/<name>/`. Remove them with `git worktree remove`.
@@ -85,7 +93,7 @@ Issues are Markdown files with YAML frontmatter under `.artifacts`.
 
 ### Issue Content and Supporting Documents
 
-The issue body is a clear, succinct, durable record of the work's design. Write for a reader with no conversation history. Explain the goal and what the work will achieve, the behavior it changes and what stays the same, how the design achieves the goal, and why this design was chosen over credible alternatives, including its known limits. Record the current state and remaining work. Organize around the problem's concepts rather than a fixed template, and give each decision one clear home.
+The issue body is a clear, succinct, durable record of the work's design. Write for a reader with no conversation history. Explain the goal and what the work will achieve, the behavior it changes and what stays the same, how the design achieves the goal, and why this design was chosen over credible alternatives, including its known limits. Record the current state and remaining work, in terms that stay true, such as commits and issue IDs, rather than worktree status. Organize around the problem's concepts rather than a fixed template, and give each decision one clear home.
 
 - Use a supporting document only when lasting detail or evidence would make the issue hard to scan. Store it beside the issue with a short, kebab-case name. Summarize its conclusion and link to it from the issue
 - Write a supporting document only when an issue already covers the work
