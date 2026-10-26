@@ -63,6 +63,13 @@ alias aic="aichat"
 compdef _openplan plan
 compdef _opencode oc occ
 
+# A function rather than an alias: zsh expands aliases before completion, so
+# an alias would hide the `tailscale` command name that the completions target.
+if [ -x /Applications/Tailscale.app/Contents/MacOS/Tailscale ]; then
+  tailscale() { /Applications/Tailscale.app/Contents/MacOS/Tailscale "$@"; }
+  source <(tailscale completion zsh)
+fi
+
 tmuxe() {
   if [ "$#" -eq 0 ]; then
     printf 'usage: tmuxe <command>\n' >&2
