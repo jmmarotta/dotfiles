@@ -2,51 +2,25 @@
 
 ## Workflow
 
-For work with material uncertainty, design, or risk, distinguish research, design, implementation planning, implementation, and review. These describe responsibilities, not a rigid sequence or mandatory ceremony. Keep the process proportional to the task and revisit decisions when evidence changes.
-
-Stages are not automatic approval gates. Continue within the authorized scope, pausing when a consequential decision requires user input.
-
-### Research
-
-Define the problem and success criteria enough to bound the investigation. Treat that view as provisional. Inspect relevant code, tests, documentation, and conventions to learn current behavior, constraints, and touch points. Note workspace state that affects the baseline, such as uncommitted changes. Use external research only when needed. Before design discussion, surface findings that materially change the problem or success criteria. For facts on which consequential choices depend, distinguish what the evidence establishes, what is inferred, and what remains unknown; identify which decisions those uncertainties affect.
-
-Use the `research` task for web access.
+Apply APOSD throughout the work. Design establishes the contract; implementation realizes and verifies it. Revisit the design when evidence exposes a problem, and scale the process to the task's uncertainty and risk.
 
 ### Design
 
-Make collaboration and shared understanding central to the design process, not a final approval step. Ground consequential decisions in the intended behavior, relevant state, constraints, and trust boundaries. Use *A Philosophy of Software Design* to compare approaches by where complexity lives, what callers must understand, and how widely future changes would spread.
-
-Design for current callers and stated requirements. Note likely extensions instead of building for them.
-
-Before presenting a design or calling it settled, walk concrete examples through it: each affected surface or caller, places where different cases meet, and edge inputs such as empty, minimum, and maximum values. List anything unspecified as an open question instead of declaring the design complete.
-
-### Implementation Planning
-
-Use an implementation plan when it helps organize the work. Build it from the settled design, and update it as the work progresses. Planning explains how to realize the design; it does not replace design discussion. If it exposes a consequential decision, discuss it with the user unless they have delegated that decision.
-
-- State the goal, material constraints, chosen design, and reasons
-- Identify the main implementation touch points and how they interact, distinguishing existing behavior from proposed changes. Use visuals when they clarify the plan
-- Organize delivery into coherent, independently reviewable steps, with checks tied to expected behavior
-- Keep each decision's rationale in one place; link to it rather than repeat it
+Understand current behavior, callers, and constraints. Define or confirm interfaces and write or update their documentation before implementation starts, specifying responsibilities, inputs and outputs, guarantees, and failure behavior. Walk concrete examples through the design, including interactions and edge cases; make unresolved questions explicit.
 
 ### Implementation
 
-- Avoid speculative fallbacks or defensive branches unless requirements or observed failure modes justify them
-- Delegate implementation only when explicitly instructed by the user
-- Discuss changes to agreed guarantees, trust boundaries, state ownership, or failure behavior before adopting them, unless the user has delegated those decisions. Explain material departures at handoff
+Implement against the agreed interfaces, revisiting the design rather than accumulating exceptions around it. Verify changed behavior and affected interactions, and complete repository-required checks. Delegate implementation only when explicitly instructed by the user.
 
 ### Review
 
-Run all configured `review-*` task presets in parallel when the change carries material risk. Consider correctness, security, performance, compatibility, and how widely a failure could spread. Mechanical or low-impact changes do not require delegated review.
+For material-risk changes, run all configured `review-*` presets in parallel. Review both behavior and design, considering correctness, security, performance, and compatibility.
 
-Review findings are evidence for a decision.
+Check APOSD red flags, increased cyclomatic complexity, and nesting. Treat them as signals to investigate, not automatic defects. Complexity can warrant a finding when it imposes a concrete comprehension or maintenance cost.
 
-- Check changed code for APOSD red flags, high or increased cyclomatic complexity, and nesting. Treat these as signals and elevate them when they support a demonstrated risk
-- Report findings with a concrete, reachable failure, violated requirement, regression, or material risk. Include the relevant code path
-- Keep findings within the change's scope, except for critical security, data-loss, or correctness risks
-- Verify each finding against the code, requirements, and supported contract. Adopt it when the demonstrated risk justifies the added complexity
-- Prefer the smallest fix that restores the intended behavior or invariant
-- Deduplicate parallel reviews, explain rejected material findings, and rerun checks affected by adopted changes
+Treat automated findings as hypotheses, not instructions. Verify them against the code, intended contract, and relevant evidence; judge whether fixing them improves the result. Deduplicate findings, explain rejected material findings, and rerun affected checks.
+
+Keep fixes within scope, bringing scope-expanding changes to the user. Prefer the smallest fix that restores the intended behavior or invariant without preserving the underlying design problem.
 
 ## Frontend
 
@@ -60,17 +34,18 @@ Do not create partial commits or rewrite files only to manufacture intermediate 
 
 ## Pull Requests
 
-The pull request body explains the change's design to a reviewer with no conversation history, in clear, succinct terms. Explain what problem the change solves, the behavior it changes and what stays the same, how the design achieves it, and why this design was chosen, including known limits. Include a visualization when it makes the design clearer.
+The pull request body explains the change's design to a reviewer with no conversation history, in clear, succinct terms. Explain what problem the change solves, the behavior it changes and what stays the same, how the design achieves it, and why this design was chosen, including known limits. Include a visualization when it makes the design clearer. A verification section is unnecessary.
 
 ## Worktrees
 
 Create Git worktrees under the primary checkout's `.worktrees/<name>/`. Remove them with `git worktree remove`.
 
-## Overfitting
+## Records
 
-Code and artifacts must make sense without conversation or pull-request history.
+Code and its comments are the authoritative record of the implemented system. Repository documentation, such as files under `docs/`, provides readable views of that state and must remain consistent with it.
 
-- Rewrite names or comments that rely on hidden context using the codebase's vocabulary
+- Code and artifacts must make sense without conversation or pull-request history. Rewrite names or comments that rely on hidden context using the codebase's vocabulary
+- Keep contracts and design rationale near the code they explain
 - Do not preserve compatibility with unshipped code that existed only earlier in the current branch. Delete old signatures, aliases, and data shapes; update their callers
 
 ## Artifact Setup
@@ -93,12 +68,13 @@ Issues are Markdown files with YAML frontmatter under `.artifacts`.
 
 ### Issue Content and Supporting Documents
 
-The issue body is a clear, succinct, durable record of the work's design. Write for a reader with no conversation history. Explain the goal and what the work will achieve, the behavior it changes and what stays the same, how the design achieves the goal, and why this design was chosen over credible alternatives, including its known limits. Record the current state and remaining work, in terms that stay true, such as commits and issue IDs, rather than worktree status. Organize around the problem's concepts rather than a fixed template, and give each decision one clear home.
+Issues and their supporting documents describe intended designs and changes, and the work toward implementing them.
 
-- Use a supporting document only when lasting detail or evidence would make the issue hard to scan. Store it beside the issue with a short, kebab-case name. Summarize its conclusion and link to it from the issue
-- Write a supporting document only when an issue already covers the work
-- Revise the issue in place as the work changes
-- Pause for approval when a proposed change would alter the agreed outcome, scope, or risk. Otherwise, proceed within the approved scope and record material design changes in the issue
+The issue explains the goal, what changes and what stays the same, the design and why it was chosen over credible alternatives, known limits, current work state, and remaining work. Organize around the problem's concepts rather than a fixed template. Reference commits and issue IDs rather than transient worktree state.
+
+- Revise the issue in place as the work changes, keeping current decisions clear and recording material changes and their rationale
+- Before context resets or handoffs, update the issue or another approved durable record with the state needed to resume
+- Use a supporting document only when an existing issue covers the work and lasting detail or evidence would make its body hard to scan. Store it beside the issue with a short, kebab-case name, summarize its conclusion, and link to it from the issue
 
 ### Scratch Work
 
