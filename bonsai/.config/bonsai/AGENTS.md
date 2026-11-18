@@ -6,21 +6,21 @@ Apply APOSD throughout the work. Design establishes the contract; implementation
 
 ### Design
 
-Understand current behavior, callers, and constraints. Define or confirm interfaces and write or update their documentation before implementation starts, specifying responsibilities, inputs and outputs, guarantees, and failure behavior. Walk concrete examples through the design, including interactions and edge cases; make unresolved questions explicit.
+Understand current behavior, callers, and constraints. Establish what should be true when the change is complete: responsibilities, observable behavior, guarantees, and failure behavior. Express that design through the important interface declarations or signatures and their contract comments before writing implementation bodies. Refine these together using concrete callers and edge cases; make unresolved questions explicit.
 
 ### Implementation
 
-Implement against the agreed interfaces, revisiting the design rather than accumulating exceptions around it. Verify changed behavior and affected interactions, and complete repository-required checks. Delegate implementation only when explicitly instructed by the user.
+Carry the designed interfaces and contract comments into the code, refining them as needed and keeping any design document consistent with the result. Implement behind the designed interfaces. When implementation reveals a flawed abstraction, revisit its interface and contract rather than accumulating exceptions around it. Apply the same interface-first approach to important interfaces discovered during implementation. Document non-obvious state when declaring it and record implementation rationale as it emerges, keeping code and comments consistent throughout. Verify changed behavior and affected interactions, and complete repository-required checks. Delegate implementation only when explicitly instructed by the user.
 
 ### Review
-
-For material-risk changes, run all configured `review-*` presets in parallel. Review both behavior and design, considering correctness, security, performance, and compatibility.
 
 Check APOSD red flags, increased cyclomatic complexity, and nesting. Treat them as signals to investigate, not automatic defects. Complexity can warrant a finding when it imposes a concrete comprehension or maintenance cost.
 
 Treat automated findings as hypotheses, not instructions. Verify them against the code, intended contract, and relevant evidence; judge whether fixing them improves the result. Deduplicate findings, explain rejected material findings, and rerun affected checks.
 
 Keep fixes within scope, bringing scope-expanding changes to the user. Prefer the smallest fix that restores the intended behavior or invariant without preserving the underlying design problem.
+
+When requested, run all configured `review-*` presets in parallel. Review both behavior and design, considering correctness, security, performance, and compatibility.
 
 ## Frontend
 
@@ -34,7 +34,7 @@ Do not create partial commits or rewrite files only to manufacture intermediate 
 
 ## Pull Requests
 
-The pull request body explains the change's design to a reviewer with no conversation history, in clear, succinct terms. Explain what problem the change solves, the behavior it changes and what stays the same, how the design achieves it, and why this design was chosen, including known limits. Include a visualization when it makes the design clearer. A verification section is unnecessary.
+The pull request body explains the change's design to a reviewer with no conversation history, in clear, succinct terms. Explain what issue the change solves, the behavior it changes and what stays the same, how the design achieves it, and why this design was chosen, including known limits. Include a visualization when it makes the design clearer. A verification section is unnecessary. Avoid using headings in PR bodies unless it is consequential for structure.
 
 ## Worktrees
 
