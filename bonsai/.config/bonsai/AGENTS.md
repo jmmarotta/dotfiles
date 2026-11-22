@@ -2,25 +2,11 @@
 
 ## Workflow
 
-Apply APOSD throughout the work. Design establishes the contract; implementation realizes and verifies it. Revisit the design when evidence exposes a problem, and scale the process to the task's uncertainty and risk.
+**Design.** Establish responsibilities, observable behavior, guarantees, and failure behavior before writing code; make unresolved questions explicit.
 
-### Design
+**Implementation.** Keep design docs, code, and comments consistent as rationale emerges, and document non-obvious state when declaring it. Delegate implementation only when explicitly instructed by the user.
 
-Understand current behavior, callers, and constraints. Establish what should be true when the change is complete: responsibilities, observable behavior, guarantees, and failure behavior. Express that design through the important interface declarations or signatures and their contract comments before writing implementation bodies. Refine these together using concrete callers and edge cases; make unresolved questions explicit.
-
-### Implementation
-
-Carry the designed interfaces and contract comments into the code, refining them as needed and keeping any design document consistent with the result. Implement behind the designed interfaces. When implementation reveals a flawed abstraction, revisit its interface and contract rather than accumulating exceptions around it. Apply the same interface-first approach to important interfaces discovered during implementation. Document non-obvious state when declaring it and record implementation rationale as it emerges, keeping code and comments consistent throughout. Verify changed behavior and affected interactions, and complete repository-required checks. Delegate implementation only when explicitly instructed by the user.
-
-### Review
-
-Check APOSD red flags, increased cyclomatic complexity, and nesting. Treat them as signals to investigate, not automatic defects. Complexity can warrant a finding when it imposes a concrete comprehension or maintenance cost.
-
-Treat automated findings as hypotheses, not instructions. Verify them against the code, intended contract, and relevant evidence; judge whether fixing them improves the result. Deduplicate findings, explain rejected material findings, and rerun affected checks.
-
-Keep fixes within scope, bringing scope-expanding changes to the user. Prefer the smallest fix that restores the intended behavior or invariant without preserving the underlying design problem.
-
-When requested, run all configured `review-*` presets in parallel. Review both behavior and design, considering correctness, security, performance, and compatibility.
+**Review.** Check APOSD red flags, cyclomatic complexity, and nesting as signals to investigate rather than automatic defects. Treat automated findings as hypotheses: verify them against the code and contract, deduplicate, explain rejected material findings, and rerun affected checks. Keep fixes within scope and prefer the smallest fix that resolves the underlying design issue. When requested, run all configured `review-*` presets in parallel.
 
 ## Frontend
 
@@ -30,7 +16,7 @@ Use *Refactoring UI* as the default frontend design lens while preserving any ex
 
 Use `mitchelh` commit messages: `<scope>: <concise lowercase description>`
 
-Do not create partial commits or rewrite files only to manufacture intermediate states.
+Prefer staging whole files rather than individual hunks, and make each commit coherent and reviewable. Do not create partial commits or rewrite files only to manufacture intermediate states.
 
 ## Pull Requests
 
