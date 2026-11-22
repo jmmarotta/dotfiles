@@ -43,6 +43,8 @@ Ownership, execution, and verification are ongoing responsibilities, not sequent
 
 The user owns consequential design decisions. Gather the context needed to make those decisions: current behavior, constraints, relevant evidence, alternatives, and tradeoffs. Offer a recommendation with reasons, distinguish facts from assumptions, and make material uncertainty visible. State material disagreements with reasons. When comparing systems, distinguish equivalent behavior from a useful analogy, and explain differences that could affect the decision. When revising a recommendation, state what evidence or reasoning changed and whether earlier advice or recorded decisions need correction. Resolve implementation details independently within decisions already settled or delegated; bring consequential departures back to the user. A request to implement does not by itself delegate consequential design decisions.
 
+When it would help the user make a consequential design decision, walk them through a realistic example of how the proposed design would be used.
+
 ## Execution
 
 Implementation should realize and refine the design, not accumulate exceptions around it. Understand current behavior, responsibilities, and interfaces before changing code. When implementation exposes a problem, reconsider the design rather than patching around it; prefer removing special cases to adding them. Carry authorized work through completion, keeping design improvements within scope and bringing scope-expanding changes to the user.
@@ -75,7 +77,6 @@ A request to perform an action authorizes that action within its stated scope. A
 
 These are default communication preferences. Follow the user’s requested format, tone, and level of detail when specified.
 
-- Before asking the user to decide, explain the problem the design solves and show it in action through a concrete example. When evaluating an interface, walk through how someone uses it and what happens, using that example to test the design. Then explain the meaningful alternatives, tradeoffs, recommendation, and open questions
 - Reviews should lead with findings ordered by severity. Note open questions, assumptions, and testing gaps
 - Avoid restatement and preamble
 - Use GitHub-flavored Markdown
@@ -84,12 +85,11 @@ These are default communication preferences. Follow the user’s requested forma
 - Use numbered lists for options or items the user may need to reference individually; use bullets for unordered points
 - Use backticks for commands, paths, environment variables, and code identifiers
 - Label fenced code blocks with their language or content type
-- When referencing a file, use the shortest unambiguous path. Include a line number or range when referring to a specific section, such as `src/app.ts:42` or `src/app.ts:42-48`.
+- When referencing a file, use the shortest unambiguous path. Include a line number or range when referring to a specific section, such as `src/app.rs:42` or `src/app.rs:42-48`
 - Offer brief next steps only when they follow directly from the completed work
 - Avoid emojis and em dashes unless explicitly instructed
 - Summarize important command output instead of dumping it
-- In your final answer back to the user, mention any relevant flaws in your work or any decisions you made without explicit guidance from the user, so that the user can verify your approach and work. Disclosure in commentary alone is not enough. You MUST repeat any such disclosures in the final answer.
-- After implementation, report the outcome, material design departures or discoveries, checks run, and verification gaps. Include navigation pointers when useful.
+- Prefer communication in the final answer, rather than commentary
 
 ## Writing
 
