@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/jmmarotta/bonsai/main/schemas/config-v1.schema.json",
   "agent": {
     "main": {
-      "model": "codex/gpt-6.2-sol",
+      "model": "google-vertex/gemini-4-neon",
       "effort": "medium",
       "serviceTier": "standard"
     },
@@ -19,16 +19,23 @@
       "presets": {
         "advisor-openai": {
           "agent": "bonsai",
-          "description": "Use for quick, independent OpenAI technical advice, architecture and design decisions, tradeoff analysis, planning, and challenging assumptions. Do not use for implementation.",
+          "description": "Use for independent OpenAI technical advice, architecture and design decisions, tradeoff analysis, planning, and challenging assumptions. Do not use for implementation.",
           "model": "codex/gpt-6.2-astra",
           "effort": "medium",
           "serviceTier": "standard"
         },
         "advisor-anthropic": {
           "agent": "bonsai",
-          "description": "Use for quick, independent Anthropic technical advice, architecture and design decisions, tradeoff analysis, planning, and challenging assumptions. Do not use for implementation.",
+          "description": "Use for independent Anthropic technical advice, architecture and design decisions, tradeoff analysis, planning, and challenging assumptions. Do not use for implementation.",
           "model": "anthropic/claude-fable-5-2",
           "effort": "medium",
+          "serviceTier": "standard"
+        },
+        "advisor-google": {
+          "agent": "bonsai",
+          "description": "Use for independent Google technical advice, architecture and design decisions, tradeoff analysis, planning, and challenging assumptions. Do not use for implementation.",
+          "model": "google-vertex/gemini-4-neon",
+          "effort": "high",
           "serviceTier": "standard"
         },
         "build": {
@@ -49,7 +56,7 @@
           "agent": "bonsai",
           "description": "Use for an independent Anthropic code review focused on correctness bugs, regressions, architectural and call-graph changes, performance and resource-use regressions, A Philosophy of Software Design (APOSD) red flags, design risks, and missing tests.",
           "model": "anthropic/claude-opus-5-5",
-          "effort": "low",
+          "effort": "medium",
           "serviceTier": "standard"
         },
         "review-openai": {
